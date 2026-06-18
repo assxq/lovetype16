@@ -1,0 +1,2217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>심층분석 — Love Type 16</title>
+<!-- SEO -->
+<meta name="description" content="당신만을 위한 깊이 있는 연애 분석. 강점·약점, 갈등 대처법, 찰떡·상극 궁합까지.">
+<meta name="author" content="Love Type 16">
+
+<!-- favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph (카카오톡, 페이스북) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Love Type 16">
+<meta property="og:title" content="심층분석 리포트 — Love Type 16">
+<meta property="og:description" content="당신만을 위한 깊이 있는 연애 분석. 강점·약점, 갈등 대처법, 찰떡·상극 궁합까지.">
+<meta property="og:image" content="https://lovetype16.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://lovetype16.com/deep-analysis.html">
+<meta property="og:locale" content="ko_KR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="심층분석 리포트 — Love Type 16">
+<meta name="twitter:description" content="당신만을 위한 깊이 있는 연애 분석. 강점·약점, 갈등 대처법, 찰떡·상극 궁합까지.">
+<meta name="twitter:image" content="https://lovetype16.com/og-image.png">
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root {
+    --cream: #f5ede0;
+    --cream-soft: #faf4ea;
+    --cream-deep: #ebe0cf;
+    --wine: #5c1f2e;
+    --wine-deep: #3d1420;
+    --wine-soft: #8a3a4d;
+    --gold: #c9a961;
+    --gold-soft: #e0c896;
+    --ink: #2a1810;
+    --ink-soft: #5a4438;
+    --ink-light: #8a7468;
+    --success: #4a7c4e;
+    --danger: #b04848;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-bottom: 80px;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.04;
+    z-index: 100;
+    mix-blend-mode: multiply;
+  }
+
+  /* ===== 상단 네비 ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 0.95rem 1.2rem;
+    background: rgba(245, 237, 224, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(60, 20, 30, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: var(--wine);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .logo .num { color: var(--gold); margin-left: 2px; }
+
+  .nav-meta {
+    font-size: 0.7rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* 진행 인디케이터 (스크롤 진행도) */
+  .scroll-indicator {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(92, 31, 46, 0.08);
+    z-index: 50;
+  }
+  .scroll-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--wine), var(--gold));
+    width: 0%;
+    transition: width 0.1s;
+  }
+
+  /* ===== 챕터 마커 (공통) ===== */
+  .chapter-marker {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .chapter-marker::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .chapter-num {
+    font-style: italic;
+    font-weight: 500;
+  }
+
+  .chapter-title {
+    font-size: clamp(1.5rem, 5vw, 1.85rem);
+    color: var(--wine);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 6.5rem 1.5rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-deco {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(92, 31, 46, 0.06);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .hero-deco::after {
+    content: '';
+    position: absolute;
+    inset: 30px;
+    border: 1px dashed rgba(201, 169, 97, 0.25);
+    border-radius: 50%;
+  }
+
+  .hero-marker {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+  }
+
+  .hero-emoji {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    position: relative;
+    animation: gentleFloat 4s ease-in-out infinite;
+    filter: drop-shadow(0 8px 20px rgba(92, 31, 46, 0.15));
+  }
+  @keyframes gentleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .hero-code {
+    font-size: clamp(2.5rem, 9vw, 3.6rem);
+    color: var(--wine);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    margin-bottom: 0.6rem;
+    position: relative;
+  }
+
+  .hero-name {
+    font-size: clamp(1.05rem, 4vw, 1.25rem);
+    color: var(--wine-soft);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .hero-tagline {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    max-width: 28rem;
+    margin: 0 auto 1.5rem;
+    font-weight: 400;
+    padding: 1.2rem 1.4rem;
+    background: rgba(250, 244, 234, 0.6);
+    border-radius: 16px;
+    border: 1px solid rgba(92, 31, 46, 0.06);
+    position: relative;
+  }
+  .hero-tagline::before, .hero-tagline::after {
+    color: var(--gold);
+    font-size: 1.6rem;
+    font-weight: 700;
+    position: relative;
+  }
+  .hero-tagline::before { content: '"'; margin-right: 0.2rem; top: 0.3rem; }
+  .hero-tagline::after { content: '"'; margin-left: 0.2rem; top: 0.5rem; }
+
+  .hero-summary {
+    font-size: 0.92rem;
+    color: var(--ink);
+    line-height: 1.85;
+    max-width: 32rem;
+    margin: 0 auto;
+    position: relative;
+    font-weight: 400;
+  }
+
+  /* ===== 섹션 공통 ===== */
+  .section {
+    padding: 3.5rem 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .section-tinted {
+    background: var(--cream-soft);
+    border-top: 1px solid rgba(92, 31, 46, 0.06);
+    border-bottom: 1px solid rgba(92, 31, 46, 0.06);
+  }
+
+  /* ===== Chapter 1: 4축 점수 그래프 ===== */
+  .axes-section {
+    background: var(--wine-deep);
+    color: var(--cream);
+    padding: 4rem 1.5rem;
+  }
+
+  .axes-section .chapter-marker { color: var(--gold-soft); }
+  .axes-section .chapter-marker::before { background: var(--gold-soft); }
+  .axes-section .chapter-title { color: var(--cream); }
+
+  .axes-list {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .axis-bar {
+    position: relative;
+  }
+
+  .axis-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.7rem;
+  }
+
+  .axis-bar-name {
+    font-size: 0.85rem;
+    color: var(--gold-soft);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .axis-bar-letter {
+    font-size: 1.4rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .axis-bar-letter .small {
+    font-size: 0.75rem;
+    color: var(--gold-soft);
+    opacity: 0.5;
+    margin: 0 0.4rem;
+    font-weight: 400;
+  }
+
+  .axis-bar-track {
+    height: 8px;
+    background: rgba(245, 237, 224, 0.1);
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .axis-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-soft), var(--gold));
+    border-radius: 100px;
+    width: 0%;
+    transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+  }
+
+  .axis-bar-fill::after {
+    content: '';
+    position: absolute;
+    right: -3px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 12px rgba(201, 169, 97, 0.6);
+  }
+
+  .axis-bar-pct {
+    position: absolute;
+    right: 0;
+    top: -1.6rem;
+    font-size: 0.85rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .axis-bar-desc {
+    font-size: 0.8rem;
+    color: var(--gold-soft);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+    font-weight: 400;
+    opacity: 0.8;
+  }
+
+  /* ===== Chapter 2: 성격 깊이 분석 (5문단) ===== */
+  .deep-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .deep-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .deep-emoji {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    width: 40px;
+    flex-shrink: 0;
+  }
+
+  .deep-content {
+    min-width: 0;
+  }
+
+  .deep-title {
+    font-size: 1.05rem;
+    color: var(--wine);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.025em;
+    line-height: 1.4;
+  }
+
+  .deep-body {
+    font-size: 0.92rem;
+    color: var(--ink);
+    line-height: 1.85;
+    font-weight: 400;
+  }
+
+  /* ===== Chapter 3: 연애할 때의 나 ===== */
+  .love-grid {
+    display: grid;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .love-card {
+    padding: 1.5rem 1.4rem;
+    border-radius: 16px;
+    border: 1px solid rgba(92, 31, 46, 0.1);
+    background: var(--cream);
+  }
+
+  .love-card.strengths {
+    border-left: 3px solid var(--success);
+  }
+
+  .love-card.weaknesses {
+    border-left: 3px solid var(--danger);
+  }
+
+  .love-card-title {
+    font-size: 0.92rem;
+    color: var(--wine);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .love-card-title .icon {
+    font-size: 1rem;
+  }
+
+  .love-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .love-list li {
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 1.6;
+    padding-left: 1.2rem;
+    position: relative;
+    font-weight: 400;
+  }
+
+  .love-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .pattern-card {
+    background: linear-gradient(135deg, var(--cream-soft), var(--cream));
+    padding: 1.5rem 1.4rem;
+    border-radius: 16px;
+    border: 1px solid rgba(201, 169, 97, 0.3);
+  }
+
+  .pattern-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+
+  .pattern-text {
+    font-size: 0.92rem;
+    color: var(--ink);
+    line-height: 1.85;
+    font-weight: 400;
+  }
+
+  /* ===== Chapter 4: 갈등 대처 ===== */
+  .conflict-block + .conflict-block {
+    margin-top: 1.8rem;
+  }
+
+  .conflict-block-title {
+    font-size: 0.95rem;
+    color: var(--wine);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .conflict-warning {
+    background: rgba(176, 72, 72, 0.06);
+    border: 1px solid rgba(176, 72, 72, 0.2);
+    border-radius: 14px;
+    padding: 1.2rem 1.3rem;
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  .conflict-tips {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .conflict-tips li {
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 1.6;
+    padding: 0.95rem 1.1rem;
+    background: rgba(74, 124, 78, 0.06);
+    border: 1px solid rgba(74, 124, 78, 0.15);
+    border-radius: 12px;
+    font-weight: 400;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .conflict-tips li::before {
+    content: '✓';
+    color: var(--success);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ===== Chapter 5: 궁합 ===== */
+  .match-section + .match-section {
+    margin-top: 2.5rem;
+  }
+
+  .match-header {
+    font-size: 1.05rem;
+    color: var(--wine);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .match-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .match-item {
+    background: var(--cream);
+    border: 1px solid rgba(92, 31, 46, 0.1);
+    border-radius: 14px;
+    padding: 1.1rem 1.3rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .match-rank {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    width: 36px;
+    text-align: center;
+  }
+
+  .match-emoji {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+  }
+
+  .match-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .match-name {
+    font-size: 0.78rem;
+    color: var(--gold);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.15rem;
+  }
+
+  .match-title {
+    font-size: 0.95rem;
+    color: var(--wine);
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.02em;
+  }
+
+  .match-desc {
+    font-size: 0.83rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    font-weight: 400;
+  }
+
+  /* ===== Chapter 6: 이상형 ===== */
+  .ideal-grid {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  .ideal-card {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 1.4rem 1.4rem;
+    border: 1px solid rgba(92, 31, 46, 0.1);
+  }
+
+  .ideal-card-title {
+    font-size: 0.92rem;
+    color: var(--wine);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .ideal-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .ideal-list li {
+    font-size: 0.88rem;
+    color: var(--ink);
+    line-height: 1.55;
+    display: flex;
+    gap: 0.55rem;
+    align-items: flex-start;
+    font-weight: 400;
+  }
+
+  .ideal-list li .icon {
+    flex-shrink: 0;
+    font-weight: 700;
+    line-height: 1.55;
+  }
+
+  .ideal-card.good .icon { color: var(--success); }
+  .ideal-card.avoid .icon { color: var(--danger); }
+
+  /* ===== Chapter 7: 편지 ===== */
+  .letter-section {
+    background: linear-gradient(180deg, var(--cream-soft), var(--cream-deep));
+    padding: 5rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .letter-section::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
+    background: radial-gradient(circle at 30% 20%, rgba(201, 169, 97, 0.1), transparent 50%);
+    pointer-events: none;
+  }
+
+  .letter-card {
+    max-width: 540px;
+    margin: 0 auto;
+    background: var(--cream);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 20px 60px rgba(92, 31, 46, 0.12);
+    position: relative;
+    border: 1px solid rgba(201, 169, 97, 0.3);
+  }
+
+  .letter-mark {
+    font-size: 2.5rem;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  .letter-marker {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .letter-body {
+    font-size: 1rem;
+    color: var(--wine);
+    line-height: 2;
+    font-weight: 400;
+    white-space: pre-line;
+    letter-spacing: -0.01em;
+  }
+
+  .letter-body strong {
+    color: var(--wine-deep);
+    font-weight: 700;
+  }
+
+  .letter-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed rgba(201, 169, 97, 0.4);
+    text-align: right;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ===== 마무리 ===== */
+  .outro {
+    padding: 4rem 1.5rem 5rem;
+    text-align: center;
+    background: var(--wine-deep);
+    color: var(--cream);
+  }
+
+  /* ===== Chapter 8: 추천템 ===== */
+  .recommend-section {
+    background: var(--cream-soft);
+    border-top: 1px solid rgba(92, 31, 46, 0.06);
+  }
+
+  .recommend-intro {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  .recommend-list {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .recommend-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--cream);
+    border: 1px solid rgba(92, 31, 46, 0.1);
+    border-radius: 16px;
+    padding: 1.1rem 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .recommend-card:hover, .recommend-card:active {
+    transform: translateY(-2px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 28px rgba(92, 31, 46, 0.1);
+  }
+
+  .recommend-emoji {
+    font-size: 1.8rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cream-soft);
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+
+  .recommend-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .recommend-name {
+    font-size: 0.98rem;
+    color: var(--wine);
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    letter-spacing: -0.02em;
+  }
+
+  .recommend-reason {
+    font-size: 0.83rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .recommend-arrow {
+    flex-shrink: 0;
+    font-size: 0.78rem;
+    color: var(--cream);
+    background: var(--wine);
+    padding: 0.5rem 0.9rem;
+    border-radius: 100px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .coupang-disclosure {
+    font-size: 0.72rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+    margin-top: 1.5rem;
+    padding: 0.9rem 1rem;
+    background: rgba(92, 31, 46, 0.04);
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  .outro-marker {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .outro-title {
+    font-size: 1.4rem;
+    color: var(--cream);
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.025em;
+  }
+
+  .outro-sub {
+    font-size: 0.88rem;
+    color: var(--gold-soft);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  .outro-actions {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .outro-btn {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 0.85rem 1.4rem;
+    border-radius: 100px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+  }
+
+  .outro-btn:hover, .outro-btn:active {
+    background: var(--gold);
+    color: var(--wine-deep);
+  }
+
+  .outro-btn.primary {
+    background: var(--gold);
+    color: var(--wine-deep);
+    font-weight: 600;
+  }
+
+  .outro-btn.primary:hover, .outro-btn.primary:active {
+    background: var(--gold-soft);
+  }
+
+  /* ===== Sticky 하단 바 ===== */
+  .sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(245, 237, 224, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(60, 20, 30, 0.08);
+    padding: 0.7rem 1rem;
+    z-index: 80;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: 0 -10px 30px rgba(60, 20, 30, 0.06);
+  }
+
+  .sticky-btn {
+    flex: 1;
+    background: transparent;
+    border: 1px solid rgba(92, 31, 46, 0.15);
+    color: var(--wine);
+    padding: 0.85rem 0.5rem;
+    border-radius: 100px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+
+  .sticky-btn:hover, .sticky-btn:active {
+    background: var(--wine);
+    color: var(--cream);
+    border-color: var(--wine);
+  }
+
+  /* ===== 잠금 (결제 안 한 경우) ===== */
+  .access-denied {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .denied-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.5;
+  }
+
+  .denied-title {
+    font-size: 1.4rem;
+    color: var(--wine);
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+  }
+
+  .denied-text {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+    max-width: 24rem;
+  }
+
+  .denied-btn {
+    background: var(--wine);
+    color: var(--cream);
+    padding: 1rem 1.8rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+
+  /* ===== 등장 애니메이션 ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== 광고 슬롯 (공통) ===== */
+  .ad-slot {
+    max-width: 600px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+  }
+  .ad-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+  .ad-inner {
+    min-height: 100px;
+    background: rgba(92, 31, 46, 0.03);
+    border: 1px dashed rgba(92, 31, 46, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ad-placeholder {
+    font-size: 0.75rem;
+    color: var(--ink-light);
+    text-align: center;
+    line-height: 1.5;
+    padding: 1rem;
+  }
+
+  /* ===== 데스크톱 ===== */
+  @media (min-width: 768px) {
+    nav { padding: 1.1rem 3rem; }
+    .scroll-indicator { top: 60px; }
+
+    .hero { padding: 8rem 3rem 4rem; }
+    .hero-emoji { font-size: 5rem; }
+
+    .section { padding: 5rem 2rem; }
+    .axes-section, .letter-section, .outro { padding-left: 3rem; padding-right: 3rem; }
+    .axes-section, .letter-section { padding-top: 5rem; padding-bottom: 5rem; }
+    .recommend-list { grid-template-columns: 1fr 1fr; }
+
+    .love-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ideal-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .letter-card {
+      padding: 3rem 2.5rem;
+    }
+    .letter-body {
+      font-size: 1.05rem;
+    }
+
+    .sticky-bar {
+      padding: 0.9rem 2rem;
+    }
+    .sticky-btn {
+      font-size: 0.9rem;
+      padding: 0.95rem 0.7rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- 결제 안 한 경우 표시될 화면 -->
+<div id="accessDenied" class="access-denied" style="display:none">
+  <div class="denied-icon">💌</div>
+  <h1 class="denied-title">먼저 테스트를 해주세요</h1>
+  <p class="denied-text">
+    심층분석을 보려면 먼저 나의 연애 유형을<br>
+    찾아야 해요. 24문항, 약 3분이면 끝나요.
+  </p>
+  <a href="test.html" class="denied-btn">테스트 시작하기</a>
+</div>
+
+<!-- 메인 콘텐츠 (결제 완료 시 표시) -->
+<div id="mainContent" style="display:none">
+
+<nav>
+  <a href="index.html" class="logo">Love Type<span class="num">16</span></a>
+  <span class="nav-meta">심층분석 리포트</span>
+</nav>
+<div class="scroll-indicator"><div class="scroll-fill" id="scrollFill"></div></div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-deco"></div>
+  <div class="hero-marker">— Deep Analysis Report —</div>
+  <div class="hero-emoji" id="heroEmoji">🌹</div>
+  <div class="hero-code" id="heroCode">ECRF</div>
+  <div class="hero-name" id="heroName">열정 로맨티시스트</div>
+  <div class="hero-tagline" id="heroTagline"></div>
+  <p class="hero-summary" id="heroSummary"></p>
+</section>
+
+<!-- ===== Chapter 1: 4축 점수 ===== -->
+<section class="axes-section">
+  <div class="section reveal" style="padding: 0; max-width: 700px;">
+    <div class="chapter-marker">
+      <span class="chapter-num">Chapter 01</span>
+    </div>
+    <h2 class="chapter-title">당신의 4축 분석</h2>
+  </div>
+  <div class="axes-list" id="axesList">
+    <!-- JS 렌더링 -->
+  </div>
+</section>
+
+<!-- ===== Chapter 2: 성격 깊이 분석 ===== -->
+<section class="section">
+  <div class="reveal">
+    <div class="chapter-marker">
+      <span class="chapter-num">Chapter 02</span>
+    </div>
+    <h2 class="chapter-title">당신은 이런 사람이에요</h2>
+  </div>
+  <div class="deep-list" id="deepList">
+    <!-- JS 렌더링 -->
+  </div>
+</section>
+
+<!-- ===== Chapter 3: 연애할 때의 나 ===== -->
+<section class="section section-tinted">
+  <div class="reveal">
+    <div class="chapter-marker">
+      <span class="chapter-num">Chapter 03</span>
+    </div>
+    <h2 class="chapter-title">연애할 때의 나</h2>
+  </div>
+
+  <div class="love-grid reveal">
+    <div class="love-card strengths">
+      <div class="love-card-title"><span class="icon">💚</span><span>강점</span></div>
+      <ul class="love-list" id="loveStrengths"></ul>
+    </div>
+    <div class="love-card weaknesses">
+      <div class="love-card-title"><span class="icon">❤️‍🩹</span><span>약점</span></div>
+      <ul class="love-list" id="loveWeaknesses"></ul>
+    </div>
+  </div>
+
+  <div class="pattern-card reveal">
+    <div class="pattern-label">— Pattern</div>
+    <p class="pattern-text" id="lovePattern"></p>
+  </div>
+</section>
+
+<!-- ===== Chapter 4: 갈등 대처 ===== -->
+<section class="section">
+  <div class="reveal">
+    <div class="chapter-marker">
+      <span class="chapter-num">Chapter 04</span>
+    </div>
+    <h2 class="chapter-title">갈등 대처 가이드</h2>
+  </div>
+
+  <div class="conflict-block reveal">
+    <div class="conflict-block-title"><span>⚔️</span><span>싸울 때의 나</span></div>
+    <ul class="love-list" id="conflictMyMode"></ul>
+  </div>
+
+  <div class="conflict-block reveal">
+    <div class="conflict-block-title"><span>⚠️</span><span>주의할 점</span></div>
+    <div class="conflict-warning" id="conflictWarning"></div>
+  </div>
+
+  <div class="conflict-block reveal">
+    <div class="conflict-block-title"><span>💡</span><span>개선 팁</span></div>
+    <ul class="conflict-tips" id="conflictTips"></ul>
+  </div>
+</section>
+
+<!-- ===== Chapter 5: 궁합 ===== -->
+<section class="section section-tinted">
+  <div class="reveal">
+    <div class="chapter-marker">
+      <span class="chapter-num">Chapter 05</span>
+    </div>
+    <h2 class="chapter-title">찰떡 궁합 / 상극 궁합</h2>
+  </div>
+
+  <div class="match-section reveal">
+    <div class="match-header"><span>💞</span><span>찰떡 궁합 TOP 3</span></div>
+    <div class="match-list" id="matchPerfect"></div>
+  </div>
+
+  <div class="match-section reveal">
+    <div class="match-header"><span>💔</span><span>상극 궁합 TOP 3</span></div>
+    <div class="match-list" id="matchWorst"></div>
+  </div>
+</section>
+
+<!-- ===== 광고 슬롯 1 ===== -->
+<div class="ad-slot reveal">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-inner">
+    <!-- ▼▼▼ 애드센스 승인 후 여기에 광고 코드 붙여넣기 ▼▼▼ -->
+    <div class="ad-placeholder">광고 영역<br>(애드센스 승인 후 표시됩니다)</div>
+    <!-- ▲▲▲ 애드센스 코드로 위 div를 교체 ▲▲▲ -->
+  </div>
+</div>
+
+<!-- ===== Chapter 6: 이상형 ===== -->
+<section class="section">
+  <div class="reveal">
+    <div class="chapter-marker">
+      <span class="chapter-num">Chapter 06</span>
+    </div>
+    <h2 class="chapter-title">당신에게 잘 맞는 사람</h2>
+  </div>
+
+  <div class="ideal-grid">
+    <div class="ideal-card good reveal">
+      <div class="ideal-card-title">✓ 이런 사람을 만나세요</div>
+      <ul class="ideal-list" id="idealGood"></ul>
+    </div>
+    <div class="ideal-card avoid reveal">
+      <div class="ideal-card-title">✗ 피해야 할 신호</div>
+      <ul class="ideal-list" id="idealAvoid"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 광고 슬롯 2 ===== -->
+<div class="ad-slot reveal">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-inner">
+    <!-- ▼▼▼ 애드센스 승인 후 여기에 광고 코드 붙여넣기 ▼▼▼ -->
+    <div class="ad-placeholder">광고 영역<br>(애드센스 승인 후 표시됩니다)</div>
+    <!-- ▲▲▲ 애드센스 코드로 위 div를 교체 ▲▲▲ -->
+  </div>
+</div>
+
+<!-- ===== Chapter 7: 편지 ===== -->
+<section class="letter-section">
+  <div class="letter-card reveal">
+    <div class="letter-mark">"</div>
+    <div class="letter-marker">— A Letter to Yourself —</div>
+    <div class="letter-body" id="letterBody"></div>
+    <div class="letter-footer">— Love Type 16</div>
+  </div>
+</section>
+
+<!-- ===== Chapter 8: 추천템 (쿠팡) ===== -->
+<section class="section recommend-section">
+  <div class="reveal">
+    <div class="chapter-marker">
+      <span class="chapter-num">Chapter 08</span>
+    </div>
+    <h2 class="chapter-title" id="recommendTitle">당신에게 어울리는 것들</h2>
+    <p class="recommend-intro" id="recommendIntro"></p>
+  </div>
+
+  <div class="recommend-list" id="recommendList">
+    <!-- JS 렌더링 -->
+  </div>
+
+  <p class="coupang-disclosure">
+    이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
+  </p>
+</section>
+
+<!-- ===== Outro ===== -->
+<section class="outro">
+  <div class="outro-marker">— End of Report —</div>
+  <h2 class="outro-title">분석은 여기까지예요</h2>
+  <p class="outro-sub">
+    이제 상대와의 궁합도 확인해볼까요?<br>
+    두 유형만 고르면 궁합 점수가 나와요.
+  </p>
+  <div class="outro-actions">
+    <a href="#" class="outro-btn primary" id="compatLink">💞 궁합 확인하기</a>
+    <button class="outro-btn" onclick="shareReport()">친구에게 공유</button>
+    <a href="index.html" class="outro-btn">홈으로</a>
+  </div>
+</section>
+
+<!-- ===== Sticky 하단 ===== -->
+<div class="sticky-bar">
+  <button class="sticky-btn" onclick="window.print()">
+    <span>📄</span><span>저장</span>
+  </button>
+  <button class="sticky-btn" onclick="shareReport()">
+    <span>📤</span><span>공유</span>
+  </button>
+  <button class="sticky-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <span>↑</span><span>맨 위로</span>
+  </button>
+</div>
+
+</div> <!-- end #mainContent -->
+
+<script>
+// ===== 16유형 풀 데이터 =====
+const TYPES = {
+  ECRF: {
+    emoji: '🌹', name: '열정 로맨티시스트',
+    tagline: '사랑은 내 삶의 메인 테마. 좋아하면 온 마음으로, 온 세상에 알리고 싶어.',
+    summary: '당신은 사랑에 있어 가장 솔직하고 가장 뜨거운 사람입니다. 마음을 숨기는 법을 모르고, 좋아하는 사람 앞에서는 표정부터 달라지죠. 함께하는 시간이 인생에서 가장 빛나는 순간이라 믿고, 그 믿음대로 살아갑니다.',
+    scores: { axis1: 85, axis2: 90, axis3: 75, axis4: 80 },
+    deep: [
+      { emoji: '🔥', title: '사랑이 곧 당신의 언어', body: 'ECRF에게 사랑은 취미나 일부가 아니라 삶을 움직이는 엔진입니다. 좋아하는 사람이 생기면 일상의 모든 결이 바뀌죠. 출근길 노래도 다르게 들리고, 점심 메뉴 고를 때도 "이 사람이 좋아할까"를 먼저 떠올립니다. 누군가는 이걸 "지나치다"고 할지 모르지만, 당신에게는 이게 사랑하는 가장 자연스러운 방식입니다.' },
+      { emoji: '💌', title: '표현하지 않으면 견딜 수 없는 마음', body: '마음속에 든 감정을 가두는 게 가장 어렵습니다. "보고 싶다", "좋아한다", "고맙다"는 말이 입 안에서 맴돌면 결국 꺼내야 직성이 풀리죠. 이건 가벼움이 아니라 진심의 농도가 짙어서 새어 나오는 것입니다. 당신의 표현은 듣는 사람을 빛나게 만드는 힘이 있어요.' },
+      { emoji: '🎀', title: '함께 있는 시간 = 사랑의 증거', body: '당신에게 거리감은 곧 거리감입니다. "각자 시간도 중요하지"라는 말은 머리로는 이해해도 마음은 이해하지 못해요. 자주 보고, 자주 연락하고, 일상을 공유해야 사랑받고 있다고 느낍니다. 이건 집착이 아니라 사랑을 확인받고 싶은 본능입니다.' },
+      { emoji: '✨', title: '분위기와 낭만이 영혼의 양식', body: '기념일을 잊는 건 당신에게 단순한 실수가 아닙니다. 당신은 그날 주고받을 분위기, 표정, 작은 이벤트를 한 달 전부터 그리고 있었으니까요. 손편지 한 장, 늦은 밤 산책, 같이 본 영화 한 편 — 그 감성의 공기가 당신을 살아 있게 합니다.' },
+      { emoji: '⚡', title: '갈등은 미루면 곪는다는 걸 아는 사람', body: '싸웠을 때 "내일 얘기하자"는 말이 가장 무섭습니다. 그 밤을 그대로 보낼 수 없어 결국 카톡을 보내고, 전화를 걸고, 만나러 갑니다. 풀지 않은 감정은 다음 날의 사랑을 갉아먹는다는 것을 본능적으로 알고 있어요.' }
+    ],
+    strengths: ['좋아하는 마음을 의심하게 만들지 않음 (상대가 안정감을 느낌)', '기념일·이벤트를 챙기는 디테일이 뛰어남', '갈등을 빨리 해결해서 관계가 깊어지는 속도가 빠름', '표현이 풍부해서 함께 있을 때 즐거움'],
+    weaknesses: ['상대의 표현이 부족하면 쉽게 불안해짐', '거리감 있는 사람을 만나면 상처받기 쉬움', '감정 기복이 관계에 직접 영향을 미침', '"왜 답장이 늦지?" 같은 생각으로 에너지 소모가 큼'],
+    pattern: '초반 1~2주에 가장 뜨겁고, 상대도 같은 온도일 때 관계가 빠르게 깊어집니다. 단, 상대가 조금이라도 식은 듯 보이면 즉각 감지하고 흔들리기 시작해요. "내 마음만큼 받고 싶다"가 핵심 욕구예요.',
+    conflictMode: ['즉시 대화를 시도함 ("우리 얘기 좀 해")', '감정이 격해진 상태에서도 자리를 떠나지 않음', '상대가 회피하면 더 답답해하고 추궁하게 됨', '결국 풀고 나면 평소보다 더 애틋해짐'],
+    conflictWarning: '당신의 "지금 풀자"가 어떤 상대에겐 압박이 됩니다. 특히 회피형(A) 파트너에겐 도망치고 싶은 신호로 읽혀요. 사랑하기 때문에 더 매달릴수록 상대는 더 멀어지는 역설이 생길 수 있습니다.',
+    conflictTips: ['화났을 때 "30분만 생각하고 다시 얘기하자"고 먼저 제안해보기', '상대가 회피형이면 "네 답을 기다릴게"라고 여백을 주기', '내 감정 = 상대의 죄책감이 아님을 기억하기'],
+    perfect: [
+      { rank: '🥇', code: 'HCRF', name: '소심한 껌딱지', emoji: '🐰', desc: '당신의 표현력이 상대의 닫힌 마음을 열어줍니다. 사랑이 점점 깊어지는 인생 연애 가능.' },
+      { rank: '🥈', code: 'HCLF', name: '조용한 진심파', emoji: '📖', desc: '상대의 묵직한 진심이 당신의 불안을 잠재워주는 안정적인 페어.' },
+      { rank: '🥉', code: 'ECRA', name: '츤데레 로맨티스트', emoji: '🎀', desc: '표현·거리·낭만이 다 맞는 가장 다이내믹하고 즐거운 케미.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'HSLA', name: '신중한 거리유지러', emoji: '🏔️', desc: '4축이 모두 정반대. 서로를 가장 이해 못 하는 조합이에요.' },
+      { rank: '⚠️', code: 'HSRA', name: '고독한 몽상가', emoji: '🌙', desc: '매일 닿고 싶은 당신 vs 사라지는 상대. 외로움이 큰 관계.' },
+      { rank: '⚠️', code: 'ESLA', name: '어른 연애러', emoji: '🍷', desc: '좋은 사람인데 "사랑받는 느낌"이 안 듦. 온도 차이가 가장 큼.' }
+    ],
+    idealGood: ['표현이 풍부하거나, 적어도 당신의 표현을 받아주는 사람', '자주 만나고 자주 연락하는 걸 부담스러워하지 않는 사람', '감정에 솔직하고, 분위기·이벤트의 가치를 아는 사람', '싸웠을 때 도망가지 않는 사람', '"사랑한다" 말을 아끼지 않는 사람'],
+    idealAvoid: ['"왜 그렇게 자주 연락해?"라는 말을 자주 하는 사람', '갈등 나면 며칠씩 잠수 타는 사람', '기념일을 "그게 뭐가 중요해"라고 하는 사람', '감정 표현을 부끄러워하는 사람'],
+    letter: '사랑이 많은 너에게,\n\n너의 뜨거움은 단점이 아니야. 그건 누군가의 인생에서 가장 빛나는 계절이 될 능력이지. 다만 기억해 — 모든 사람이 너처럼 표현하진 않아도, 그게 사랑이 없는 건 아니라는 걸.\n\n너의 사랑을 알아봐 줄 사람을 만나기까지, 너 자신을 작아지게 하지 마. 너의 온도를 견딜 수 있는 사람만이 너의 진짜 따뜻함을 알게 될 테니까.\n\n그리고 그 사람은, 분명히 있어.'
+  },
+
+  ECRA: {
+    emoji: '🎀', name: '츤데레 로맨티스트',
+    tagline: '좋아할 땐 다 보여주는데, 삐지면 며칠은 가야 해. 사랑은 뜨겁게, 화해는 천천히.',
+    summary: '당신은 평소엔 다정하고 살갑고 표현 많은 사람입니다. 그런데 한 번 마음 상하면 갑자기 차가워지고, 답장이 사라지고, 며칠은 거리를 둬요. 사랑이 식은 게 아니라 감정을 정리할 시간이 필요한 것뿐인데, 상대 입장에선 가장 헷갈리는 타입이죠.',
+    scores: { axis1: 80, axis2: 85, axis3: 78, axis4: 70 },
+    deep: [
+      { emoji: '💖', title: '평소엔 가장 사랑스러운 사람', body: '당신과 함께 있는 시간은 즐거움 그 자체입니다. 애교도 많고, 표현도 잘하고, 사진 찍어주는 것도 좋아하고, 챙기는 것도 잘해요. 상대는 "내가 이렇게 사랑받는 사람이었나?" 싶을 정도로 충만한 시간을 보냅니다.' },
+      { emoji: '🌪️', title: '그런데 한번 삐지면 다른 사람', body: '스위치가 있어요. 마음이 상하는 순간 갑자기 톤이 변하고, 답장이 짧아지고, 결국 잠수에 가까워집니다. 화가 나서가 아니라 — 감정이 너무 커서 그 자리에선 정리가 안 되기 때문이에요. 즉각 반응하면 후회할 말이 나올 걸 본능적으로 알아요.' },
+      { emoji: '🎁', title: '표현 욕구는 강한데 분쟁 회피', body: '당신의 모순은 여기 있어요. 평소엔 누구보다 적극적으로 표현하면서, 정작 갈등 상황에선 입을 닫습니다. "말하면 더 싸울 것 같아서" "지금 내 감정이 무서워서" — 그래서 회피하지만, 마음속에선 상대가 먼저 다가와 주길 기다리고 있죠.' },
+      { emoji: '🍰', title: '화해 후의 사랑이 가장 진해지는 사람', body: '당신의 연애는 파동이 큽니다. 잠잠하다가 갈등 → 잠수 → 화해 → 그리고 그 후 평소보다 더 애틋한 시간. 이 사이클을 거치며 관계는 더 깊어져요. 단, 상대가 이 패턴을 견뎌줄 수 있어야 가능한 이야기입니다.' },
+      { emoji: '🌸', title: '결국엔 사랑받고 싶은 마음 하나', body: '당신의 모든 행동은 결국 한 가지를 향해 있어요. "내가 이렇게 화났다는 걸 알아주길, 그래도 떠나지 않길". 그래서 당신에겐 잠수를 풀어주는 상대가 가장 큰 사랑이에요.' }
+    ],
+    strengths: ['표현력과 다정함의 밸런스가 좋음', '화해 후 관계가 더 단단해지는 회복력', '함께 있을 때의 분위기 메이커', '챙기고 표현하는 능력 출중'],
+    weaknesses: ['잠수 패턴이 상대를 지치게 만듦', '"왜 화났는지 말 안 해주면서 풀어주길 바라는" 모순', '감정 처리에 시간이 오래 걸림', '스스로도 자기 패턴에 지칠 때가 있음'],
+    pattern: '초반엔 가장 사랑스러운 연인입니다. 갈등이 처음 생기는 순간이 분기점이에요. 상대가 잠수를 견디고 다가와 주면 관계는 깊어지고, 못 견디면 빠르게 식어요.',
+    conflictMode: ['그 자리에선 말 안 함, 표정만 굳음', '답장이 느려지거나 끊김', '며칠 후 상대가 다가오면 조금씩 풀림', '풀고 나면 평소보다 더 애틋'],
+    conflictWarning: '잠수가 길어질수록 상대는 "내가 잘못한 것 이상의 벌을 받고 있다"고 느낍니다. 당신의 정리 시간이 상대에겐 처벌처럼 느껴질 수 있어요.',
+    conflictTips: ['"지금은 말 못 하겠어, ○시간만 시간 줘" 한마디라도 남기기', '잠수 기간에 짧은 신호("나 살아있어") 보내기', '풀린 후 "이래서 잠수했어"라고 솔직히 말해주기'],
+    perfect: [
+      { rank: '🥇', code: 'HCRA', name: '속앓이 로맨티스트', emoji: '🥺', desc: '같은 회피 동지. 둘 다 시간 두고 풀어서 서로 이해해주는 페어.' },
+      { rank: '🥈', code: 'HCLA', name: '무뚝뚝한 로열티', emoji: '🗝️', desc: '상대의 묵직함이 당신의 잠수를 받아주는 안정적인 케미.' },
+      { rank: '🥉', code: 'ECLA', name: '표현형 신중파', emoji: '📋', desc: '표현은 통하고 갈등 처리도 비슷한 균형 잡힌 페어.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'HSLF', name: '침착한 관찰자', emoji: '🦉', desc: '거리감 + 정면돌파 → 당신이 가장 답답해할 조합.' },
+      { rank: '⚠️', code: 'ESRF', name: '자유로운 로맨티스트', emoji: '🦋', desc: '잠수 패턴을 못 견디고 떠나는 타입.' },
+      { rank: '⚠️', code: 'ESLF', name: '쿨한 직진러', emoji: '⚡', desc: '"왜 말 안 해?"로 더 큰 갈등이 생기는 미스매치.' }
+    ],
+    idealGood: ['당신의 잠수를 인내심으로 기다려주는 사람', '먼저 다가와서 말을 걸어주는 사람', '표현이 풍부하고 다정한 사람', '감정의 파동을 견뎌줄 안정감 있는 사람', '"괜찮아, 천천히 말해도 돼"라고 해주는 사람'],
+    idealAvoid: ['갈등 시 즉각 추궁하는 사람', '잠수에 똑같이 잠수로 대응하는 사람', '감정 처리에 시간을 못 주는 사람', '논리만으로 모든 걸 풀려는 사람'],
+    letter: '마음이 많은 너에게,\n\n너의 잠수는 사랑이 식어서가 아니야. 사랑이 너무 커서, 그 감정 앞에서 네가 다칠까 봐 잠시 멈추는 거지. 다만 기억해 — 너의 침묵을 사랑이라 읽어줄 수 있는 사람만큼, 그 침묵에 상처받는 사람도 있다는 걸.\n\n다음번엔 한 줄만 남겨봐. "지금은 말 못 하겠어." 그 한 줄이 너의 사람을 곁에 두는 가장 다정한 방법이야.'
+  },
+
+  ECLF: {
+    emoji: '💼', name: '직진 현실주의자',
+    tagline: '좋아하면 표현해. 근데 우리 미래는 어떻게 될까? — 라고 3개월 차에 묻는 사람.',
+    summary: '당신은 표현은 풍부하지만 머리는 차가운 사람입니다. 좋아한다고 말도 잘하고 자주 만나고 싶어하지만, 동시에 "이 사람과 정말 잘 맞을까", "현실적으로 가능한가"를 끊임없이 따져요. 사랑이 가벼워서가 아니라 진지해서 그래요.',
+    scores: { axis1: 82, axis2: 80, axis3: 72, axis4: 80 },
+    deep: [
+      { emoji: '📋', title: '사랑도 진지하게 임하는 사람', body: '당신에게 연애는 가벼운 감정 놀이가 아닙니다. 좋아하는 사람을 만나면 "이 사람과 5년 후, 10년 후가 가능한가"를 떠올려요. 이건 계산적인 게 아니라 시간을 함부로 쓰지 않으려는 책임감입니다.' },
+      { emoji: '💕', title: '표현은 아끼지 않음', body: '머리가 현실적이라고 마음까지 차가운 건 아니에요. 좋아하면 좋아한다고 분명히 말하고, 자주 보고 싶어하고, 챙기는 것도 잘합니다. 단, 그 표현 안엔 항상 "우리가 잘 맞는다"는 확신이 깔려 있어요.' },
+      { emoji: '🎯', title: '빠른 단계 진입을 원함', body: '당신은 "썸"이 길어지는 걸 못 견딥니다. 좋으면 좋다, 사귀자, 만나자 — 명확하게 가야 마음이 편해요. 미래 얘기, 결혼 얘기, 가치관 얘기를 다른 사람보다 빨리 꺼내는 이유는 시간 낭비하기 싫어서예요.' },
+      { emoji: '⚖️', title: '감정과 이성의 균형', body: '싸웠을 때도 흥분하지 않아요. "왜 이런 감정이 생겼는지" 분석하고 "어떻게 해결할지" 제안합니다. 상대 입장에선 "감정 좀 받아주면 안 돼?" 싶을 수 있는데, 당신에겐 그게 가장 사랑하는 방식이에요 — 함께 답을 찾는 것.' },
+      { emoji: '💼', title: '좋은 파트너의 정석', body: '당신은 결혼 상대로 가장 인기 있는 타입 중 하나입니다. 표현 잘 해주고, 같이 있고 싶어하고, 현실적으로 함께 미래 그릴 수 있고, 갈등도 피하지 않으니까요. 다만 "감정의 결"을 더 챙기면 완벽해져요.' }
+    ],
+    strengths: ['관계의 방향성이 명확해서 상대가 안정감을 느낌', '표현·헌신·진지함의 삼박자', '갈등을 회피하지 않고 함께 해결하려 함', '결혼·미래에 대한 책임감'],
+    weaknesses: ['감정보다 분석이 앞서서 차갑다는 오해', '"왜 이렇게 빨리 진지해져?"라는 부담을 줄 수 있음', '상대의 감정적 호소를 논리로 받아칠 때가 있음', '가치관 안 맞으면 빠르게 식음'],
+    pattern: '시작이 빠르고 깊이도 빠릅니다. 3개월 차에 이미 미래 얘기, 6개월 차에 결혼 얘기를 꺼낼 수 있어요. 상대의 페이스가 맞으면 최고의 파트너, 안 맞으면 서로 부담.',
+    conflictMode: ['"지금 얘기하자"고 바로 제안', '문제의 원인과 해결책을 정리해서 제시', '감정보다 사실 위주로 대화', '결론 없이는 자리 못 뜸'],
+    conflictWarning: '당신의 "해결 모드"가 상대에겐 "내 감정은 안 들어줘?"로 느껴질 수 있어요. 특히 감성형(R) 파트너에게 "그래서 결론이 뭔데"는 가장 차가운 말이에요.',
+    conflictTips: ['해결책 제시 전에 "많이 속상했지" 한마디 먼저', '모든 갈등이 해결될 필요는 없다는 걸 받아들이기', '가끔은 결론 없이 그냥 안아주기'],
+    perfect: [
+      { rank: '🥇', code: 'HCRF', name: '소심한 껌딱지', emoji: '🐰', desc: '당신의 직진을 상대가 따뜻하게 받아줍니다. 사랑이 천천히 깊어짐.' },
+      { rank: '🥈', code: 'HCLF', name: '조용한 진심파', emoji: '📖', desc: '둘 다 현실적이고 진지함. 결혼 직행 케미.' },
+      { rank: '🥉', code: 'ECRF', name: '열정 로맨티시스트', emoji: '🌹', desc: '당신의 차가움을 상대의 뜨거움이 녹여주는 보완 관계.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'HSLA', name: '신중한 거리유지러', emoji: '🏔️', desc: '모든 게 반대. 당신은 "왜 결정 못 해?" 답답해함.' },
+      { rank: '⚠️', code: 'HSRA', name: '고독한 몽상가', emoji: '🌙', desc: '미래 얘기에 도망가는 타입. 진전 어려움.' },
+      { rank: '⚠️', code: 'ESRA', name: '시크한 로맨티스트', emoji: '🖤', desc: '진지함을 부담스러워하는 미스매치.' }
+    ],
+    idealGood: ['가치관·미래에 대해 솔직하게 대화 가능한 사람', '당신의 표현을 받아주는 사람', '갈등을 회피하지 않는 사람', '책임감 있고 진지한 사람', '함께 인생 설계를 그릴 수 있는 사람'],
+    idealAvoid: ['"그냥 흐르는 대로"를 좋아하는 사람', '감정에만 호소하는 사람', '진지한 대화를 회피하는 사람', '결정을 미루는 사람'],
+    letter: '진심이 많은 너에게,\n\n너의 진지함은 사랑을 가볍게 여기지 않는 가장 큰 증거야. 단지 기억해 — 모든 관계가 답을 필요로 하진 않아. 어떤 사랑은 그냥 함께 있는 것만으로도 충분하다는 걸.\n\n너의 똑똑한 사랑에 따뜻한 호흡 하나만 더해봐. 그러면 너는 가장 든든한 사람이 될 거야.'
+  },
+
+  ECLA: {
+    emoji: '📋', name: '표현형 신중파',
+    tagline: '좋아한다는 말은 자주, 결정은 천천히, 싸울 땐 한 박자 쉬어가기.',
+    summary: '당신은 다정하고 살갑지만, 동시에 신중한 사람입니다. 표현은 잘하고 같이 있고 싶어하지만, 중요한 결정 앞에선 한참 생각하고, 갈등이 생기면 즉각 반응하지 않고 정리할 시간을 가져요. 가장 균형 잡힌 EC 계열이에요.',
+    scores: { axis1: 75, axis2: 78, axis3: 70, axis4: 72 },
+    deep: [
+      { emoji: '🍃', title: '다정함과 신중함의 공존', body: '당신은 표현이 부족한 사람도, 거리 두는 사람도 아니에요. 좋아한다 말도 잘하고, 자주 만나고, 챙기는 것도 잘해요. 그런데 동시에 머리는 늘 차분합니다. "이 관계가 어디로 가고 있나" "내가 너무 빠르게 가고 있진 않나" — 늘 자기 점검을 하죠.' },
+      { emoji: '📝', title: '결정 전에 시간이 필요한 사람', body: '사귀자는 고백이 와도, 결혼 얘기가 나와도, 동거 제안이 와도 — 당신은 "생각해볼게"라고 답합니다. 이건 망설임이 아니라 신중함이에요. 한번 결정하면 진심으로 가기 때문에 그 결정에 무게를 둬요.' },
+      { emoji: '💌', title: '표현은 아끼지 않지만 결정은 아낌', body: '당신의 사랑은 일관됩니다. 표현·연락·만남에서 변동이 적어요. 갑자기 뜨거워졌다 식는 일이 거의 없습니다. 상대 입장에선 "안정적이다"라고 느끼고, 그게 당신의 가장 큰 매력이에요.' },
+      { emoji: '🌙', title: '갈등 앞에선 한 박자 쉬어가기', body: '싸움이 나면 그 자리에서 결론 내려 하지 않아요. "오늘은 좀 생각하고 내일 얘기하자" — 이게 당신의 방식입니다. 감정이 식은 후 차분하게 대화해야 진짜 해결된다고 믿어요.' },
+      { emoji: '📋', title: '신뢰가 모든 것의 기반', body: '당신에게 사랑은 신뢰의 다른 이름이에요. 표현이 화려해도 신뢰가 깨지면 끝, 표현이 적어도 신뢰가 단단하면 오래갑니다. 함께 있는 시간보다 함께 쌓아온 시간을 봐요.' }
+    ],
+    strengths: ['안정적이고 일관된 사랑의 온도', '표현과 신중함의 좋은 균형', '큰 결정에서 실수가 적음', '갈등을 차분하게 처리'],
+    weaknesses: ['결정이 느려서 상대가 답답해할 수 있음', '갈등 시 "생각해볼게"가 회피로 보일 수 있음', '감정 표출이 절제돼서 상대가 본심을 모를 때가 있음', '한번 신뢰가 깨지면 회복이 어려움'],
+    pattern: '시작이 신중하지만 한번 시작하면 오래갑니다. 단기 연애보단 장기 연애 체질. 결혼까지 가는 비율이 높아요.',
+    conflictMode: ['즉각 반응하지 않고 한 박자 쉼', '"조금 생각하고 다시 얘기하자"', '차분해진 후 논리적으로 대화', '감정 폭발은 거의 없음'],
+    conflictWarning: '"생각해볼게"가 너무 자주 반복되면 상대는 "결국 안 풀자는 건가"로 받아들일 수 있어요. 그리고 정면돌파(F) 파트너에겐 답답함의 원인이 됩니다.',
+    conflictTips: ['"언제까지 생각하고 답 줄게" 시간 명시', '작은 갈등은 그 자리에서 처리하기', '감정이 정리됐어도 "그때 속상했어"라고 표현 한 번 해주기'],
+    perfect: [
+      { rank: '🥇', code: 'HCRA', name: '속앓이 로맨티스트', emoji: '🥺', desc: '같은 회피 코드, 둘 다 시간 두고 풀어서 편안한 페어.' },
+      { rank: '🥈', code: 'HCLA', name: '무뚝뚝한 로열티', emoji: '🗝️', desc: '가장 안정적인 페어. 결혼 직행 케미.' },
+      { rank: '🥉', code: 'ECRA', name: '츤데레 로맨티스트', emoji: '🎀', desc: '표현·갈등 코드가 통하는 균형 잡힌 관계.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'HSLF', name: '침착한 관찰자', emoji: '🦉', desc: '거리감 + 정면돌파 → 가장 답답한 조합.' },
+      { rank: '⚠️', code: 'ESRF', name: '자유로운 로맨티스트', emoji: '🦋', desc: '빠른 페이스를 견디기 힘듦.' },
+      { rank: '⚠️', code: 'ESLF', name: '쿨한 직진러', emoji: '⚡', desc: '결정 압박이 부담스러운 미스매치.' }
+    ],
+    idealGood: ['시간을 충분히 주는 사람', '표현을 받아주고 같이 표현해주는 사람', '감정이 격해지지 않는 사람', '안정적이고 신뢰할 수 있는 사람', '서두르지 않는 어른스러운 사람'],
+    idealAvoid: ['즉각 결정·즉각 해결을 요구하는 사람', '변덕이 심한 사람', '큰소리 자주 내는 사람', '신뢰를 쉽게 깨는 사람'],
+    letter: '균형이 많은 너에게,\n\n너는 가장 단단한 사랑을 할 줄 아는 사람이야. 표현도 신중함도, 다정함도 차분함도 모두 가진 너는 누군가의 인생에서 가장 든든한 동반자가 될 수 있어.\n\n다만 가끔은, 생각하지 말고 그냥 말해봐. "지금 너무 좋아"라고. 그 즉흥적인 한마디가 너의 사랑을 더 빛나게 할 거야.'
+  },
+
+  ESRF: {
+    emoji: '🦋', name: '자유로운 로맨티스트',
+    tagline: '사랑해. 근데 이번 주말은 혼자 있을게 — 라고 말해도 어색하지 않은 사람.',
+    summary: '당신은 표현은 풍부하지만 자기만의 시간도 꼭 필요한 사람입니다. 좋아한다고 말도 잘하고 분위기도 챙기는데, 매일 만나거나 매시간 연락하는 건 부담스러워요. 사랑이 식어서가 아니라, 혼자만의 공간이 곧 자기 자신이라서요.',
+    scores: { axis1: 80, axis2: 75, axis3: 75, axis4: 78 },
+    deep: [
+      { emoji: '🌿', title: '사랑하지만 잠식되긴 싫은 사람', body: '당신은 사랑에 빠져도 자기 자신을 잃지 않아요. 좋아하는 사람이 생겨도 친구 약속, 혼자만의 취미, 개인 작업 시간을 그대로 지킵니다. 이건 차가움이 아니라 건강한 자기 인식이에요. 내가 나로 살아야 좋은 연인도 될 수 있다는 걸 알고 있죠.' },
+      { emoji: '💌', title: '표현은 아끼지 않음', body: '거리를 둔다고 표현까지 아끼는 건 아니에요. 좋아한다 말도 잘하고, 만났을 땐 다정하고, 이벤트도 챙겨요. 단, 그게 매일이 아닐 뿐이에요. 당신의 표현은 농도가 짙고 임팩트가 있어요.' },
+      { emoji: '🎨', title: '분위기와 감성을 사랑함', body: '혼자 영화 보러 가는 걸 좋아하고, 카페에서 책 읽는 시간을 사랑하고, 늦은 밤 산책을 즐기는 사람. 그 모든 감성을 누군가와 함께 나누고 싶지만, 강요받지 않을 때만 가능해요. 자발적으로 다가가는 게 사랑이라고 믿어요.' },
+      { emoji: '⚡', title: '갈등은 빠르게, 깔끔하게', body: '싸움이 나면 미루지 않아요. "이 부분은 짚고 가자"고 분명히 말하고 그 자리에서 정리하려 합니다. 단, 감정적으로 격해지진 않아요. 차분하게 의견을 교환하고 합의점을 찾는 스타일.' },
+      { emoji: '🦋', title: '사랑이 자유와 충돌하지 않는다고 믿음', body: '당신의 가장 큰 신념은 이거예요. "사랑한다고 자유를 포기할 필요는 없다." 그래서 당신은 상대에게도 자유를 주려 하고, 자신도 그만큼 자유를 원해요. 서로의 세계를 존중하는 연애를 추구합니다.' }
+    ],
+    strengths: ['자기 페이스가 분명해서 흔들리지 않음', '표현과 거리감의 균형이 좋음', '갈등을 빠르고 깔끔하게 처리', '상대에게도 자유를 줌'],
+    weaknesses: ['매일 보고 싶어하는 상대에겐 차갑게 느껴짐', '"사랑한다면서 왜 자주 안 만나?" 오해받기 쉬움', '자기 시간이 침범당하면 예민해짐', '너무 빨리 거리를 두면 상대가 떠날 수 있음'],
+    pattern: '시작도 자연스럽고 진행도 일정한 페이스. 격렬한 시작과 빠른 식음이 없어요. 단, 거리감 코드가 안 맞는 상대를 만나면 초반에 끝나는 경우가 많습니다.',
+    conflictMode: ['그 자리에서 짚되 감정적으로 가지 않음', '논리적으로 의견을 정리해서 전달', '"이건 이렇게 하자" 식으로 합의점 제시', '끝난 후엔 깔끔하게 잊음'],
+    conflictWarning: '당신의 차분한 갈등 처리가 감성형 파트너에겐 "내 감정 안 받아줘"로 느껴질 수 있어요. 또 빠르게 잊는 능력이 상대에겐 "진심으로 미안한 거 맞아?"로 보일 수 있고요.',
+    conflictTips: ['결론 내기 전에 "속상했지" 한마디 먼저', '잊는 속도를 상대에게 맞춰주기', '자기 시간이 필요할 땐 미리 예고하기'],
+    perfect: [
+      { rank: '🥇', code: 'HSRF', name: '신비주의 로맨티스트', emoji: '🔮', desc: '같은 거리감, 같은 갈등 코드. 가장 자연스러운 케미.' },
+      { rank: '🥈', code: 'HSLF', name: '침착한 관찰자', emoji: '🦉', desc: '어른 연애의 정석. 서로 존중하며 깊어짐.' },
+      { rank: '🥉', code: 'ESLF', name: '쿨한 직진러', emoji: '⚡', desc: '표현·거리·갈등이 다 맞는 효율적 페어.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'HCRA', name: '속앓이 로맨티스트', emoji: '🥺', desc: '거리 두는 당신 vs 매달리는 상대 = 외로움.' },
+      { rank: '⚠️', code: 'HCLA', name: '무뚝뚝한 로열티', emoji: '🗝️', desc: '매일 챙기고 싶은 상대를 부담스러워함.' },
+      { rank: '⚠️', code: 'ECRA', name: '츤데레 로맨티스트', emoji: '🎀', desc: '잠수 패턴을 못 견디는 미스매치.' }
+    ],
+    idealGood: ['자기만의 세계가 있는 사람', '"각자 시간"의 가치를 아는 사람', '표현은 풍부하되 매달리지 않는 사람', '자유를 존중해주는 사람', '갈등을 차분하게 처리할 수 있는 사람'],
+    idealAvoid: ['매일 연락·매일 만남을 요구하는 사람', '잠수·삐짐 패턴이 있는 사람', '자기 시간을 침범하는 사람', '감정에만 호소하는 사람'],
+    letter: '자유로운 너에게,\n\n너의 거리감은 사랑이 부족해서가 아니야. 너는 사랑하면서도 너 자신으로 남아있는 법을 아는 사람이지. 다만 기억해 — 모든 사람이 너처럼 거리감을 사랑이라 읽지는 않아.\n\n너의 자유를 이해해주는 사람을 만나면, 너는 가장 멋진 연인이 될 거야. 너의 페이스를 미안해하지 마.'
+  },
+
+  ESRA: {
+    emoji: '🖤', name: '시크한 로맨티스트',
+    tagline: '좋아해. 근데 며칠 답장 없어도 너무 걱정하진 마 — 내 스타일이야.',
+    summary: '당신은 표현은 하지만 절제하고, 거리는 두고, 갈등 나면 며칠 사라지는 사람입니다. 사랑이 없는 게 아니라 표현하는 방식이 다른 거예요. 미스터리하고 매력적이지만, 동시에 가장 알기 어려운 타입이기도 해요.',
+    scores: { axis1: 70, axis2: 82, axis3: 75, axis4: 75 },
+    deep: [
+      { emoji: '🖤', title: '절제된 표현의 미학', body: '당신의 표현은 양보다 질입니다. 매일 "좋아해" 하지 않지만, 한번 하면 무게가 있어요. 평소엔 시크하다가 결정적 순간에 진심을 드러내는 갭에 상대가 빠지죠. 절제가 곧 진심의 다른 이름이에요.' },
+      { emoji: '🌙', title: '혼자 있는 시간이 곧 충전', body: '당신은 사람을 만나면 에너지를 쓰는 타입이에요. 좋아하는 사람이라도 마찬가지예요. 그래서 정기적으로 혼자 있는 시간이 필요하고, 그 시간을 못 가지면 관계 자체가 어려워져요. 거리는 거부가 아니라 생존이에요.' },
+      { emoji: '🎭', title: '감성은 있지만 안으로 향함', body: '분위기·낭만·예술을 사랑하지만 그걸 SNS에 올리거나 떠벌리진 않아요. 당신의 감성은 자기 안에서 조용히 발효되는 와인 같은 거예요. 함께 나누는 사람이 있다면 특별한 사이지만, 그건 아무에게나 열어주지 않아요.' },
+      { emoji: '🌫️', title: '갈등 나면 사라지는 사람', body: '당신은 싸움이 나면 즉각 반응 안 해요. 답장이 끊기고, 며칠 잠수하고, 그 시간 동안 혼자 정리합니다. 상대 입장에선 "끝난 건가" 싶을 정도로 사라져요. 당신에겐 그게 처리 방식이지만, 모두에게 그렇게 보이진 않아요.' },
+      { emoji: '🥃', title: '깊이 있는 관계만 추구', body: '얕은 관계를 못 견딥니다. 당신이 마음을 여는 사람은 적지만, 한번 열면 정말 깊이 가요. 친구도 연인도 양보다 질. 당신의 사람이 되는 건 어렵지만, 한번 되면 오래갑니다.' }
+    ],
+    strengths: ['절제된 표현이 만드는 미스터리한 매력', '자기 페이스가 흔들리지 않음', '한번 진심이면 깊고 오래', '감정에 휘둘리지 않는 안정감'],
+    weaknesses: ['표현 부족으로 상대가 늘 불안해함', '잠수가 길어서 상대를 지치게 함', '"사랑하는 거 맞아?"라는 질문을 자주 받음', '마음을 여는 데 시간이 너무 오래 걸림'],
+    pattern: '시작이 느리고 속도도 느림. 단, 한번 자리 잡으면 오래갑니다. 빠른 진행 원하는 상대와는 초반에 어긋나요.',
+    conflictMode: ['즉각 반응 X, 답장 끊김', '며칠 혼자 정리', '정리되면 짧게 "미안" 정도', '길게 분석하거나 사과하진 않음'],
+    conflictWarning: '당신의 잠수와 짧은 사과가 상대에겐 "그게 다야?"로 느껴져요. 특히 정면형(F)에겐 가장 답답한 패턴이에요.',
+    conflictTips: ['잠수 전 "시간 좀 필요해" 한마디', '사과할 때 한 문장 더 — "이래서 그랬어"', '풀린 후 평소보다 표현 한 번 더 해주기'],
+    perfect: [
+      { rank: '🥇', code: 'HSRA', name: '고독한 몽상가', emoji: '🌙', desc: '같은 코드, 가장 자연스러운 케미. 둘만의 세계.' },
+      { rank: '🥈', code: 'HSLA', name: '신중한 거리유지러', emoji: '🏔️', desc: '거리감과 침묵을 같이 즐길 수 있는 페어.' },
+      { rank: '🥉', code: 'ESLA', name: '어른 연애러', emoji: '🍷', desc: '안정감 + 거리감 = 이상적인 케미.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'HCRF', name: '소심한 껌딱지', emoji: '🐰', desc: '같이 있고 싶은데 표현 못 하는 상대 → 당신의 잠수에 무너짐.' },
+      { rank: '⚠️', code: 'ECRF', name: '열정 로맨티시스트', emoji: '🌹', desc: '매일 표현 받고 싶은 상대 → 당신을 차갑다고 여김.' },
+      { rank: '⚠️', code: 'ECLF', name: '직진 현실주의자', emoji: '💼', desc: '빠른 진전 원하는 상대를 부담스러워함.' }
+    ],
+    idealGood: ['자기 세계가 있는 사람', '적은 표현에서도 진심을 읽을 줄 아는 사람', '잠수에 패닉하지 않는 사람', '깊이 있는 대화가 가능한 사람', '거리감을 존중해주는 어른'],
+    idealAvoid: ['매일 표현·매일 연락 요구하는 사람', '즉각 답장이 없으면 불안해하는 사람', '얕은 대화만 하는 사람', '감정 폭발이 잦은 사람'],
+    letter: '깊이 있는 너에게,\n\n너의 절제는 차가움이 아니야. 그건 진심을 함부로 흘리지 않으려는 너만의 예의지. 다만 기억해 — 너의 침묵을 사랑이라 번역할 수 있는 사람은 생각보다 드물어.\n\n가끔은 한 문장 더 남겨봐. 그 한 문장이 너의 사람을 곁에 두는 가장 다정한 방법이야.'
+  },
+
+  ESLF: {
+    emoji: '⚡', name: '쿨한 직진러',
+    tagline: '좋아하면 좋아한다. 별로면 별로다. 갈등은 그 자리에서 — 시간 낭비 싫어.',
+    summary: '당신은 명확함의 화신입니다. 표현도 분명하고, 거리도 분명하고, 갈등 처리도 분명해요. 감정에 휘둘리지 않고 가장 효율적인 방식으로 사랑하는 타입. 일과 연애를 모두 잘하는 사람들이 많은 유형이에요.',
+    scores: { axis1: 80, axis2: 72, axis3: 80, axis4: 85 },
+    deep: [
+      { emoji: '⚡', title: '명확함이 곧 사랑의 방식', body: '당신은 "썸"이라는 단어를 별로 안 좋아해요. 좋으면 좋다, 사귀자, 안 맞으면 끝. 시간 낭비 없는 게 가장 큰 미덕이라 믿습니다. 이건 차가움이 아니라 효율이에요. 어차피 헤어질 사람과 시간 끌고 싶지 않을 뿐이에요.' },
+      { emoji: '💼', title: '일과 연애의 균형', body: '당신은 자기 커리어, 자기 목표가 분명한 사람이에요. 사랑이 인생의 전부가 아니라 인생의 중요한 한 축. 그래서 연애한다고 일에 소홀해지지 않고, 일한다고 연애에 소홀해지지 않아요. 둘 다 잘 해내는 사람.' },
+      { emoji: '🎯', title: '표현은 정확하게', body: '"좋아해"라는 말을 자주 하진 않지만, 할 때 정확합니다. 두루뭉술하게 "그냥 좋다"가 아니라 "오늘 ○○ 해준 게 정말 고마웠어" 식으로 디테일이 있어요. 실속 있는 표현이에요.' },
+      { emoji: '🚀', title: '갈등 = 빠른 해결', body: '싸움이 나면 그 자리에서 끝내는 게 원칙. 미루는 건 시간 낭비고 감정 소모예요. "지금 얘기하자, 결론 내자, 다음으로 가자". 단호하지만 그래서 관계가 깨끗해요.' },
+      { emoji: '📐', title: '가치관이 안 맞으면 빠르게 정리', body: '당신은 안 맞는다는 걸 빨리 알아챕니다. 그리고 빨리 정리해요. 잔정에 끌려다니지 않고, "이건 아니다" 싶으면 단호한 결단을 내려요. 그게 서로를 위한 길이라 믿어요.' }
+    ],
+    strengths: ['관계가 명확하고 깨끗함', '갈등 처리가 빠르고 효율적', '자기 인생도 잘 살면서 연애도 잘함', '거짓말·우유부단함이 없음'],
+    weaknesses: ['너무 명확해서 차갑게 느껴짐', '"좀 부드럽게 말해주면 안 돼?" 소리를 자주 들음', '감정 호소를 논리로 받아칠 때가 많음', '단호한 결단이 상대에겐 매정하게 보임'],
+    pattern: '시작이 빠르고 정리도 빠름. 미적거리지 않아요. 안 맞으면 6개월 안에 정리, 맞으면 결혼 직진. 중간이 없어요.',
+    conflictMode: ['즉시 "지금 얘기하자"', '핵심부터 정확히 짚음', '결론과 합의점 도출', '끝난 후엔 다시 평소대로'],
+    conflictWarning: '당신의 효율적인 갈등 해결이 감성형(R) 파트너에겐 "내 감정 무시당했다"로 느껴질 수 있어요. "그래서 결론은?"이 너무 빨리 나오면 상처받는 사람이 많아요.',
+    conflictTips: ['결론 전에 감정 인정 한마디 ("화났구나")', '모든 갈등에 결론이 필요한 건 아니라는 걸 받아들이기', '단호함과 차가움의 차이를 의식하기'],
+    perfect: [
+      { rank: '🥇', code: 'HSRF', name: '신비주의 로맨티스트', emoji: '🔮', desc: '거리감 + 직진 코드. 어른들의 멋진 케미.' },
+      { rank: '🥈', code: 'HSLF', name: '침착한 관찰자', emoji: '🦉', desc: '가장 효율적이고 깔끔한 페어.' },
+      { rank: '🥉', code: 'ESRF', name: '자유로운 로맨티스트', emoji: '🦋', desc: '같은 가치관, 같은 페이스의 안정적 관계.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'HCRA', name: '속앓이 로맨티스트', emoji: '🥺', desc: '잠수 + 매달림 → 당신이 가장 답답해할 조합.' },
+      { rank: '⚠️', code: 'HCLA', name: '무뚝뚝한 로열티', emoji: '🗝️', desc: '거리감 안 맞고 갈등 처리도 어긋남.' },
+      { rank: '⚠️', code: 'ECRA', name: '츤데레 로맨티스트', emoji: '🎀', desc: '"왜 말 안 하는데?"의 끝없는 반복.' }
+    ],
+    idealGood: ['명확한 의사 표현이 가능한 사람', '자기 인생을 잘 사는 사람', '갈등을 회피하지 않는 사람', '효율을 이해하는 사람', '진솔하고 단도직입적인 사람'],
+    idealAvoid: ['우유부단하고 잠수 잘하는 사람', '감정에만 호소하는 사람', '말을 빙빙 돌리는 사람', '결정을 못하는 사람'],
+    letter: '명확한 너에게,\n\n너의 단호함은 매정함이 아니야. 그건 시간을 낭비하지 않고 진심을 향해 가는 가장 빠른 길이지. 다만 기억해 — 사람의 마음은 효율로만 움직이지 않아. 어떤 사랑은 비효율적이어서 더 아름다워.\n\n가끔은 결론 없이 그냥 안아줘 봐. 그 한 번이 너의 멋진 사랑을 더 따뜻하게 만들어 줄 거야.'
+  },
+
+  ESLA: {
+    emoji: '🍷', name: '어른 연애러',
+    tagline: '표현은 적당히, 거리는 적당히, 결정은 신중히, 갈등은 식혀서. — 가장 균형 잡힌 사랑.',
+    summary: '당신은 결혼 상대 1순위로 가장 자주 꼽히는 타입입니다. 표현 부족하지도 과하지도 않고, 거리감도 적절하고, 가치관도 분명하고, 갈등도 차분하게 처리해요. 가장 안정적이고 성숙한 연애의 정석이에요.',
+    scores: { axis1: 68, axis2: 70, axis3: 82, axis4: 72 },
+    deep: [
+      { emoji: '🍷', title: '균형 잡힌 어른의 사랑', body: '당신의 사랑은 화려하지 않지만 깊어요. 매일 "사랑해" 외치진 않지만 매일 챙기고, 매일 보지 않지만 늘 안정감 있고, 큰소리 내지 않지만 분명히 자기 의사 있고. 가장 어른스러운 방식의 사랑이에요.' },
+      { emoji: '📐', title: '가치관과 미래가 분명함', body: '당신은 자기 인생 계획이 명확한 사람이에요. 결혼관, 돈관, 가족관 — 다 정리되어 있어요. 그래서 연애도 그 안에서 합리적으로 진행됩니다. 가치관 안 맞는 사람과는 처음부터 시작하지 않아요.' },
+      { emoji: '🌿', title: '적절한 거리감의 미학', body: '당신은 매일 안 봐도 되지만 매주는 봐야 하는 사람. 매시간 연락 안 해도 되지만 하루는 연락해야 하는 사람. "적정선"이 본능적으로 정해져 있어요. 그게 당신을 안정적으로 만들어요.' },
+      { emoji: '💼', title: '갈등 = 차분한 분석 + 시간', body: '싸움이 나면 즉각 반응 안 해요. 일단 거리를 두고, 차분히 정리하고, 며칠 후 대화 제안. 감정이 식은 후에 논리적으로 풀어가는 스타일. 큰 다툼이 거의 없어요.' },
+      { emoji: '🌸', title: '관계의 안정성이 곧 행복', body: '당신은 격렬한 사랑보단 안정적인 사랑을 원해요. 두근거림보단 편안함, 이벤트보단 일상의 신뢰. 그래서 한번 자리 잡으면 오래가고, 그 안정성에서 행복을 느껴요.' }
+    ],
+    strengths: ['관계의 안정성이 압도적', '큰 갈등이 거의 없음', '가치관·미래에 대한 합리적 접근', '결혼 상대로 가장 매력적인 타입'],
+    weaknesses: ['표현이 절제돼서 상대가 본심을 모를 때가 있음', '"두근거림이 없다" 소리를 들을 수 있음', '감정형 상대에겐 차갑게 느껴짐', '한번 정해진 가치관은 잘 안 바뀜'],
+    pattern: '시작이 신중하고 진행은 안정적. 한번 자리 잡으면 오래, 결혼까지 가는 비율이 가장 높은 유형. 단, 시작 자체가 드물어요.',
+    conflictMode: ['즉각 반응 X, 거리를 둠', '차분히 정리한 후 대화 제안', '감정보다 사실과 해결책 위주', '큰소리 거의 없음'],
+    conflictWarning: '당신의 차분함이 감정형 상대에겐 "내 감정 안 받아줘"로, 표현형에겐 "사랑하는 거 맞아?"로 느껴질 수 있어요.',
+    conflictTips: ['차분한 답 전에 감정 인정 한마디', '"좀 더 표현해줘"라는 요청을 받아들이기', '가끔은 비효율적인 사랑도 해보기'],
+    perfect: [
+      { rank: '🥇', code: 'HSLA', name: '신중한 거리유지러', emoji: '🏔️', desc: '가장 안정적이고 성숙한 페어. 결혼 직행.' },
+      { rank: '🥈', code: 'HSRA', name: '고독한 몽상가', emoji: '🌙', desc: '거리감과 신중함의 코드 일치.' },
+      { rank: '🥉', code: 'ESRA', name: '시크한 로맨티스트', emoji: '🖤', desc: '어른들의 어른 연애.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'HCRF', name: '소심한 껌딱지', emoji: '🐰', desc: '매달리는 상대 → 당신이 부담스러워함.' },
+      { rank: '⚠️', code: 'ECRF', name: '열정 로맨티시스트', emoji: '🌹', desc: '"사랑받는 느낌이 안 든다"는 말을 가장 자주 들을 조합.' },
+      { rank: '⚠️', code: 'ECRA', name: '츤데레 로맨티스트', emoji: '🎀', desc: '잠수 패턴 + 표현 욕구 = 미스매치.' }
+    ],
+    idealGood: ['가치관·미래가 분명한 사람', '적정 거리감을 아는 사람', '감정에 휘둘리지 않는 사람', '안정적이고 책임감 있는 사람', '함께 인생을 설계할 수 있는 어른'],
+    idealAvoid: ['매달림·집착하는 사람', '가치관이 불분명하고 변덕스러운 사람', '감정 기복이 심한 사람', '큰 이벤트만 추구하는 사람'],
+    letter: '어른스러운 너에게,\n\n너의 차분함은 가장 든든한 사랑의 형태야. 너와 함께하는 사람은 인생에서 가장 안정적인 시간을 보낼 수 있을 거야. 다만 기억해 — 안정감만으로는 채울 수 없는 두근거림도 있다는 걸.\n\n가끔은 계산 없이, 그냥 마음 가는 대로 한 번 해봐. 그 한 번의 비효율이 너의 사랑을 더 풍요롭게 만들 거야.'
+  },
+
+  HCRF: {
+    emoji: '🐰', name: '소심한 껌딱지',
+    tagline: '보고 싶은데 말 못 하겠어. 같이 있고 싶은데 먼저 연락 못 하겠어. 근데… 우리 진짜 얘기 좀 해.',
+    summary: '당신은 마음은 가득 찼는데 입은 잠긴 사람입니다. 좋아하는 사람과 매일 연락하고 매일 보고 싶지만, 정작 먼저 다가가는 게 어려워요. 그런데 신기하게도 갈등은 회피 안 해요 — 무서워하면서도 풀어야 직성이 풀려요. 가장 사랑스럽고 짠한 타입이에요.',
+    scores: { axis1: 70, axis2: 85, axis3: 75, axis4: 70 },
+    deep: [
+      { emoji: '🐰', title: '마음은 큰데 입은 작은 사람', body: '당신의 마음속엔 늘 하고 싶은 말이 가득해요. "오늘 너 생각 많이 했어", "보고 싶었어", "고마워" — 그런데 막상 입을 열려고 하면 목에 걸려요. 이건 사랑이 부족해서가 아니라, 너무 커서 어떻게 표현해야 할지 몰라서예요.' },
+      { emoji: '📱', title: '카톡창에서 썼다 지웠다 백 번', body: '"잘 자"를 보낼지 말지 30분 고민, 보낸 후엔 "너무 들이댄 거 아닌가" 또 30분 후회. 답장이 1분만 늦어도 "내가 뭘 잘못했나" 자책. 당신의 카톡창은 보내지 못한 메시지의 무덤이에요.' },
+      { emoji: '🥺', title: '같이 있고 싶다는 마음은 누구보다 큼', body: '표현은 못 해도 함께 있고 싶은 마음은 EC 계열만큼 강해요. 매일 만나고 싶고, 매일 연락하고 싶고, 늘 닿아있고 싶어요. 단, 그걸 먼저 요구할 용기가 없을 뿐이에요. 그래서 상대가 먼저 다가와 주면 그때 가장 행복해져요.' },
+      { emoji: '💌', title: '행동으로 다 보여주는 사람', body: '말로 못 하는 대신 행동으로 다 합니다. 좋아하는 사람의 취향을 외우고, 작은 변화도 알아채고, 챙겨주는 디테일이 어마어마해요. 표현은 적어도 사랑의 농도는 가장 짙은 사람.' },
+      { emoji: '⚡', title: '무섭지만 갈등은 풀어야 함', body: '당신의 의외성은 여기 있어요. 평소엔 그렇게 소심한데, 정작 큰 갈등이 생기면 떨면서도 "저기… 우리 얘기 좀 해야 할 것 같아"라고 꺼내요. 풀지 않으면 잠 못 자기 때문에. 사랑하는 마음이 두려움보다 큰 거예요.' }
+    ],
+    strengths: ['사랑의 농도가 가장 짙음', '행동으로 진심을 다 보여줌', '한번 사랑하면 흔들림 없이 오래', '갈등을 회피하지 않는 의외의 단단함'],
+    weaknesses: ['먼저 표현 못 해서 상대가 마음을 모를 때 많음', '자존감이 낮아 자주 자책함', '답장 늦으면 혼자 무너짐', '사랑받는 느낌을 받아도 못 믿음'],
+    pattern: '시작이 어렵지만 일단 시작되면 가장 깊은 사랑을 함. 단, 표현 부족으로 상대가 떠나는 경우도 종종. 표현 잘하는 상대와 만나면 인생 연애 가능.',
+    conflictMode: ['무섭지만 결국 먼저 말 꺼냄', '떨면서도 "얘기하자"', '자기 잘못부터 인정하는 경향', '풀고 나면 평소보다 더 매달림'],
+    conflictWarning: '당신의 "다 내 잘못"이 상대에게 책임 회피의 도구가 될 수 있어요. 모든 갈등이 당신 탓일 수는 없어요.',
+    conflictTips: ['갈등 시 "내 감정도 중요하다"고 스스로에게 말해주기', '자책 모드 들어가기 전에 한 번 멈추기', '평소엔 "보고 싶어" 한마디라도 먼저 보내보기'],
+    perfect: [
+      { rank: '🥇', code: 'ECRF', name: '열정 로맨티시스트', emoji: '🌹', desc: '상대의 표현이 당신의 침묵을 녹여줍니다. 인생 연애 가능.' },
+      { rank: '🥈', code: 'ECLF', name: '직진 현실주의자', emoji: '💼', desc: '명확한 표현 + 미래까지 그려주는 안정감.' },
+      { rank: '🥉', code: 'ECRA', name: '츤데레 로맨티스트', emoji: '🎀', desc: '평소 다정함이 당신을 충만하게 함.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'ESRA', name: '시크한 로맨티스트', emoji: '🖤', desc: '적은 표현 + 거리감 → 당신이 가장 외로워질 조합.' },
+      { rank: '⚠️', code: 'ESLA', name: '어른 연애러', emoji: '🍷', desc: '안정적이지만 두근거림 부족.' },
+      { rank: '⚠️', code: 'HSRA', name: '고독한 몽상가', emoji: '🌙', desc: '둘 다 표현 못 하고 한 명은 멀리 있어 단절.' }
+    ],
+    idealGood: ['먼저 표현해주는 사람', '자주 연락하고 자주 만나는 걸 좋아하는 사람', '당신의 침묵을 사랑이라 읽을 줄 아는 사람', '인내심 있고 따뜻한 사람', '리드해주는 다정한 사람'],
+    idealAvoid: ['답장 며칠씩 안 하는 사람', '거리감 많이 두는 사람', '표현이 거의 없는 사람', '자존감 떨어뜨리는 사람'],
+    letter: '마음이 큰 너에게,\n\n너의 침묵은 사랑이 부족해서가 아니야. 너무 커서 어디서부터 말해야 할지 모르는 거지. 다만 기억해 — 너의 마음을 알아주는 데에도 누군가의 시간이 필요해. 그 시간을 줄여줄 수 있는 건 너의 한마디야.\n\n"보고 싶었어" 그 한마디만 용기 내봐. 너의 마음을 읽어줄 사람은 분명히 있어. 너는 그렇게 사랑받을 자격이 있는 사람이야.'
+  },
+
+  HCRA: {
+    emoji: '🥺', name: '속앓이 로맨티스트',
+    tagline: '좋아한다 말 못 했어. 서운하다 말 못 했어. 헤어지자도 말 못 했어. 일기장만 두꺼워져.',
+    summary: '당신은 속으로 다 삭이는 사람입니다. 좋아해도 말 못 하고, 서운해도 말 못 하고, 갈등 나면 잠수에 가까울 정도로 사라져요. 사랑이 부족해서가 아니라, 표현하는 법을 배운 적이 없어서. 가장 사랑받고 싶은데 가장 표현 못 하는, 모순으로 가득한 타입이에요.',
+    scores: { axis1: 80, axis2: 78, axis3: 75, axis4: 82 },
+    deep: [
+      { emoji: '🥺', title: '일기장이 가장 두꺼운 사람', body: '당신은 모든 감정을 안으로 삼키는 사람이에요. 좋아하는 마음, 서운한 마음, 고마운 마음 — 다 일기장이나 메모장에 써요. 입 밖으로 나오지 못한 감정이 계속 쌓이는 사람. 그래서 마음 한 켠은 늘 무거워요.' },
+      { emoji: '📵', title: '카톡 미리보기로 백 번 봐도 못 누름', body: '좋아하는 사람의 카톡이 와도 바로 못 열어요. "지금 답하면 너무 바로인가" 고민하다가 30분 후 답장. 그 30분 동안 이미 마음은 백 번을 다녀왔어요. 그런데 막상 답장은 "ㅇㅇ" "응" 한마디. 마음과 손가락이 따로 가는 사람.' },
+      { emoji: '💔', title: '서운함을 절대 말 못 함', body: '당신의 가장 큰 비극은 이거예요. 서운해도 말 못 해요. "내가 너무 예민한 건가", "이 정도로 서운해해도 되나" — 자기 검열이 너무 강해서 결국 입을 닫아요. 그러다 한꺼번에 폭발하거나, 조용히 사라지거나.' },
+      { emoji: '🌧️', title: '갈등 = 잠수 + 자책', body: '싸움이 나면 답장 끊고, 며칠 사라지고, 그 시간 내내 자책. "내가 잘못한 거야", "나만 이상한 거야". 그러다 상대가 먼저 다가오면 다시 풀리지만, 안 다가오면 그대로 끝나요. 당신은 먼저 손 내밀 용기가 없어요.' },
+      { emoji: '🌸', title: '사랑받고 싶은 마음은 누구보다 큼', body: '당신은 사실 가장 사랑받고 싶은 사람이에요. 매일 "좋아해" 듣고 싶고, 매일 안기고 싶고, 매일 확인받고 싶어요. 단, 그걸 요구할 용기가 없을 뿐이에요. 그래서 알아서 챙겨주는 상대를 만나면 인생이 완전히 바뀝니다.' }
+    ],
+    strengths: ['마음의 깊이가 가장 깊음', '한번 사랑하면 절대 흔들리지 않음', '상대를 위해 모든 걸 감수', '섬세하고 디테일한 챙김'],
+    weaknesses: ['표현 부족으로 상대가 마음을 끝까지 모를 수 있음', '잠수 + 자책 패턴이 관계를 망침', '자존감이 낮아 사랑받아도 못 믿음', '안에 쌓인 게 한꺼번에 터질 때 위험'],
+    pattern: '시작이 가장 어려움. 좋아하는 마음을 끝내 못 전해서 짝사랑으로 끝나는 경우 많음. 일단 시작되면 깊고 오래, 단 표현 부족으로 상대가 떠나기도.',
+    conflictMode: ['답장 끊김, 잠수', '며칠 동안 자책 모드', '상대가 다가와야만 풀림', '풀고 나서도 솔직히 말 못 함'],
+    conflictWarning: '당신의 잠수와 침묵은 상대에게 "차였다" 신호로 읽혀요. 그리고 누적된 서운함이 한꺼번에 폭발하면 회복 불가능한 상처가 돼요.',
+    conflictTips: ['작은 서운함은 그때그때 한 줄이라도 표현하기', '잠수 전에 "지금 마음 정리 중" 한마디 남기기', '자책 모드 들어가면 일단 멈추고 상황 객관화하기'],
+    perfect: [
+      { rank: '🥇', code: 'ECRA', name: '츤데레 로맨티스트', emoji: '🎀', desc: '같은 회피 동지 + 평소 표현 풍부 → 당신을 가장 잘 알아줌.' },
+      { rank: '🥈', code: 'ECLA', name: '표현형 신중파', emoji: '📋', desc: '안정적인 표현 + 갈등 코드 일치.' },
+      { rank: '🥉', code: 'ECRF', name: '열정 로맨티시스트', emoji: '🌹', desc: '상대의 적극성이 당신을 충만하게 함.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'ESRF', name: '자유로운 로맨티스트', emoji: '🦋', desc: '거리감 두는 상대에 당신이 가장 무너짐.' },
+      { rank: '⚠️', code: 'ESLF', name: '쿨한 직진러', emoji: '⚡', desc: '"왜 말 안 해"의 끝없는 추궁.' },
+      { rank: '⚠️', code: 'HSRF', name: '신비주의 로맨티스트', emoji: '🔮', desc: '둘 다 표현 못 하는데 한 명은 멀리 있음.' }
+    ],
+    idealGood: ['먼저 다가와서 챙겨주는 사람', '당신의 침묵을 인내심으로 기다려주는 사람', '표현 풍부하고 다정한 사람', '먼저 마음 알아채는 섬세한 사람', '안정감을 주는 따뜻한 사람'],
+    idealAvoid: ['거리 두는 사람', '추궁하는 사람', '잠수 자주 타는 사람', '감정을 무시하는 사람'],
+    letter: '마음이 깊은 너에게,\n\n너의 침묵은 사랑이 없어서가 아니야. 너무 많은 사랑을 다칠까 봐 끌어안고만 있는 거지. 다만 기억해 — 사랑은 표현되지 않으면 상대에게 도착하지 않아.\n\n한 줄만, 한 마디만 용기 내봐. "오늘 보고 싶었어." 그 한마디가 너의 일기장을 비우고 너의 사람을 곁에 두게 할 거야. 너는 충분히 사랑받을 자격이 있어.'
+  },
+
+  HCLF: {
+    emoji: '📖', name: '조용한 진심파',
+    tagline: '말은 적게. 행동은 확실히. 미래는 같이. 갈등은 똑바로.',
+    summary: '당신은 입은 무겁지만 마음은 묵직한 사람입니다. 좋아한다 자주 말하진 않지만 매일 챙기고, 표현은 절제돼도 진심은 단단해요. 그리고 의외로 갈등 앞에선 단호하게 정면돌파. "행동으로 보여주는 사랑"의 정수예요.',
+    scores: { axis1: 72, axis2: 78, axis3: 80, axis4: 75 },
+    deep: [
+      { emoji: '📖', title: '묵직한 진심의 사람', body: '당신의 사랑은 시끄럽지 않아요. "좋아해" 하루에 열 번 외치는 사람도 아니고, SNS에 자랑하는 사람도 아니에요. 대신 매일 챙기고, 매일 곁에 있고, 매일 약속을 지킵니다. 당신의 사랑은 일기예보처럼 정확하고 안정적이에요.' },
+      { emoji: '🍵', title: '표현은 적지만 디테일이 강함', body: '"좋아해"는 한 달에 한두 번이지만, 좋아하는 사람의 알레르기, 좋아하는 음식, 컨디션 패턴 다 외워요. 말 대신 행동으로 사랑을 증명하는 타입. 상대가 알아채주면 가장 큰 사랑을 받는 거예요.' },
+      { emoji: '🏠', title: '함께하는 일상이 곧 행복', body: '당신은 거창한 이벤트 안 좋아해요. 함께 장 보고, 함께 밥 먹고, 함께 청소하는 그 일상의 시간들이 가장 소중해요. 그 안정감 안에서 사랑이 깊어진다고 믿어요. 결혼 생활을 가장 잘하는 타입이에요.' },
+      { emoji: '📐', title: '미래를 함께 그리는 사람', body: '당신은 연애를 하는 동안 늘 미래를 봅니다. 결혼관, 자녀관, 돈관, 가족관 — 다 진지하게 생각해요. 가벼운 연애는 별로 안 좋아하고, 시작하면 진지하게 가는 타입.' },
+      { emoji: '⚡', title: '의외의 갈등 정면돌파', body: '평소엔 그렇게 조용한데, 갈등 앞에선 의외로 단호합니다. "이 부분은 짚고 가자"고 분명히 말해요. 풀지 않으면 신뢰가 깨진다고 믿기 때문에. 당신의 갈등 처리는 시끄럽지 않지만 깊고 정확해요.' }
+    ],
+    strengths: ['안정성이 압도적', '행동으로 보여주는 사랑의 깊이', '미래를 함께 그리는 진지함', '갈등을 회피하지 않는 단단함'],
+    weaknesses: ['표현 부족으로 상대가 사랑받는 느낌 못 받을 수 있음', '"좀 더 표현해줘"라는 요청을 자주 받음', '두근거림보단 안정감', '신뢰 깨지면 회복 거의 불가'],
+    pattern: '시작이 신중하지만 한번 시작되면 결혼까지 직진. 가장 안정적이고 길게 가는 유형. 단, 표현 부족으로 초반에 짝사랑으로 끝나는 경우도.',
+    conflictMode: ['차분하지만 단호하게 말 꺼냄', '"이건 짚어야 한다"', '감정보단 사실 위주', '결론까지 끌고 감'],
+    conflictWarning: '당신의 단호함이 상대에겐 차갑게 느껴질 수 있어요. 그리고 표현 부족 + 갈등 직면 = "왜 평소엔 표현 안 하면서 싸울 때만 말이 많아?" 소리를 들을 수 있어요.',
+    conflictTips: ['갈등 시 "사랑하니까 짚는 거야" 한마디 먼저', '평소에 표현 한 번 더 — 갈등 시 받아들이는 톤이 달라져요', '결론 전에 감정 인정 한 번'],
+    perfect: [
+      { rank: '🥇', code: 'ECRF', name: '열정 로맨티시스트', emoji: '🌹', desc: '상대의 표현이 당신의 묵직함을 빛나게 함.' },
+      { rank: '🥈', code: 'ECLF', name: '직진 현실주의자', emoji: '💼', desc: '가치관·미래·갈등 처리 다 일치. 결혼 직행.' },
+      { rank: '🥉', code: 'ECRA', name: '츤데레 로맨티스트', emoji: '🎀', desc: '같이 있고 싶은 코드 + 보완 관계.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'ESRA', name: '시크한 로맨티스트', emoji: '🖤', desc: '거리감 + 표현 부족 = 단절.' },
+      { rank: '⚠️', code: 'HSLA', name: '신중한 거리유지러', emoji: '🏔️', desc: '거리감 안 맞고 갈등 코드도 어긋남.' },
+      { rank: '⚠️', code: 'ESRF', name: '자유로운 로맨티스트', emoji: '🦋', desc: '같이 있고 싶은데 거리 두는 상대.' }
+    ],
+    idealGood: ['행동으로 보여주는 사랑을 알아주는 사람', '안정감과 진지함을 좋아하는 사람', '표현이 풍부해서 당신을 보완해주는 사람', '미래를 함께 그릴 수 있는 사람', '신뢰를 소중히 하는 사람'],
+    idealAvoid: ['두근거림만 추구하는 사람', '거리감 많이 두는 사람', '신뢰 쉽게 깨는 사람', '가벼운 연애만 원하는 사람'],
+    letter: '묵직한 너에게,\n\n너의 사랑은 화려하지 않아도 가장 단단한 모양이야. 너와 함께하는 사람은 인생에서 가장 든든한 동반자를 얻은 거지. 다만 기억해 — 행동만으로는 닿지 않는 마음도 있어. 가끔은 한 문장으로 사랑을 증명해줘.\n\n"오늘 너 보고 많이 좋았어." 그 한마디가 너의 모든 챙김을 사랑이라 번역해줄 거야.'
+  },
+
+  HCLA: {
+    emoji: '🗝️', name: '무뚝뚝한 로열티',
+    tagline: '말은 안 해도 매일 챙겨. 싸우면 며칠 말 안 해. 근데 내 사람이야 — 평생.',
+    summary: '당신은 가장 표현이 적지만 가장 충성스러운 사람입니다. 좋아한다 거의 안 말해도 매일 챙기고, 갈등 나면 며칠 말 안 해도 결국 풀러 와요. 한번 "내 사람"이라 정하면 절대 변하지 않는, 동물로 치면 시바견이나 진돗개 같은 타입이에요.',
+    scores: { axis1: 85, axis2: 75, axis3: 78, axis4: 75 },
+    deep: [
+      { emoji: '🗝️', title: '표현이 가장 적은 사랑꾼', body: '당신은 "좋아해"라는 말을 1년에 몇 번 할까 말까 한 사람이에요. SNS에도 안 올리고, 친구한테도 자랑 안 하고, 본인 입으로도 거의 안 말해요. 그런데 매일 챙기고 매일 곁에 있어요. 당신에겐 말이 곧 사랑이 아니에요. 같이 있는 시간이 사랑이에요.' },
+      { emoji: '🐕', title: '한번 정한 사람은 평생 가는 충성심', body: '당신은 사랑에 빠지는 데 시간이 오래 걸려요. 그런데 한번 "이 사람이다" 결정하면 평생을 갑니다. 흔들림이 거의 없고, 한눈팔지 않고, 끝까지 곁에 있어요. 당신을 만난 사람은 가장 안정적인 사랑을 받게 돼요.' },
+      { emoji: '🏠', title: '일상의 챙김이 곧 사랑의 언어', body: '당신은 좋아하는 사람의 우산을 챙기고, 약을 챙기고, 늦은 밤 데리러 오고, 식사를 챙겨요. 말 한마디 없이. 이 모든 게 "좋아해"라는 말의 다른 표현이에요. 알아주는 사람만 알아볼 수 있는 사랑.' },
+      { emoji: '🌧️', title: '싸우면 며칠 말 안 함, 근데 결국 풀러 옴', body: '당신의 갈등 패턴은 명확해요. 싸우면 일단 입 닫음. 며칠 말 안 함. 그런데 결국 본인이 먼저 풀러 와요. "밥 먹자" 한마디로. 길게 사과하지 않지만 행동으로 보여줘요. 이 리듬을 이해해주는 상대가 필요해요.' },
+      { emoji: '📐', title: '가치관이 곧 사랑의 기반', body: '당신은 가치관 안 맞는 사람과는 절대 안 만나요. 시작도 안 해요. 시작했다는 건 이미 가치관이 맞다고 판단했다는 뜻이에요. 그래서 당신의 사랑은 흔들림이 없어요. 기반이 단단하니까.' }
+    ],
+    strengths: ['충성도가 압도적으로 높음', '행동으로 보여주는 사랑의 깊이', '흔들림 없는 안정감', '가치관 기반의 단단한 신뢰'],
+    weaknesses: ['표현 부족으로 상대가 사랑을 못 느낄 수 있음', '며칠 말 안 하는 패턴이 상대를 지치게 함', '"사랑한다 한 번만 말해줘"라는 요청이 누적됨', '감정 표출이 거의 없어 답답해함'],
+    pattern: '시작이 가장 느림. 그런데 한번 시작되면 가장 길고 안정적. 결혼까지 가는 비율이 매우 높음.',
+    conflictMode: ['입 닫고 며칠 말 안 함', '그 시간 동안 혼자 정리', '결국 짧게 "밥 먹자"로 풀러 옴', '길게 사과하지 않지만 행동으로 보여줌'],
+    conflictWarning: '당신의 며칠 침묵이 상대에겐 가장 큰 형벌이에요. 그리고 풀러 올 때도 사과의 말이 너무 짧아서 "그게 다야?" 소리를 들을 수 있어요.',
+    conflictTips: ['침묵 기간에 "지금 정리 중" 한마디 남기기', '풀 때 "내가 미안했어"라는 말 한 번이라도 정확히', '평소에 작은 표현 자주 — "오늘도 고마워" 정도'],
+    perfect: [
+      { rank: '🥇', code: 'ECRA', name: '츤데레 로맨티스트', emoji: '🎀', desc: '상대의 평소 표현 + 갈등 코드 일치.' },
+      { rank: '🥈', code: 'ECLA', name: '표현형 신중파', emoji: '📋', desc: '가장 안정적이고 깊은 결혼 직행 페어.' },
+      { rank: '🥉', code: 'ECRF', name: '열정 로맨티시스트', emoji: '🌹', desc: '상대의 표현이 당신의 침묵을 채워줌.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'ESLF', name: '쿨한 직진러', emoji: '⚡', desc: '"왜 말 안 해" + 즉각 해결 요구.' },
+      { rank: '⚠️', code: 'HSLF', name: '침착한 관찰자', emoji: '🦉', desc: '거리감과 갈등 코드 모두 어긋남.' },
+      { rank: '⚠️', code: 'ESRF', name: '자유로운 로맨티스트', emoji: '🦋', desc: '거리 두는 상대를 못 견딤.' }
+    ],
+    idealGood: ['행동으로 표현되는 사랑을 알아주는 사람', '표현이 풍부해서 당신을 보완해주는 사람', '며칠 침묵을 이해해주는 인내심', '안정감을 사랑이라 읽을 줄 아는 사람', '한결같은 사람'],
+    idealAvoid: ['매시간 표현 요구하는 사람', '즉각 해결 강요하는 사람', '변덕이 심한 사람', '잔말이 많은 사람'],
+    letter: '한결같은 너에게,\n\n너의 침묵은 무관심이 아니야. 그건 너만의 충성스러운 사랑의 형태지. 너의 사람이 된다는 건 인생에서 가장 든든한 자리를 얻는 거야. 다만 기억해 — 너의 사랑이 보이지 않으면 도착하지 않아.\n\n1년에 한 번이라도 "고마워"를 말해봐. 그 한마디가 너의 모든 챙김을 빛나게 할 거야. 너의 사람은 그 한마디를 평생 기억할 거야.'
+  },
+
+  HSRF: {
+    emoji: '🔮', name: '신비주의 로맨티스트',
+    tagline: '평소엔 멀리 있어. 그런데 결정적 순간에 — 갑자기 훅 들어와.',
+    summary: '당신은 평소엔 거리 두고 표현 절제하다가, 결정적 순간에 갑자기 다가오는 사람입니다. 갈등 앞에선 의외로 단호하게 정면돌파. 잡힐 듯 잡히지 않는 매력으로 상대를 빠져들게 만드는 타입이에요.',
+    scores: { axis1: 70, axis2: 80, axis3: 75, axis4: 75 },
+    deep: [
+      { emoji: '🔮', title: '거리감 안의 낭만주의자', body: '당신은 겉으론 차가워 보이는데 속은 가장 감성적인 사람이에요. 분위기 있는 카페, 늦은 밤 산책, 비 오는 날의 음악 — 이런 결을 누구보다 사랑해요. 단, 그 감성을 아무에게나 보여주지 않아요. 자기만의 영역에서 조용히 즐기는 타입이에요.' },
+      { emoji: '🌙', title: '평소엔 닿기 어려운 사람', body: '당신은 매일 연락 안 해요. 매일 안 만나도 괜찮아요. 자기 시간이 생명이라 그 안에서 충전해요. 상대 입장에선 "이 사람 나한테 관심 있는 거 맞나" 헷갈릴 만큼 거리감이 있어요.' },
+      { emoji: '✨', title: '그런데 결정적 순간에 훅 들어옴', body: '당신의 가장 큰 매력은 갭이에요. 평소엔 멀리 있다가, 상대가 힘든 날에 갑자기 나타나서 챙겨주거나, 기념일에 예상치 못한 이벤트를 준비하거나. 자주 안 하기 때문에 한 번이 임팩트가 어마어마해요. "뭐야 이 사람…" 하고 빠져들게 만드는 타입.' },
+      { emoji: '⚡', title: '갈등은 미루지 않음', body: '의외의 단호함이 있어요. 평소엔 그렇게 거리 두고 조용한데, 갈등 앞에선 "이건 짚어야 한다"고 분명히 말해요. 풀지 않으면 관계 자체가 의미 없다고 믿기 때문에. 당신의 갈등 직면은 시끄럽지 않지만 정확해요.' },
+      { emoji: '🎭', title: '잡힐 듯 잡히지 않는 매력', body: '당신의 매력은 거리감에서 나와요. 다 보여주지 않고, 다 표현하지 않고, 다 닿지 않는 그 여백이 사람을 끌어당겨요. 단, 이걸 의도해서 하는 게 아니라 그냥 본인이 그런 사람일 뿐이에요. 그래서 더 매력적이죠.' }
+    ],
+    strengths: ['미스터리한 매력이 강함', '갭에서 오는 임팩트가 큼', '자기 페이스가 흔들리지 않음', '갈등을 정면돌파하는 단단함'],
+    weaknesses: ['평소 표현 부족으로 상대가 늘 불안해함', '"사랑하는 거 맞아?" 질문을 자주 받음', '거리감을 못 견디는 상대와는 초반에 끝남', '자기 세계가 너무 깊어 상대가 외로워질 수 있음'],
+    pattern: '시작이 느리고 진행도 느리지만, 한번 자리 잡으면 매우 깊고 안정적. 거리감 코드 맞는 상대와는 인생 연애 가능.',
+    conflictMode: ['차분하지만 분명하게 짚음', '"이건 얘기하자"', '감정보단 본질 위주', '결론 없이는 끝내지 않음'],
+    conflictWarning: '당신의 갈등 직면이 평소 거리감과 대비돼서 상대에게 혼란을 줄 수 있어요. "왜 평소엔 무관심하면서 싸울 때만 적극적이야?" 소리를 들을 수 있어요.',
+    conflictTips: ['평소에 표현 한 번 더 — 갈등 시 받아들이는 톤이 달라짐', '갈등 직면 전 "사랑하니까 짚는 거야" 한마디', '결론 후 따뜻한 표현 한 번 더'],
+    perfect: [
+      { rank: '🥇', code: 'ESRF', name: '자유로운 로맨티스트', emoji: '🦋', desc: '거리감 + 갈등 코드 일치. 가장 자연스러운 케미.' },
+      { rank: '🥈', code: 'ESLF', name: '쿨한 직진러', emoji: '⚡', desc: '어른들의 깔끔한 사랑.' },
+      { rank: '🥉', code: 'HSRA', name: '고독한 몽상가', emoji: '🌙', desc: '같은 결의 두 사람, 둘만의 세계.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'HCRA', name: '속앓이 로맨티스트', emoji: '🥺', desc: '둘 다 표현 못 하는데 한 명은 멀리 있음.' },
+      { rank: '⚠️', code: 'ECRA', name: '츤데레 로맨티스트', emoji: '🎀', desc: '잠수 패턴 + 표현 부족 = 단절.' },
+      { rank: '⚠️', code: 'HCLA', name: '무뚝뚝한 로열티', emoji: '🗝️', desc: '거리감 차이로 상대가 외로워함.' }
+    ],
+    idealGood: ['자기 세계가 있는 사람', '거리감을 사랑이라 읽을 줄 아는 사람', '갈등을 회피하지 않는 사람', '결정적 순간을 알아채는 사람', '인내심 있는 어른'],
+    idealAvoid: ['매일 연락 요구하는 사람', '잠수 패턴이 있는 사람', '평소 표현 강요하는 사람', '집착이 강한 사람'],
+    letter: '신비로운 너에게,\n\n너의 거리감은 차가움이 아니야. 그건 너 자신을 지키면서 사랑하는 가장 어른스러운 방식이지. 다만 기억해 — 너의 갭은 매력이지만, 너무 잦은 부재는 사랑을 의심하게 만들기도 해.\n\n평소에 한 번 더 표현해봐. 그러면 너의 결정적 순간이 더 큰 임팩트로 닿을 거야. 너는 그렇게 사랑받을 자격이 있는 사람이야.'
+  },
+
+  HSRA: {
+    emoji: '🌙', name: '고독한 몽상가',
+    tagline: '혼자만의 세계가 있어. 그 세계를 보여줄 사람을 만나는 것 — 평생 한두 번뿐일지도 몰라.',
+    summary: '당신은 가장 깊은 내면을 가진 사람입니다. 표현 절제, 거리 유지, 감성 풍부, 갈등 회피 — 모든 게 자기 안으로 향해 있어요. 잡기 어렵고 알기 어렵지만, 한번 마음 열면 가장 신비롭고 깊은 사랑을 줄 수 있는 타입이에요.',
+    scores: { axis1: 82, axis2: 88, axis3: 80, axis4: 80 },
+    deep: [
+      { emoji: '🌙', title: '자기 안에 우주를 가진 사람', body: '당신은 혼자 있는 시간이 가장 풍요로운 사람이에요. 책 읽고, 음악 듣고, 글 쓰고, 영화 보고 — 그 안에서 자기만의 세계가 점점 깊어져요. 이 세계가 너무 충만해서 사람이 굳이 필요하지 않을 때도 있어요. 외로움이 아니라 충만한 고독이에요.' },
+      { emoji: '🎨', title: '감성은 깊지만 안으로 향함', body: '당신의 감성은 누구보다 풍부해요. 단, 그걸 SNS에 올리거나 친구한테 떠벌리거나 연인에게 자주 표현하지 않아요. 자기 안에서 조용히 발효시켜요. 그 깊이를 알아봐 주는 사람이 곁에 있다면 가장 큰 행운이에요.' },
+      { emoji: '🌌', title: '사람이 많이 필요하지 않은 사람', body: '친구도 적고, 만나는 사람도 적어요. 그런데 그게 외로움이 아니에요. 깊이 있는 관계 한둘이 얕은 관계 백 명보다 훨씬 가치 있다고 믿어요. 사랑도 마찬가지예요. 한 사람과 깊게 가는 게 당신의 방식이에요.' },
+      { emoji: '🌫️', title: '갈등 = 사라짐', body: '싸우면 그냥 사라져요. 답장 끊고, 며칠 보이지 않고, 그 시간 동안 자기 안에서 정리해요. 다시 나타날 때까지 상대는 기다려야 해요. 당신은 갈등을 즉각 풀어야 한다고 생각하지 않아요. 시간이 모든 걸 정리해준다고 믿어요.' },
+      { emoji: '🔮', title: '잡기 어려운 사람', body: '당신은 누군가의 소유가 되는 걸 본능적으로 거부해요. 사랑하면서도 자기 자신을 잃지 않으려 해요. 그래서 가장 잡기 어렵고, 가장 신비롭고, 가장 매력적이에요. 단, 모두가 이 매력을 견딜 수 있는 건 아니에요.' }
+    ],
+    strengths: ['가장 깊은 내면의 사람', '알아봐 주는 사람에겐 가장 신비로운 존재', '자기 페이스가 절대 흔들리지 않음', '한번 사랑하면 영혼 깊이까지 감'],
+    weaknesses: ['거의 모든 사람이 당신을 차갑다고 오해함', '잠수 패턴이 길어 상대가 떠나기 쉬움', '자기 세계가 너무 깊어 상대가 들어갈 틈이 없음', '표현이 거의 없어 사랑이 닿지 않을 때 많음'],
+    pattern: '시작이 가장 어려움. 마음 여는 데 오래 걸림. 단, 한번 열면 가장 깊고 영혼적인 사랑. 평생 한두 번의 진짜 사랑을 하는 타입.',
+    conflictMode: ['답장 끊김, 잠수', '며칠~몇 주 사라짐', '혼자 정리 후 조용히 돌아옴', '길게 사과하거나 분석하지 않음'],
+    conflictWarning: '당신의 잠수가 가장 길고 가장 깊어요. 상대 입장에선 "끝났다" 신호로 받아들이고 정말 떠나기도 해요. 그게 당신의 의도가 아니어도요.',
+    conflictTips: ['잠수 전 "시간 좀 필요해" 한마디라도 남기기', '잠수 기간 중 짧은 신호 보내기 — "나 살아있어"', '돌아왔을 때 "기다려줘서 고마워" 한마디'],
+    perfect: [
+      { rank: '🥇', code: 'ESRA', name: '시크한 로맨티스트', emoji: '🖤', desc: '같은 결, 같은 페이스. 둘만의 우주.' },
+      { rank: '🥈', code: 'ESLA', name: '어른 연애러', emoji: '🍷', desc: '안정적인 거리감과 신중함의 완벽한 조화.' },
+      { rank: '🥉', code: 'HSLA', name: '신중한 거리유지러', emoji: '🏔️', desc: '가장 조용하고 깊은 페어.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'ECRF', name: '열정 로맨티시스트', emoji: '🌹', desc: '매일 닿고 싶은 상대 vs 사라지는 당신 = 비극.' },
+      { rank: '⚠️', code: 'ECLF', name: '직진 현실주의자', emoji: '💼', desc: '빠른 진전 요구하는 상대를 부담스러워함.' },
+      { rank: '⚠️', code: 'HCRF', name: '소심한 껌딱지', emoji: '🐰', desc: '가까이 있고 싶은 상대가 당신의 거리감에 무너짐.' }
+    ],
+    idealGood: ['자기 세계가 깊은 사람', '잠수에 패닉하지 않는 사람', '적은 표현에서 깊이를 읽을 줄 아는 사람', '깊이 있는 대화가 가능한 사람', '평온한 어른'],
+    idealAvoid: ['매일 연락 요구하는 사람', '즉각 해결 요구하는 사람', '얕은 관계만 추구하는 사람', '집착이 강한 사람'],
+    letter: '깊은 너에게,\n\n너의 고독은 외로움이 아니야. 그건 너 자신과 가장 친한 사람만이 가질 수 있는 풍요로움이지. 다만 기억해 — 너의 우주를 알아볼 사람이 곁에 있을 때, 그 사람도 너의 신호를 필요로 해.\n\n한 줄만, 한 마디만 남겨줘. "나 여기 있어"라는 그 한마디가 너의 우주에 누군가를 머물게 할 거야. 너의 깊이를 알아볼 사람은 분명히 있어.'
+  },
+
+  HSLF: {
+    emoji: '🦉', name: '침착한 관찰자',
+    tagline: '표현은 적게. 거리는 유지. 가치관은 분명. 갈등은 똑바로. — 어른 of 어른.',
+    summary: '당신은 가장 침착하고 가장 어른스러운 사람입니다. 표현 절제하고 거리 유지하지만, 가치관이 분명하고 갈등은 회피하지 않아요. 시끄럽지 않게 자기 인생을 잘 살면서 사랑도 잘하는 타입. "어른의 사랑"이라는 게 뭔지 보여주는 사람이에요.',
+    scores: { axis1: 75, axis2: 80, axis3: 85, axis4: 72 },
+    deep: [
+      { emoji: '🦉', title: '모든 걸 차분히 보는 사람', body: '당신은 흥분하지 않아요. 좋아도 차분, 싫어도 차분, 화나도 차분. 모든 상황을 한 발 떨어져서 관찰하고 분석해요. 이게 차가움이 아니라, 감정에 휘둘리지 않는 어른의 방식이에요. 당신 곁에 있으면 이상하게 안정감이 들어요.' },
+      { emoji: '📐', title: '가치관이 곧 사랑의 기반', body: '당신은 가치관 안 맞는 사람과는 시작 자체를 안 해요. 만나봐야 시간 낭비라고 알기 때문에. 그래서 한번 시작했다는 건 이미 신뢰의 기반이 있다는 뜻이에요. 당신의 사랑은 머리에서 시작해 마음으로 가는 타입이에요.' },
+      { emoji: '🌿', title: '거리감이 곧 존중', body: '당신은 매일 안 만나도 되고, 매시간 연락 안 해도 돼요. 그게 사랑이 부족해서가 아니라, 자기 시간과 상대 시간을 모두 존중하기 때문이에요. 각자 잘 살면서 함께할 때 더 빛난다고 믿어요.' },
+      { emoji: '⚡', title: '갈등은 정면돌파, 그러나 시끄럽지 않게', body: '싸우면 차분하게 짚어요. 큰소리 안 내고, 감정적으로 가지 않고, 핵심만 정확하게. "이 부분은 이렇게 가자"고 명확히 결론까지 끌고 가요. 갈등을 회피하지 않으면서 우아하게 처리하는 사람.' },
+      { emoji: '🍷', title: '어른의 사랑을 하는 사람', body: '두근거림보단 신뢰, 격렬함보단 안정, 이벤트보단 일상. 당신의 사랑은 와인처럼 시간이 지날수록 깊어져요. 결혼 후가 더 좋아지는 타입. 짧고 화려한 연애엔 별로 관심 없어요.' }
+    ],
+    strengths: ['가장 안정적이고 흔들림 없는 사람', '가치관 기반의 단단한 사랑', '갈등 처리가 우아하고 정확', '시간이 지날수록 깊어지는 사랑'],
+    weaknesses: ['표현 부족으로 상대가 사랑을 못 느낄 수 있음', '차분함이 차가움으로 오해됨', '두근거림 부족', '감정형 상대와는 잘 맞지 않음'],
+    pattern: '시작이 신중하고 진행은 안정적. 결혼까지 가는 비율이 매우 높음. 단, 시작 자체가 드물어요.',
+    conflictMode: ['차분하지만 분명히 짚음', '핵심부터 정확하게', '감정보단 본질 위주', '결론까지 끌고 감, 시끄럽지 않게'],
+    conflictWarning: '당신의 우아한 갈등 처리가 감정형 상대에겐 "내 감정 무시당했다"로 느껴질 수 있어요. 모든 사람이 갈등을 논리로 풀 수 있는 건 아니에요.',
+    conflictTips: ['결론 전에 감정 인정 한마디', '가끔은 결론 없이 그냥 안아주기', '평소에 표현 한 번 더 — 작은 칭찬, 작은 인사'],
+    perfect: [
+      { rank: '🥇', code: 'ESRF', name: '자유로운 로맨티스트', emoji: '🦋', desc: '거리감과 갈등 코드의 완벽한 조화.' },
+      { rank: '🥈', code: 'ESLF', name: '쿨한 직진러', emoji: '⚡', desc: '가장 효율적이고 깔끔한 어른 페어.' },
+      { rank: '🥉', code: 'ESLA', name: '어른 연애러', emoji: '🍷', desc: '안정성의 정점. 결혼 직행.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'ECRA', name: '츤데레 로맨티스트', emoji: '🎀', desc: '잠수 + 표현 욕구 = 미스매치.' },
+      { rank: '⚠️', code: 'HCLA', name: '무뚝뚝한 로열티', emoji: '🗝️', desc: '거리감과 갈등 코드 모두 어긋남.' },
+      { rank: '⚠️', code: 'ECLA', name: '표현형 신중파', emoji: '📋', desc: '거리감 + 정면돌파 → 가장 답답한 조합.' }
+    ],
+    idealGood: ['가치관이 분명한 사람', '자기 인생을 잘 사는 사람', '차분한 대화가 가능한 사람', '거리감을 존중해주는 어른', '신뢰를 소중히 하는 사람'],
+    idealAvoid: ['감정에만 호소하는 사람', '매시간 연락 요구하는 사람', '큰소리 자주 내는 사람', '가치관이 자주 바뀌는 사람'],
+    letter: '침착한 너에게,\n\n너의 차분함은 가장 든든한 사랑의 형태야. 너와 함께하는 사람은 인생의 폭풍 속에서도 흔들리지 않는 닻을 얻은 거지. 다만 기억해 — 모든 사랑이 논리로 닿지는 않아. 어떤 마음은 그저 따뜻한 한마디만 필요해.\n\n가끔은 분석 없이, 그냥 "고마워"라고 말해봐. 그 한마디가 너의 어른스러움을 완성시킬 거야.'
+  },
+
+  HSLA: {
+    emoji: '🏔️', name: '신중한 거리유지러',
+    tagline: '마음을 여는 데 평생이 걸릴지도 몰라. 근데 한번 열면 — 그것도 평생이야.',
+    summary: '당신은 16유형 중 가장 마음 알기 어려운 사람입니다. 표현 절제, 거리 유지, 신중한 판단, 갈등 회피 — 4축 모두 안으로 향해 있어요. 짝사랑 유발자 1순위. 단, 한번 마음 열면 가장 깊고 길게 가는 사람이기도 해요.',
+    scores: { axis1: 90, axis2: 88, axis3: 82, axis4: 80 },
+    deep: [
+      { emoji: '🏔️', title: '가장 높은 마음의 산', body: '당신에게 다가가는 건 산을 오르는 것과 같아요. 길도 잘 안 보이고, 표지판도 없고, 정상이 어디인지도 알기 어려워요. 그런데 당신을 짝사랑하는 사람은 늘 있어요. 다가가기 어려울수록 매력적인 그 신비로움 때문에.' },
+      { emoji: '🌫️', title: '표현이 거의 없는 사람', body: '당신은 좋아한다는 말을 거의 안 해요. 1년에 한두 번 할까. 그런데 행동에서 미세한 신호가 있어요. 자주 옆에 있는 거, 작은 챙김, 시선 — 그걸 알아채는 사람만이 당신의 마음을 알 수 있어요. 모르는 사람은 평생 모르고요.' },
+      { emoji: '🌑', title: '자기 세계가 가장 깊은 사람', body: '당신은 혼자만의 시간이 가장 길어야 하는 사람이에요. 사람과 함께하는 시간보다 혼자 있는 시간이 훨씬 더 많이 필요해요. 그게 외로움이 아니라 본질이에요. 이 페이스를 깨려는 상대를 본능적으로 멀리해요.' },
+      { emoji: '📐', title: '모든 결정이 신중함', body: '당신은 빠른 결정을 못 해요. 사귀자는 말에도 한 달은 생각하고, 결혼 얘기엔 1년은 생각해요. 이건 망설임이 아니라 한번 결정하면 평생 가기 때문에 그 결정에 무게를 두는 거예요. 당신의 신중함은 사랑의 깊이의 반대 증거예요.' },
+      { emoji: '🗝️', title: '한번 열면 평생 가는 마음', body: '당신의 진짜 매력은 여기 있어요. 마음 여는 데 평생이 걸릴 수 있지만, 한번 열면 그것도 평생이에요. 흔들림 없고, 한눈팔지 않고, 끝까지 가요. 그래서 당신을 사랑하는 사람들은 인내심을 갖고 기다려요. 그만한 가치가 있다는 걸 본능적으로 알기 때문에.' }
+    ],
+    strengths: ['한번 사랑하면 가장 깊고 길게 감', '흔들림 없는 안정성', '가치관 기반의 단단한 신뢰', '미스터리한 매력의 정점'],
+    weaknesses: ['거의 모든 사람이 당신을 차갑다고 오해함', '표현이 너무 절제돼서 사랑이 닿지 않을 때 많음', '잠수 패턴이 가장 길어 상대가 떠남', '마음 여는 데 너무 오래 걸려 시작 자체가 드묾'],
+    pattern: '시작이 가장 어려움. 짝사랑이 가장 많은 유형. 단, 한번 시작되면 거의 흔들림 없이 평생.',
+    conflictMode: ['답장 끊김, 깊은 잠수', '몇 주 사라질 수도 있음', '혼자 모든 걸 정리', '같은 갈등 두 번이면 거기서 끝'],
+    conflictWarning: '당신의 잠수가 가장 길고 깊어요. 상대 입장에선 정말 떠난 줄 알고 정리하기 시작해요. 그게 당신의 의도가 아니어도, 결과적으로 관계가 끝나는 경우가 많아요.',
+    conflictTips: ['잠수 전에 "시간 좀 필요해" 반드시 남기기', '잠수 기간 중 한 번이라도 신호 보내기', '같은 갈등이 반복되기 전에 한 번이라도 명확하게 짚기'],
+    perfect: [
+      { rank: '🥇', code: 'ESLA', name: '어른 연애러', emoji: '🍷', desc: '가장 안정적이고 성숙한 페어. 결혼 직행.' },
+      { rank: '🥈', code: 'ESRA', name: '시크한 로맨티스트', emoji: '🖤', desc: '둘만의 조용한 우주.' },
+      { rank: '🥉', code: 'HSRA', name: '고독한 몽상가', emoji: '🌙', desc: '같은 결의 두 사람, 가장 깊은 공감.' }
+    ],
+    worst: [
+      { rank: '⚠️', code: 'ECRF', name: '열정 로맨티시스트', emoji: '🌹', desc: '4축 모두 반대. 가장 답답한 조합.' },
+      { rank: '⚠️', code: 'ECLF', name: '직진 현실주의자', emoji: '💼', desc: '빠른 진전 요구 vs 평생 신중함 = 비극.' },
+      { rank: '⚠️', code: 'HCLF', name: '조용한 진심파', emoji: '📖', desc: '거리감 차이로 상대가 외로워짐.' }
+    ],
+    idealGood: ['평생 기다려줄 수 있는 인내심을 가진 사람', '자기 세계가 깊고 거리감을 사랑이라 읽을 줄 아는 사람', '작은 신호에서 깊이를 읽을 줄 아는 사람', '안정적이고 한결같은 사람', '말 없는 사랑을 이해하는 사람'],
+    idealAvoid: ['빠른 진전 요구하는 사람', '매일 표현 요구하는 사람', '결정을 재촉하는 사람', '얕은 관계만 추구하는 사람'],
+    letter: '가장 깊은 너에게,\n\n너의 신중함은 사랑이 부족해서가 아니야. 한번 열면 평생 가는 너의 마음이 그 무게를 알기 때문이지. 너를 기다려준 사람은 인생에서 가장 깊은 사랑을 받게 될 거야. 다만 기억해 — 너의 신호가 너무 작으면, 기다려줄 사람조차 떠날 수 있어.\n\n1년에 한 번이라도 "고마워, 곁에 있어줘서"를 말해줘. 그 한마디가 너의 평생을 곁에 있어줄 사람을 만드는 길이야. 너의 깊이는 누군가의 인생에서 가장 큰 축복이 될 수 있어.'
+  }
+};
+
+// ===== 축 라벨 데이터 =====
+const AXIS_INFO = {
+  1: { letters: ['E', 'H'], labels: ['직진러', '은은파'], name: '표현력', desc: '마음을 얼마나 적극적으로 표현하는가' },
+  2: { letters: ['C', 'S'], labels: ['껌딱지', '독립파'], name: '거리감', desc: '함께하는 시간 vs 혼자만의 시간' },
+  3: { letters: ['R', 'L'], labels: ['감성파', '현실파'], name: '사고방식', desc: '두근거림과 분위기 vs 가치관과 미래' },
+  4: { letters: ['F', 'A'], labels: ['정면돌파', '회피형'], name: '갈등대처', desc: '바로 풀기 vs 시간을 두고 보기' }
+};
+
+// ===== 16유형별 추천템 (쿠팡파트너스) =====
+// ⚠️ url은 본인 쿠팡파트너스에서 생성한 링크로 교체하세요.
+//    제가 넣은 건 쿠팡 검색 링크라 수익 추적이 안 됩니다.
+//    파트너스 > 링크 생성 > 상품/검색 링크를 만들어 url에 넣으세요.
+function coupangSearch(keyword) {
+  return 'https://www.coupang.com/np/search?q=' + encodeURIComponent(keyword);
+}
+
+const RECOMMENDS = {
+  ECRF: { intro: '표현이 풍부하고 함께하는 시간을 사랑하는 당신. 마음을 더 빛나게 표현할 수 있는 것들을 골라봤어요.', items: [
+    { emoji: '📸', name: '폴라로이드 즉석카메라', reason: '함께한 순간을 바로 남기고 선물하기 좋아요', kw: '폴라로이드 카메라' },
+    { emoji: '🗓️', name: '커플 기념일 캘린더', reason: '챙기는 걸 좋아하는 당신에게 딱', kw: '커플 기념일 캘린더' },
+    { emoji: '💡', name: 'LED 무드 스트링 조명', reason: '분위기 가득한 데이트 공간을 위해', kw: 'LED 무드등 스트링조명' } ] },
+  ECRA: { intro: '평소엔 다정하고 화해 후엔 더 애틋해지는 당신. 마음을 표현하고 다독이는 데 도움 될 것들이에요.', items: [
+    { emoji: '📓', name: '감정 기록 다이어리', reason: '말로 못 한 마음을 정리하기 좋아요', kw: '감정 다이어리' },
+    { emoji: '🕯️', name: '향초 세트', reason: '화해 후 함께하는 포근한 무드', kw: '향초 세트' },
+    { emoji: '🧸', name: '커플 메신저 인형', reason: '삐졌을 때 마음 전하는 귀여운 매개', kw: '커플 인형' } ] },
+  ECLF: { intro: '표현은 화끈하지만 미래를 진지하게 그리는 당신. 함께 계획하고 쌓아가기 좋은 것들이에요.', items: [
+    { emoji: '💰', name: '커플 가계부 / 데이트 통장 노트', reason: '함께 미래를 설계하는 현실주의자에게', kw: '커플 가계부' },
+    { emoji: '✈️', name: '여행 플래너 다이어리', reason: '둘의 다음 계획을 구체적으로', kw: '여행 플래너 다이어리' },
+    { emoji: '📚', name: '관계 심리 베스트셀러', reason: '더 단단한 관계를 위한 인사이트', kw: '연애 심리학 책' } ] },
+  ECLA: { intro: '다정함과 신중함을 함께 가진 당신. 천천히, 그러나 깊게 마음을 나누는 것들이에요.', items: [
+    { emoji: '🖋️', name: '고급 만년필 / 편지지 세트', reason: '신중하게 고른 진심을 손글씨로', kw: '편지지 세트' },
+    { emoji: '☕', name: '홈카페 드립 키트', reason: '함께하는 차분한 시간을 위해', kw: '홈카페 드립세트' },
+    { emoji: '🎲', name: '커플 대화 보드게임', reason: '서로를 더 알아가는 데이트', kw: '커플 보드게임' } ] },
+  ESRF: { intro: '사랑하면서도 나만의 시간이 중요한 당신. 혼자도 둘이도 좋은 감성템을 골랐어요.', items: [
+    { emoji: '🔊', name: '휴대용 블루투스 스피커', reason: '혼자 카페감성, 둘이 피크닉 모두', kw: '블루투스 스피커' },
+    { emoji: '📖', name: '감성 에세이 베스트셀러', reason: '혼자만의 시간을 채우는 글', kw: '감성 에세이' },
+    { emoji: '🌿', name: '룸 디퓨저', reason: '나만의 공간을 위한 향', kw: '디퓨저' } ] },
+  ESRA: { intro: '절제된 표현 속 깊은 감성을 가진 당신. 혼자만의 무드를 완성하는 것들이에요.', items: [
+    { emoji: '🌑', name: '미니멀 디자인 무드등', reason: '시크한 당신의 공간에 어울리는', kw: '미니멀 무드등' },
+    { emoji: '🎵', name: 'LP 턴테이블', reason: '혼자 음미하는 음악의 깊이', kw: 'LP 턴테이블' },
+    { emoji: '🖤', name: '블랙톤 인테리어 머그', reason: '취향이 담긴 작은 소품', kw: '블랙 머그컵' } ] },
+  ESLF: { intro: '명확하고 효율적인 당신. 일과 사랑 모두 잘 굴러가게 돕는 것들이에요.', items: [
+    { emoji: '🗂️', name: '시간관리 플래너', reason: '효율을 사랑하는 당신에게', kw: '시간관리 플래너' },
+    { emoji: '🎧', name: '무선 이어폰', reason: '일도 데이트도 깔끔하게', kw: '무선 이어폰' },
+    { emoji: '📈', name: '자기계발 베스트셀러', reason: '성장하는 사람의 필독서', kw: '자기계발 베스트셀러' } ] },
+  ESLA: { intro: '균형 잡힌 어른의 사랑을 하는 당신. 안정적이고 품격 있는 것들을 골랐어요.', items: [
+    { emoji: '🍷', name: '와인 글래스 세트', reason: '차분한 둘만의 저녁을 위해', kw: '와인잔 세트' },
+    { emoji: '🌿', name: '프리미엄 디퓨저', reason: '안정적인 공간의 완성', kw: '프리미엄 디퓨저' },
+    { emoji: '💍', name: '관계·결혼 준비 도서', reason: '미래를 함께 그리는 당신에게', kw: '결혼 준비 책' } ] },
+  HCRF: { intro: '마음은 큰데 표현이 서툰 당신. 진심을 전하는 연습이 될 것들을 골랐어요.', items: [
+    { emoji: '✉️', name: '손편지지 / 엽서 세트', reason: '입으로 못 한 말을 글로', kw: '편지지 엽서 세트' },
+    { emoji: '🔑', name: '커스텀 커플 키링', reason: '말 없이 마음을 표현하는 선물', kw: '커플 키링' },
+    { emoji: '💌', name: '메시지 카드 세트', reason: '용기 내어 한마디 건네보기', kw: '메시지 카드' } ] },
+  HCRA: { intro: '모든 걸 안으로 삼키는 당신. 마음을 꺼내놓고 다독이는 데 도움 될 것들이에요.', items: [
+    { emoji: '📔', name: '감정 기록 다이어리', reason: '일기장이 두꺼운 당신에게', kw: '감정일기 다이어리' },
+    { emoji: '🌙', name: '힐링 무드등', reason: '혼자만의 시간을 따뜻하게', kw: '힐링 무드등' },
+    { emoji: '🌷', name: '자존감·마음챙김 도서', reason: '나를 먼저 사랑하는 연습', kw: '자존감 책' } ] },
+  HCLF: { intro: '행동으로 사랑을 증명하는 당신. 함께하는 일상을 풍요롭게 하는 것들이에요.', items: [
+    { emoji: '🍳', name: '집밥 / 홈쿡 키트', reason: '함께하는 일상이 가장 소중한 당신', kw: '밀키트' },
+    { emoji: '📒', name: '커플 일상 기록 다이어리', reason: '말 대신 기록으로 남기는 진심', kw: '커플 다이어리' },
+    { emoji: '🏠', name: '생활 인테리어 소품', reason: '함께 가꾸는 공간', kw: '인테리어 소품' } ] },
+  HCLA: { intro: '말 없이 평생 챙기는 당신. 오래 곁에 두고 쓰는 든든한 것들을 골랐어요.', items: [
+    { emoji: '🍵', name: '보온 텀블러', reason: '말없이 챙겨주는 당신의 마음처럼', kw: '보온 텀블러' },
+    { emoji: '☂️', name: '튼튼한 장우산', reason: '비 오는 날 챙겨주는 다정함', kw: '장우산' },
+    { emoji: '💞', name: '장기연애·결혼 준비 도서', reason: '한 사람만 보는 당신에게', kw: '장기연애 책' } ] },
+  HSRF: { intro: '평소엔 멀리, 결정적 순간엔 훅 들어오는 당신. 분위기를 만드는 감성템이에요.', items: [
+    { emoji: '🕯️', name: '디자인 캔들 / 인센스', reason: '신비로운 무드를 완성하는', kw: '디자인 캔들' },
+    { emoji: '📽️', name: '미니 빔프로젝터', reason: '둘만의 영화 같은 순간', kw: '미니 빔프로젝터' },
+    { emoji: '🖼️', name: '감성 사진집 / 예술 도서', reason: '깊은 취향을 나누는 매개', kw: '사진집' } ] },
+  HSRA: { intro: '자기만의 우주가 깊은 당신. 혼자만의 시간을 더 풍요롭게 하는 것들이에요.', items: [
+    { emoji: '💡', name: '독서등 / 리딩 라이트', reason: '혼자만의 깊은 밤을 위해', kw: '독서등' },
+    { emoji: '🖋️', name: '만년필 / 노트', reason: '내면을 기록하는 도구', kw: '만년필' },
+    { emoji: '📕', name: '에세이 / 시집', reason: '당신의 우주를 채우는 글', kw: '시집' } ] },
+  HSLF: { intro: '차분하게 모든 걸 관찰하는 어른의 당신. 루틴을 단단하게 하는 것들이에요.', items: [
+    { emoji: '🪵', name: '원목 데스크 정리템', reason: '정돈된 일상을 좋아하는 당신에게', kw: '원목 데스크정리' },
+    { emoji: '☕', name: '핸드드립 커피 세트', reason: '차분한 루틴의 완성', kw: '핸드드립 커피세트' },
+    { emoji: '📘', name: '심리·철학 도서', reason: '깊이 생각하는 당신을 위한', kw: '철학 책' } ] },
+  HSLA: { intro: '마음 열기까지 오래 걸리지만 한번 열면 평생인 당신. 자기만의 공간을 위한 것들이에요.', items: [
+    { emoji: '🖋️', name: '프리미엄 만년필 / 다이어리', reason: '신중한 당신의 기록을 위해', kw: '프리미엄 다이어리' },
+    { emoji: '🌿', name: '아로마 디퓨저', reason: '혼자만의 공간을 채우는 향', kw: '아로마 디퓨저' },
+    { emoji: '🤝', name: '인간관계·심리 도서', reason: '관계를 깊이 이해하는 당신에게', kw: '인간관계 책' } ] }
+};
+
+// ===== 결제 검증 + 결과 가져오기 =====
+function checkAccess() {
+  // 무료 공개 — 결제 게이트 없음. 유형만 결정하면 됨.
+  const params = new URLSearchParams(window.location.search);
+  const urlType = params.get('type');
+
+  // 1. URL 파라미터 우선
+  if (urlType && TYPES[urlType.toUpperCase()]) {
+    return urlType.toUpperCase();
+  }
+
+  // 2. sessionStorage에서 결과 가져오기
+  try {
+    const saved = sessionStorage.getItem('lt16_result');
+    if (saved) {
+      const result = JSON.parse(saved);
+      if (result.type && TYPES[result.type]) return result.type;
+    }
+  } catch (e) {}
+
+  // 3. 유형 정보가 전혀 없으면 테스트로 안내
+  document.getElementById('accessDenied').style.display = 'flex';
+  return null;
+}
+
+// ===== 실제 사용자 점수 파싱 =====
+// URL의 s 파라미터(8자리: E,H,C,S,R,L,F,A 순)를 받아
+// 유형 코드 기준으로 각 축의 실제 강도(%)를 계산
+function parseUserScores(type) {
+  const params = new URLSearchParams(window.location.search);
+  let s = params.get('s');
+
+  // URL에 없으면 sessionStorage의 테스트 결과에서 시도
+  if (!s) {
+    try {
+      const result = JSON.parse(sessionStorage.getItem('lt16_result'));
+      if (result && result.scores) {
+        const sc = result.scores;
+        s = `${sc.E}${sc.H}${sc.C}${sc.S}${sc.R}${sc.L}${sc.F}${sc.A}`;
+      }
+    } catch (e) {}
+  }
+
+  // 점수 문자열이 없거나 형식이 안 맞으면 null 반환 (유형 고정값 사용)
+  if (!s || !/^\d{8}$/.test(s)) return null;
+
+  const nums = s.split('').map(Number);
+  const raw = { E: nums[0], H: nums[1], C: nums[2], S: nums[3], R: nums[4], L: nums[5], F: nums[6], A: nums[7] };
+
+  // 각 축의 합이 6이어야 정상 (각 축 6문항)
+  const pairs = [['E','H'], ['C','S'], ['R','L'], ['F','A']];
+  const result = {};
+  for (let i = 0; i < 4; i++) {
+    const [a, b] = pairs[i];
+    const sum = raw[a] + raw[b];
+    if (sum === 0) return null; // 비정상
+    // 이긴 쪽의 비율을 강도로 (예: E 5점 / 6 = 83%)
+    const winner = Math.max(raw[a], raw[b]);
+    result[`axis${i + 1}`] = Math.round((winner / sum) * 100);
+  }
+  return result;
+}
+
+// ===== 페이지 렌더링 =====
+function render() {
+  const type = checkAccess();
+  if (!type) return; // 접근 거부
+
+  document.getElementById('mainContent').style.display = 'block';
+  const data = TYPES[type];
+
+  // 페이지 타이틀
+  document.title = `${type} ${data.name} — 심층분석 — Love Type 16`;
+
+  // 히어로
+  document.getElementById('heroEmoji').textContent = data.emoji;
+  document.getElementById('heroCode').textContent = type;
+  document.getElementById('heroName').textContent = data.name;
+  document.getElementById('heroTagline').textContent = data.tagline;
+  document.getElementById('heroSummary').textContent = data.summary;
+
+  // Chapter 1: 4축 — 사용자 실제 점수가 있으면 그걸 사용, 없으면 유형 대표값
+  const userScores = parseUserScores(type);
+  renderAxes(type, userScores || data.scores);
+
+  // Chapter 2: 성격 깊이 분석
+  document.getElementById('deepList').innerHTML = data.deep.map(d => `
+    <div class="deep-item reveal">
+      <div class="deep-emoji">${d.emoji}</div>
+      <div class="deep-content">
+        <div class="deep-title">${d.title}</div>
+        <div class="deep-body">${d.body}</div>
+      </div>
+    </div>
+  `).join('');
+
+  // Chapter 3: 연애할 때의 나
+  document.getElementById('loveStrengths').innerHTML = data.strengths.map(s => `<li>${s}</li>`).join('');
+  document.getElementById('loveWeaknesses').innerHTML = data.weaknesses.map(w => `<li>${w}</li>`).join('');
+  document.getElementById('lovePattern').textContent = data.pattern;
+
+  // Chapter 4: 갈등 대처
+  document.getElementById('conflictMyMode').innerHTML = data.conflictMode.map(m => `<li>${m}</li>`).join('');
+  document.getElementById('conflictWarning').textContent = data.conflictWarning;
+  document.getElementById('conflictTips').innerHTML = data.conflictTips.map(t => `<li>${t}</li>`).join('');
+
+  // Chapter 5: 궁합
+  document.getElementById('matchPerfect').innerHTML = data.perfect.map(m => `
+    <div class="match-item reveal">
+      <div class="match-rank">${m.rank}</div>
+      <div class="match-emoji">${m.emoji}</div>
+      <div class="match-info">
+        <div class="match-name">${m.code}</div>
+        <div class="match-title">${m.name}</div>
+        <div class="match-desc">${m.desc}</div>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('matchWorst').innerHTML = data.worst.map(m => `
+    <div class="match-item reveal">
+      <div class="match-rank">${m.rank}</div>
+      <div class="match-emoji">${m.emoji}</div>
+      <div class="match-info">
+        <div class="match-name">${m.code}</div>
+        <div class="match-title">${m.name}</div>
+        <div class="match-desc">${m.desc}</div>
+      </div>
+    </div>
+  `).join('');
+
+  // Chapter 6: 이상형
+  document.getElementById('idealGood').innerHTML = data.idealGood.map(g => `<li><span class="icon">✓</span><span>${g}</span></li>`).join('');
+  document.getElementById('idealAvoid').innerHTML = data.idealAvoid.map(a => `<li><span class="icon">✗</span><span>${a}</span></li>`).join('');
+
+  // Chapter 7: 편지
+  document.getElementById('letterBody').textContent = data.letter;
+
+  // Chapter 8: 추천템 (쿠팡)
+  renderRecommends(type);
+
+  // 궁합 테스트 링크에 현재 유형 전달
+  const compatLink = document.getElementById('compatLink');
+  if (compatLink) compatLink.href = `compatibility.html?me=${type}`;
+
+  // 애니메이션
+  initReveal();
+  initScrollProgress();
+}
+
+// ===== 추천템 렌더링 =====
+function renderRecommends(type) {
+  const rec = RECOMMENDS[type];
+  if (!rec) return;
+
+  document.getElementById('recommendIntro').textContent = rec.intro;
+
+  document.getElementById('recommendList').innerHTML = rec.items.map(item => {
+    // ⚠️ 실제 운영 시 coupangSearch(item.kw)를 본인 파트너스 링크로 교체
+    const url = coupangSearch(item.kw);
+    return `
+      <a class="recommend-card reveal" href="${url}" target="_blank" rel="noopener nofollow sponsored">
+        <div class="recommend-emoji">${item.emoji}</div>
+        <div class="recommend-info">
+          <div class="recommend-name">${item.name}</div>
+          <div class="recommend-reason">${item.reason}</div>
+        </div>
+        <span class="recommend-arrow">쿠팡에서 보기</span>
+      </a>
+    `;
+  }).join('');
+}
+
+// ===== 4축 그래프 렌더링 =====
+function renderAxes(type, scores) {
+  const list = document.getElementById('axesList');
+  const letters = type.split('');
+
+  list.innerHTML = letters.map((letter, idx) => {
+    const axis = AXIS_INFO[idx + 1];
+    const isFirst = letter === axis.letters[0];
+    const otherLetter = isFirst ? axis.letters[1] : axis.letters[0];
+    const score = scores[`axis${idx + 1}`];
+    const desc = isFirst ? axis.labels[0] : axis.labels[1];
+
+    return `
+      <div class="axis-bar reveal">
+        <div class="axis-bar-header">
+          <div class="axis-bar-name">${axis.name}</div>
+          <div class="axis-bar-letter">
+            ${letter}<span class="small">vs</span>${otherLetter}
+          </div>
+        </div>
+        <div class="axis-bar-track">
+          <div class="axis-bar-fill" data-score="${score}"></div>
+          <div class="axis-bar-pct">${score}%</div>
+        </div>
+        <div class="axis-bar-desc">${desc} 성향이 강해요 — ${axis.desc}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ===== 등장 애니메이션 + 그래프 채우기 =====
+function initReveal() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('in');
+          // axis-bar이면 그래프 채우기
+          const fill = entry.target.querySelector('.axis-bar-fill');
+          if (fill) {
+            const score = fill.dataset.score;
+            setTimeout(() => fill.style.width = score + '%', 100);
+          }
+        }, i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+// ===== 스크롤 진행 인디케이터 =====
+function initScrollProgress() {
+  const fill = document.getElementById('scrollFill');
+  if (!fill) return;
+
+  window.addEventListener('scroll', () => {
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = (window.scrollY / total) * 100;
+    fill.style.width = Math.min(100, pct) + '%';
+  }, { passive: true });
+}
+
+// ===== 공유 =====
+function shareReport() {
+  const params = new URLSearchParams(window.location.search);
+  const type = params.get('type') || (() => {
+    try {
+      const r = JSON.parse(sessionStorage.getItem('lt16_result'));
+      return r?.type || 'ECRF';
+    } catch { return 'ECRF'; }
+  })();
+  const data = TYPES[type];
+  const text = `나는 ${type} ${data.emoji} ${data.name}!\n${data.tagline}\n\n너의 연애 유형은?\nlovetype16.com`;
+
+  if (navigator.share) {
+    navigator.share({
+      title: `Love Type 16 — ${type}`,
+      text: text,
+      url: window.location.href
+    }).catch(() => {
+      copyToClipboard(text);
+    });
+  } else {
+    copyToClipboard(text);
+  }
+}
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    showToast('결과가 복사됐어요 ✨');
+  }).catch(() => {
+    showToast('복사 실패. 다시 시도해주세요.');
+  });
+}
+
+function showToast(msg) {
+  const toast = document.createElement('div');
+  toast.style.cssText = `
+    position: fixed; top: 5rem; left: 50%; transform: translateX(-50%);
+    background: var(--wine); color: var(--cream); padding: 0.8rem 1.5rem;
+    border-radius: 100px; font-size: 0.85rem; font-weight: 500;
+    box-shadow: 0 12px 30px rgba(92, 31, 46, 0.3);
+    z-index: 300; opacity: 0; transition: all 0.3s;
+  `;
+  toast.textContent = msg;
+  document.body.appendChild(toast);
+
+  requestAnimationFrame(() => {
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateX(-50%) translateY(10px)';
+  });
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    setTimeout(() => toast.remove(), 300);
+  }, 2500);
+}
+
+// ===== 시작 =====
+render();
+</script>
+</body>
+</html>

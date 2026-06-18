@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이용약관 — Love Type 16</title>
+<!-- SEO -->
+<meta name="description" content="Love Type 16 서비스 이용약관입니다.">
+<meta name="author" content="Love Type 16">
+
+<!-- favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph (카카오톡, 페이스북) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Love Type 16">
+<meta property="og:title" content="이용약관 — Love Type 16">
+<meta property="og:description" content="Love Type 16 서비스 이용약관입니다.">
+<meta property="og:image" content="https://lovetype16.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://lovetype16.com/terms.html">
+<meta property="og:locale" content="ko_KR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="이용약관 — Love Type 16">
+<meta name="twitter:description" content="Love Type 16 서비스 이용약관입니다.">
+<meta name="twitter:image" content="https://lovetype16.com/og-image.png">
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root {
+    --cream: #f5ede0;
+    --cream-soft: #faf4ea;
+    --wine: #5c1f2e;
+    --wine-deep: #3d1420;
+    --wine-soft: #8a3a4d;
+    --gold: #c9a961;
+    --ink: #2a1810;
+    --ink-soft: #5a4438;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.75;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* 네비 */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 1rem 1.5rem;
+    background: rgba(245, 237, 224, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(60, 20, 30, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: var(--wine);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .logo .num { color: var(--gold); margin-left: 2px; }
+
+  .back-link {
+    font-size: 0.85rem;
+    color: var(--wine);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.4rem 0.6rem;
+  }
+
+  /* 본문 */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .doc-marker {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(1.7rem, 5vw, 2.1rem);
+    color: var(--wine);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .doc-meta {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(92, 31, 46, 0.1);
+    line-height: 1.7;
+  }
+
+  .doc-meta strong {
+    color: var(--wine);
+    font-weight: 600;
+  }
+
+  /* 목차 */
+  .toc {
+    background: var(--cream-soft);
+    border: 1px solid rgba(92, 31, 46, 0.08);
+    border-radius: 14px;
+    padding: 1.3rem 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .toc-title {
+    font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.9rem;
+  }
+
+  .toc ol {
+    list-style: none;
+    counter-reset: toc-counter;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  @media (min-width: 600px) {
+    .toc ol { grid-template-columns: 1fr 1fr; }
+  }
+
+  .toc li {
+    counter-increment: toc-counter;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .toc li::before {
+    content: counter(toc-counter, decimal-leading-zero) ' ';
+    color: var(--gold);
+    font-weight: 600;
+    margin-right: 0.4rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .toc a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .toc a:hover { color: var(--wine); }
+
+  /* 섹션 */
+  h2 {
+    font-size: 1.15rem;
+    color: var(--wine);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 2.5rem;
+    margin-bottom: 0.9rem;
+    padding-top: 0.5rem;
+    line-height: 1.4;
+  }
+
+  h2:first-of-type { margin-top: 1rem; }
+
+  h3 {
+    font-size: 0.95rem;
+    color: var(--wine-soft);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+  }
+
+  p, ul, ol {
+    font-size: 0.9rem;
+    color: var(--ink);
+    line-height: 1.85;
+    margin-bottom: 0.9rem;
+    font-weight: 400;
+  }
+
+  ul, ol {
+    padding-left: 1.5rem;
+  }
+
+  ul li, ol li {
+    margin-bottom: 0.4rem;
+  }
+
+  ul li::marker {
+    color: var(--gold);
+  }
+
+  ol li::marker {
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  strong {
+    color: var(--wine);
+    font-weight: 600;
+  }
+
+  /* 강조 박스 */
+  .notice {
+    background: rgba(201, 169, 97, 0.08);
+    border: 1px solid rgba(201, 169, 97, 0.3);
+    border-left: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  .notice strong {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--wine);
+  }
+
+  /* 푸터 */
+  footer {
+    background: var(--wine-deep);
+    color: var(--cream);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+
+  footer a {
+    color: var(--gold);
+    text-decoration: none;
+    margin: 0 0.4rem;
+  }
+
+  .footer-business {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(245, 237, 224, 0.1);
+    font-size: 0.72rem;
+    color: rgba(245, 237, 224, 0.5);
+    line-height: 1.8;
+  }
+
+  /* 스크롤 위치 보정 (sticky nav) */
+  h2, h3 { scroll-margin-top: 80px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Love Type<span class="num">16</span></a>
+  <a href="javascript:history.back()" class="back-link">← 뒤로</a>
+</nav>
+
+<main>
+  <div class="doc-marker">— Terms of Service —</div>
+  <h1>이용약관</h1>
+  <div class="doc-meta">
+    <strong>시행일자:</strong> 2026년 5월 4일<br>
+    <strong>최종 개정일:</strong> 2026년 5월 4일
+  </div>
+
+  <div class="notice">
+    <strong>📌 안내</strong>
+    본 약관은 Love Type 16(이하 "회사")이 제공하는 연애 유형 분석 서비스(이하 "서비스")의 이용과 관련하여 회사와 이용자(이하 "회원" 또는 "이용자") 간의 권리, 의무 및 책임사항을 규정합니다. 서비스를 이용하시기 전 반드시 정독해주시기 바랍니다.
+  </div>
+
+  <!-- 목차 -->
+  <div class="toc">
+    <div class="toc-title">— 목차</div>
+    <ol>
+      <li><a href="#s1">목적</a></li>
+      <li><a href="#s2">용어의 정의</a></li>
+      <li><a href="#s3">약관의 효력 및 변경</a></li>
+      <li><a href="#s4">서비스의 제공</a></li>
+      <li><a href="#s5">서비스 이용 계약</a></li>
+      <li><a href="#s6">서비스의 무료 제공</a></li>
+      <li><a href="#s7">제휴 마케팅 및 광고</a></li>
+      <li><a href="#s8">이용자의 의무</a></li>
+      <li><a href="#s9">회사의 의무</a></li>
+      <li><a href="#s10">서비스 이용 제한</a></li>
+      <li><a href="#s11">지식재산권</a></li>
+      <li><a href="#s12">면책조항</a></li>
+      <li><a href="#s13">손해배상</a></li>
+      <li><a href="#s14">분쟁 해결</a></li>
+      <li><a href="#s15">부칙</a></li>
+    </ol>
+  </div>
+
+  <h2 id="s1">제1조 (목적)</h2>
+  <p>이 약관은 Love Type 16(이하 "회사")이 운영하는 연애 유형 분석 서비스(이하 "서비스")를 이용함에 있어 회사와 이용자 간의 권리, 의무, 책임사항 및 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
+
+  <h2 id="s2">제2조 (용어의 정의)</h2>
+  <p>이 약관에서 사용하는 용어의 정의는 다음과 같습니다.</p>
+  <ol>
+    <li><strong>"서비스"</strong>란 회사가 제공하는 연애 유형 진단 테스트, 결과 리포트, 심층분석 리포트 및 관련 부가 기능 일체를 의미합니다.</li>
+    <li><strong>"이용자"</strong>란 본 약관에 따라 회사가 제공하는 서비스를 이용하는 모든 자를 말합니다.</li>
+    <li><strong>"심층분석"</strong>이란 테스트 결과를 바탕으로 제공되는 상세 분석 리포트로, 무료로 제공되는 콘텐츠 서비스를 의미합니다.</li>
+    <li><strong>"콘텐츠"</strong>란 서비스 내에서 제공되는 모든 텍스트, 이미지, 디자인, 분석 결과 및 기타 자료를 의미합니다.</li>
+  </ol>
+
+  <h2 id="s3">제3조 (약관의 효력 및 변경)</h2>
+  <ol>
+    <li>이 약관은 서비스 화면에 게시하거나 기타의 방법으로 공지함으로써 효력이 발생합니다.</li>
+    <li>회사는 「약관의 규제에 관한 법률」, 「전자상거래 등에서의 소비자보호에 관한 법률」 등 관계 법령을 위반하지 않는 범위 내에서 이 약관을 개정할 수 있습니다.</li>
+    <li>회사가 약관을 개정하는 경우 적용일자 및 개정사유를 명시하여 적용일자 7일 전부터 서비스 내에 공지합니다. 다만, 이용자에게 불리한 약관 개정의 경우 적용일자 30일 전부터 공지합니다.</li>
+    <li>이용자가 개정 약관에 동의하지 않는 경우 서비스 이용을 중단하고 이용 계약을 해지할 수 있습니다.</li>
+  </ol>
+
+  <h2 id="s4">제4조 (서비스의 제공)</h2>
+  <ol>
+    <li>회사가 제공하는 서비스는 다음과 같습니다.
+      <ul>
+        <li>24문항 연애 유형 테스트</li>
+        <li>유형 결과 페이지</li>
+        <li>심층분석 리포트(4축 점수 그래프, 성격 분석, 강점·약점, 갈등 대처 가이드, 궁합 분석, 이상형 가이드 등)</li>
+        <li>연애 관련 콘텐츠(블로그) 및 기타 부가 서비스</li>
+      </ul>
+    </li>
+    <li>위 모든 서비스는 <strong>무료로 제공</strong>됩니다.</li>
+    <li>서비스는 연중무휴 24시간 제공함을 원칙으로 합니다. 다만, 시스템 점검, 증설 및 교체, 정기점검 등의 사유로 일정 기간 서비스 제공이 중단될 수 있습니다.</li>
+    <li>회사는 서비스의 내용, 운영 방식 등을 사전 공지 후 변경할 수 있습니다.</li>
+  </ol>
+
+  <h2 id="s5">제5조 (서비스 이용 계약)</h2>
+  <ol>
+    <li>서비스 이용 계약은 이용자가 본 약관에 동의하고 회사가 정한 절차에 따라 서비스를 이용함으로써 성립됩니다.</li>
+    <li>현재 서비스는 회원가입 없이 누구나 이용 가능합니다.</li>
+    <li>이용자는 만 14세 이상이어야 서비스를 이용할 수 있습니다. 만 14세 미만 아동의 경우 서비스 이용이 제한될 수 있습니다.</li>
+  </ol>
+
+  <h2 id="s6">제6조 (서비스의 무료 제공)</h2>
+  <ol>
+    <li>회사가 제공하는 모든 콘텐츠 서비스(테스트, 결과, 심층분석 등)는 이용자에게 무료로 제공됩니다.</li>
+    <li>회사는 별도의 결제나 유료 결제를 요구하지 않습니다.</li>
+    <li>회사는 서비스 운영을 위해 광고 및 제휴 마케팅을 통한 수익 모델을 운영할 수 있으며, 이에 관한 사항은 제7조에 따릅니다.</li>
+    <li>회사는 향후 일부 서비스를 유료로 전환할 수 있으며, 이 경우 사전에 명확히 고지하고 이용자의 동의를 받습니다.</li>
+  </ol>
+
+  <h2 id="s7">제7조 (제휴 마케팅 및 광고)</h2>
+  <ol>
+    <li>회사는 서비스 내에 쿠팡 파트너스 등 제휴 마케팅 링크 및 광고를 게재할 수 있습니다.</li>
+    <li>이용자가 서비스 내 제휴 링크를 통해 외부 쇼핑몰 등에서 상품을 구매할 경우, 회사는 해당 제휴사로부터 일정액의 수수료를 제공받을 수 있습니다.</li>
+    <li>제휴 링크를 통한 상품의 구매 계약은 이용자와 해당 판매자(외부 쇼핑몰) 간에 직접 체결되며, 상품의 품질, 배송, 교환, 환불 등에 관한 책임은 해당 판매자에게 있습니다. 회사는 이에 대해 책임을 지지 않습니다.</li>
+    <li>회사는 「추천·보증 등에 관한 표시·광고 심사지침」에 따라 제휴 관계를 명확히 표시합니다.</li>
+  </ol>
+
+  <div class="notice">
+    <strong>📌 제휴 안내</strong>
+    이 사이트의 추천 콘텐츠 일부에는 쿠팡 파트너스 등 제휴 링크가 포함되어 있으며, 이를 통해 발생하는 구매에 대해 회사가 일정액의 수수료를 제공받습니다. 이용자에게 추가 비용은 발생하지 않습니다.
+  </div>
+
+  <h2 id="s8">제8조 (이용자의 의무)</h2>
+  <p>이용자는 다음 행위를 해서는 안 됩니다.</p>
+  <ul>
+    <li>타인의 정보 도용 또는 허위 정보 입력</li>
+    <li>회사의 서비스 운영을 방해하는 행위</li>
+    <li>서비스를 통해 얻은 정보를 회사의 사전 승낙 없이 복제·유통하거나 상업적으로 이용하는 행위</li>
+    <li>서비스의 안정적 운영을 방해하는 정보, 문장, 도형, 음향, 동영상 등을 전송, 게시하는 행위</li>
+    <li>회사 또는 제3자의 지식재산권을 침해하는 행위</li>
+    <li>회사의 동의 없이 서비스를 영리 목적으로 사용하는 행위</li>
+    <li>기타 관계 법령에 위배되는 행위</li>
+  </ul>
+
+  <h2 id="s9">제9조 (회사의 의무)</h2>
+  <ol>
+    <li>회사는 관계 법령과 이 약관이 금지하거나 미풍양속에 반하는 행위를 하지 않으며, 안정적인 서비스 제공을 위해 최선을 다합니다.</li>
+    <li>회사는 이용자의 개인정보 보호를 위해 보안 시스템을 갖추고 「개인정보처리방침」을 공시하고 준수합니다.</li>
+    <li>회사는 이용자가 제기한 의견이나 불만이 정당하다고 인정할 경우 적절한 절차를 거쳐 신속히 처리합니다.</li>
+  </ol>
+
+  <h2 id="s10">제10조 (서비스 이용 제한)</h2>
+  <ol>
+    <li>회사는 이용자가 본 약관의 의무를 위반하거나 서비스의 정상적인 운영을 방해한 경우 서비스 이용을 제한할 수 있습니다.</li>
+    <li>이용 제한 사유가 중대한 경우 회사는 사전 통지 없이 서비스 이용을 즉시 중단할 수 있습니다.</li>
+  </ol>
+
+  <h2 id="s11">제11조 (지식재산권)</h2>
+  <ol>
+    <li>서비스에 게시된 모든 콘텐츠(텍스트, 이미지, 디자인, 분석 결과 등)에 대한 저작권 및 기타 지식재산권은 회사에 귀속됩니다.</li>
+    <li>이용자는 서비스를 이용함으로써 얻은 정보를 회사의 사전 승낙 없이 복제·송신·출판·배포·방송 기타 방법으로 영리 목적에 이용하거나 제3자에게 이용하게 해서는 안 됩니다.</li>
+    <li>이용자는 자신의 결과 리포트를 개인적 용도로 SNS 등에 공유할 수 있습니다.</li>
+  </ol>
+
+  <h2 id="s12">제12조 (면책조항)</h2>
+  <ol>
+    <li>회사가 제공하는 서비스는 <strong>오락 및 자기 이해를 위한 참고용</strong>이며, 의학적·심리학적·전문 상담 서비스가 아닙니다.</li>
+    <li>회사는 서비스 결과를 바탕으로 한 이용자의 결정 및 그 결과에 대해 책임을 지지 않습니다.</li>
+    <li>회사는 천재지변, 전쟁, 기간통신사업자의 서비스 중지, 해킹 등 회사의 합리적인 통제를 벗어난 사유로 인한 서비스 제공 장애에 대해 책임을 지지 않습니다.</li>
+    <li>회사는 이용자 간 또는 이용자와 제3자 간에 서비스를 매개로 발생한 분쟁에 대해 개입할 의무가 없으며, 이로 인한 손해를 배상할 책임이 없습니다.</li>
+  </ol>
+
+  <h2 id="s13">제13조 (손해배상)</h2>
+  <p>회사 또는 이용자가 본 약관을 위반하여 상대방에게 손해가 발생한 경우, 손해를 입은 당사자는 관계 법령에 따라 손해배상을 청구할 수 있습니다.</p>
+
+  <h2 id="s14">제14조 (분쟁 해결)</h2>
+  <ol>
+    <li>회사와 이용자 간에 발생한 분쟁에 대하여는 대한민국 법령을 적용합니다.</li>
+    <li>서비스 이용으로 발생한 분쟁에 대해 소송이 제기될 경우 회사 본사 소재지를 관할하는 법원을 합의관할 법원으로 합니다.</li>
+  </ol>
+
+  <h2 id="s15">부칙</h2>
+  <p>본 약관은 2026년 5월 4일부터 시행됩니다.</p>
+
+</main>
+
+<footer>
+  <div>
+    <a href="blog.html">러브레터</a> ·
+    <a href="terms.html">이용약관</a> ·
+    <a href="privacy.html">개인정보처리방침</a> ·
+  </div>
+  <div class="footer-business">
+    상호: [상호명을 입력하세요] ㅣ 대표: [대표자명] ㅣ 사업자등록번호: [000-00-00000]<br>
+    주소: [사업장 주소] ㅣ 통신판매업신고: [신고번호]<br>
+    고객센터: assxq@naver.com
+  </div>
+</footer>
+
+</body>
+</html>

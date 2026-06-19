@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>당신의 결과 — Love Type 16</title>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3042136140366202" crossorigin="anonymous"></script>
+<!-- SEO -->
+<meta name="description" content="16가지 연애 유형 중 나는 어떤 사람일까? 내 유형을 확인하고 친구와 비교해보세요.">
+<meta name="author" content="Love Type 16">
+
+<!-- favicon -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph (카카오톡, 페이스북) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Love Type 16">
+<meta property="og:title" content="당신의 연애 유형 결과 — Love Type 16">
+<meta property="og:description" content="16가지 연애 유형 중 나는 어떤 사람일까? 내 유형을 확인하고 친구와 비교해보세요.">
+<meta property="og:image" content="https://www.lovetype16.xyz/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://www.lovetype16.xyz/result.html">
+<meta property="og:locale" content="ko_KR">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="당신의 연애 유형 결과 — Love Type 16">
+<meta name="twitter:description" content="16가지 연애 유형 중 나는 어떤 사람일까? 내 유형을 확인하고 친구와 비교해보세요.">
+<meta name="twitter:image" content="https://www.lovetype16.xyz/og-image.png">
+
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
+<style>
+  :root {
+    --cream: #f5ede0;
+    --cream-soft: #faf4ea;
+    --cream-deep: #ebe0cf;
+    --wine: #5c1f2e;
+    --wine-deep: #3d1420;
+    --wine-soft: #8a3a4d;
+    --gold: #c9a961;
+    --gold-soft: #e0c896;
+    --ink: #2a1810;
+    --ink-soft: #5a4438;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-bottom: 100px; /* sticky bar 공간 */
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.05;
+    z-index: 100;
+    mix-blend-mode: multiply;
+  }
+
+  /* ===== 네비게이션 ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    padding: 1.1rem 1.5rem;
+    background: rgba(245, 237, 224, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(60, 20, 30, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--wine);
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+
+  .logo .num {
+    color: var(--gold);
+    margin-left: 2px;
+    font-weight: 700;
+  }
+
+  .home-link {
+    font-size: 0.85rem;
+    color: var(--wine);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.4rem 0.6rem;
+  }
+
+  /* ===== 히어로 ===== */
+  .hero {
+    padding: 6rem 1.5rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-deco {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(92, 31, 46, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-deco::after {
+    content: '';
+    position: absolute;
+    inset: 30px;
+    border: 1px dashed rgba(201, 169, 97, 0.3);
+    border-radius: 50%;
+  }
+
+  .hero-marker {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+  }
+
+  .type-emoji {
+    font-size: 4.5rem;
+    line-height: 1;
+    margin-bottom: 1.2rem;
+    filter: drop-shadow(0 8px 20px rgba(92, 31, 46, 0.15));
+    position: relative;
+    animation: gentleFloat 4s ease-in-out infinite;
+  }
+
+  @keyframes gentleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .type-code {
+    font-size: clamp(2.5rem, 9vw, 3.6rem);
+    color: var(--wine);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    margin-bottom: 0.7rem;
+    position: relative;
+  }
+
+  .type-name {
+    font-size: clamp(1.1rem, 4vw, 1.3rem);
+    color: var(--wine-soft);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .type-tagline {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    max-width: 28rem;
+    margin: 0 auto;
+    font-weight: 400;
+    position: relative;
+    padding: 1.4rem 1.5rem;
+    background: #fffdf9;
+    border-radius: 16px;
+    border: 1px solid rgba(201, 169, 97, 0.25);
+    box-shadow: 0 8px 24px rgba(92, 31, 46, 0.07);
+  }
+
+  .type-tagline::before, .type-tagline::after {
+    content: '"';
+    color: var(--gold);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 0;
+    position: relative;
+  }
+
+  .type-tagline::before {
+    margin-right: 0.3rem;
+    top: 0.4rem;
+  }
+
+  .type-tagline::after {
+    margin-left: 0.3rem;
+    top: 0.6rem;
+  }
+
+  /* ===== 4축 미리보기 ===== */
+  .axes-preview {
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .axes-grid {
+    max-width: 500px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+  }
+
+  .axis-pill {
+    background: var(--cream-soft);
+    border: 1px solid rgba(92, 31, 46, 0.1);
+    border-radius: 12px;
+    padding: 0.9rem 0.4rem;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .axis-pill:hover {
+    border-color: var(--wine-soft);
+    transform: translateY(-2px);
+  }
+
+  .axis-letter {
+    font-size: 1.6rem;
+    color: var(--wine);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.02em;
+  }
+
+  .axis-label {
+    font-size: 0.68rem;
+    color: var(--ink-soft);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  /* ===== 섹션 공통 ===== */
+  section {
+    padding: 3rem 1.5rem;
+    position: relative;
+  }
+
+  .section-marker {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    color: var(--wine);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: -0.025em;
+    text-align: center;
+  }
+
+  /* ===== 핵심 특징 (무료) ===== */
+  .features {
+    background: var(--cream-soft);
+    border-top: 1px solid rgba(92, 31, 46, 0.06);
+    border-bottom: 1px solid rgba(92, 31, 46, 0.06);
+  }
+
+  .features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .feature {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 1.5rem 1.4rem;
+    border-left: 3px solid var(--gold);
+    transition: all 0.3s;
+  }
+
+  .feature:hover {
+    transform: translateX(3px);
+    border-left-color: var(--wine);
+    box-shadow: 0 6px 20px rgba(92, 31, 46, 0.06);
+  }
+
+  .feature-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .feature-title {
+    font-size: 1rem;
+    color: var(--wine);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .feature-desc {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  /* ===== 잠금 영역 ===== */
+  .locked {
+    padding: 4rem 1.5rem 2rem;
+    position: relative;
+  }
+
+  .locked-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .locked-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    display: inline-block;
+  }
+
+  .locked-title {
+    font-size: 1.4rem;
+    color: var(--wine);
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.025em;
+  }
+
+  .locked-sub {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  .locked-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  .locked-item {
+    background: var(--cream-soft);
+    border: 1px solid rgba(92, 31, 46, 0.1);
+    border-radius: 12px;
+    padding: 1.1rem 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .locked-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 60%, rgba(245, 237, 224, 0.7));
+    pointer-events: none;
+  }
+
+  .locked-emoji {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .locked-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .locked-name {
+    font-size: 0.92rem;
+    color: var(--wine);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    letter-spacing: -0.01em;
+  }
+
+  .locked-preview {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    filter: blur(4px);
+    user-select: none;
+    line-height: 1.5;
+    font-weight: 400;
+    -webkit-user-select: none;
+  }
+
+  .locked-tag {
+    font-size: 0.65rem;
+    color: var(--wine-soft);
+    background: rgba(92, 31, 46, 0.08);
+    padding: 0.2rem 0.5rem;
+    border-radius: 100px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    text-transform: uppercase;
+  }
+
+  /* ===== 결제 CTA ===== */
+  .pricing-cta {
+    background: var(--wine-deep);
+    color: var(--cream);
+    padding: 4rem 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(201, 169, 97, 0.08), transparent 50%);
+  }
+
+  .badge-beta {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  .pricing-title {
+    font-size: 1.5rem;
+    color: var(--cream);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.025em;
+    position: relative;
+  }
+
+  .pricing-title .accent {
+    color: var(--gold-soft);
+  }
+
+  .price-display {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.7rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  .price-old {
+    font-size: 1rem;
+    color: var(--gold-soft);
+    text-decoration: line-through;
+    opacity: 0.5;
+    font-weight: 400;
+  }
+
+  .price-now {
+    font-size: 2.5rem;
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  .price-unit {
+    font-size: 1.2rem;
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .price-meta {
+    font-size: 0.78rem;
+    color: var(--gold-soft);
+    margin-bottom: 2rem;
+    position: relative;
+    letter-spacing: 0.02em;
+  }
+
+  /* 심층분석 미리보기 그리드 */
+  .report-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    max-width: 440px;
+    margin: 0 auto 2rem;
+    position: relative;
+  }
+
+  .report-preview-item {
+    background: rgba(245, 237, 224, 0.06);
+    border: 1px solid rgba(201, 169, 97, 0.2);
+    border-radius: 10px;
+    padding: 0.85rem 0.7rem;
+    font-size: 0.82rem;
+    color: var(--gold-soft);
+    text-align: left;
+    font-weight: 500;
+  }
+
+  .pricing-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: var(--gold);
+    color: var(--wine-deep);
+    padding: 1.15rem 2.2rem;
+    border: none;
+    border-radius: 100px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 10px 40px rgba(201, 169, 97, 0.35);
+    position: relative;
+  }
+
+  .pricing-btn:hover, .pricing-btn:active {
+    transform: translateY(-2px) scale(1.02);
+    background: var(--gold-soft);
+  }
+
+  .benefits-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    position: relative;
+  }
+
+  .benefit {
+    font-size: 0.78rem;
+    color: var(--gold-soft);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+  }
+
+  .benefit-check {
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* ===== Sticky 하단 액션 바 ===== */
+  .sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(245, 237, 224, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(60, 20, 30, 0.08);
+    padding: 0.8rem 1rem;
+    z-index: 90;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: 0 -10px 30px rgba(60, 20, 30, 0.06);
+  }
+
+  .sticky-btn {
+    flex: 1;
+    background: transparent;
+    border: 1px solid rgba(92, 31, 46, 0.15);
+    color: var(--wine);
+    padding: 0.85rem 0.5rem;
+    border-radius: 100px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  .sticky-btn:hover, .sticky-btn:active {
+    background: var(--wine);
+    color: var(--cream);
+    border-color: var(--wine);
+  }
+
+  .sticky-btn.primary {
+    flex: 1.6;
+    background: var(--wine);
+    color: var(--cream);
+    border-color: var(--wine);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(92, 31, 46, 0.25);
+  }
+
+  .sticky-btn.primary:hover, .sticky-btn.primary:active {
+    background: var(--wine-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(92, 31, 46, 0.35);
+  }
+
+  .sticky-btn-icon {
+    font-size: 0.95rem;
+  }
+
+  /* ===== 모달 (공유/결제 안내) ===== */
+  .modal-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(45, 20, 25, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 200;
+    display: none;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 1rem;
+    animation: fadeIn 0.3s;
+  }
+
+  .modal-bg.show {
+    display: flex;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .modal {
+    background: var(--cream);
+    border-radius: 24px 24px 16px 16px;
+    padding: 2rem 1.5rem 1.5rem;
+    max-width: 460px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: slideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .modal-handle {
+    width: 36px;
+    height: 4px;
+    background: rgba(92, 31, 46, 0.2);
+    border-radius: 100px;
+    margin: -0.8rem auto 1.2rem;
+  }
+
+  .modal-title {
+    font-size: 1.15rem;
+    color: var(--wine);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.02em;
+  }
+
+  .modal-sub {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .modal-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .modal-option {
+    background: var(--cream-soft);
+    border: 1px solid rgba(92, 31, 46, 0.1);
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: left;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 0.9rem;
+    color: var(--ink);
+    font-weight: 500;
+    width: 100%;
+  }
+
+  .modal-option:hover {
+    border-color: var(--wine-soft);
+    background: var(--cream);
+    transform: translateY(-1px);
+  }
+
+  .modal-option-icon {
+    font-size: 1.3rem;
+    width: 32px;
+    text-align: center;
+  }
+
+  .modal-cancel {
+    margin-top: 1rem;
+    background: transparent;
+    border: none;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.7rem;
+    width: 100%;
+    font-family: 'Pretendard', sans-serif;
+  }
+
+  /* ===== 약관 동의 영역 ===== */
+  .payment-agree {
+    background: var(--cream-soft);
+    border: 1px solid rgba(92, 31, 46, 0.1);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .agree-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.4rem 0;
+    cursor: pointer;
+    font-size: 0.83rem;
+    color: var(--ink);
+    line-height: 1.5;
+    user-select: none;
+  }
+
+  .agree-row input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid rgba(92, 31, 46, 0.3);
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+    background: var(--cream);
+  }
+
+  .agree-row input[type="checkbox"]:checked {
+    background: var(--wine);
+    border-color: var(--wine);
+  }
+
+  .agree-row input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--cream);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .agree-text {
+    flex: 1;
+    font-weight: 400;
+  }
+
+  .agree-text strong {
+    color: var(--wine);
+    font-weight: 700;
+  }
+
+  .agree-text a {
+    color: var(--wine);
+    text-decoration: underline;
+    text-decoration-color: rgba(92, 31, 46, 0.3);
+    text-underline-offset: 2px;
+    font-weight: 500;
+  }
+
+  .agree-text a:hover {
+    text-decoration-color: var(--wine);
+  }
+
+  .agree-divider {
+    height: 1px;
+    background: rgba(92, 31, 46, 0.1);
+    margin: 0.4rem 0;
+  }
+
+  /* ===== 데스크톱 ===== */
+  @media (min-width: 768px) {
+    nav {
+      padding: 1.3rem 3rem;
+    }
+
+    .hero {
+      padding: 8rem 3rem 4rem;
+    }
+
+    section {
+      padding: 4rem 3rem;
+    }
+
+    .pricing-cta {
+      padding: 5rem 3rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .pricing-title {
+      font-size: 1.8rem;
+    }
+
+    .sticky-bar {
+      padding: 1rem 2rem;
+    }
+
+    .sticky-btn {
+      font-size: 0.9rem;
+      padding: 0.95rem 0.7rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero, .axes-preview, .features, .locked, .pricing-cta {
+      padding-left: max(3rem, calc((100vw - 800px) / 2));
+      padding-right: max(3rem, calc((100vw - 800px) / 2));
+    }
+  }
+
+  /* 등장 애니메이션 */
+  .reveal {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== 광고 슬롯 (공통) ===== */
+  .ad-slot {
+    max-width: 540px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+  .ad-inner {
+    min-height: 100px;
+    background: rgba(92, 31, 46, 0.03);
+    border: 1px dashed rgba(92, 31, 46, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .ad-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+  /* 광고 승인 전 안내 (실제 광고 코드 넣으면 .ad-placeholder는 가려짐) */
+  .ad-placeholder {
+    font-size: 0.75rem;
+    color: var(--ink-light);
+    text-align: center;
+    line-height: 1.5;
+    padding: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <a href="index.html" class="logo">Love Type<span class="num">16</span></a>
+  <a href="index.html" class="home-link">홈</a>
+</nav>
+
+<!-- ===== HERO (유형 결과) ===== -->
+<section class="hero">
+  <div class="hero-deco"></div>
+  <div class="hero-marker">— Your Love Type —</div>
+  <div class="type-emoji" id="typeEmoji">🌹</div>
+  <div class="type-code" id="typeCode">ECRF</div>
+  <div class="type-name" id="typeName">열정 로맨티시스트</div>
+  <div class="type-tagline" id="typeTagline">사랑은 내 삶의 메인 테마. 좋아하면 온 마음으로, 온 세상에 알리고 싶어.</div>
+</section>
+
+<!-- ===== 4축 미리보기 ===== -->
+<section class="axes-preview">
+  <div class="axes-grid" id="axesGrid">
+    <!-- JS 렌더링 -->
+  </div>
+</section>
+
+<!-- ===== 핵심 특징 3개 (무료) ===== -->
+<section class="features">
+  <div class="reveal">
+    <div class="section-marker">— Key Traits</div>
+    <h2 class="section-title">당신의 핵심 특징</h2>
+  </div>
+  <div class="features-list" id="featuresList">
+    <!-- JS 렌더링 -->
+  </div>
+</section>
+
+<!-- ===== 광고 슬롯 1 ===== -->
+<div class="ad-slot reveal">
+  <div class="ad-label">Advertisement</div>
+  <div class="ad-inner">
+    <!-- ▼▼▼ 애드센스 승인 후 여기에 광고 코드 붙여넣기 ▼▼▼ -->
+    <div class="ad-placeholder">광고 영역<br>(애드센스 승인 후 표시됩니다)</div>
+    <!-- ▲▲▲ 애드센스 코드로 위 div를 교체 ▲▲▲ -->
+  </div>
+</div>
+
+<!-- ===== 심층분석 안내 (무료) ===== -->
+<section class="pricing-cta">
+  <div class="badge-beta reveal">— Full Report —</div>
+  <h2 class="pricing-title reveal">
+    더 깊은 <span class="accent">나의 연애</span>가<br>
+    기다리고 있어요
+  </h2>
+
+  <div class="report-preview reveal">
+    <div class="report-preview-item">📊 4축 점수 그래프</div>
+    <div class="report-preview-item">💚 연애할 때 강점·약점</div>
+    <div class="report-preview-item">⚡ 갈등 대처 가이드</div>
+    <div class="report-preview-item">💞 찰떡 궁합 TOP 3</div>
+    <div class="report-preview-item">💔 상극 궁합 TOP 3</div>
+    <div class="report-preview-item">💌 나에게 보내는 편지</div>
+  </div>
+
+  <button class="pricing-btn reveal" onclick="goToDeepAnalysis()">
+    <span>심층분석 무료로 보기</span>
+    <span>→</span>
+  </button>
+
+  <div class="price-meta reveal" style="margin-top:1.2rem;">전부 무료로 공개돼요 ✨</div>
+</section>
+
+<!-- ===== Sticky 하단 바 ===== -->
+<div class="sticky-bar">
+  <button class="sticky-btn" onclick="openShare()">
+    <span class="sticky-btn-icon">📤</span>
+    <span>공유</span>
+  </button>
+  <button class="sticky-btn" onclick="retakeTest()">
+    <span class="sticky-btn-icon">🔄</span>
+    <span>다시</span>
+  </button>
+  <button class="sticky-btn primary" onclick="goToDeepAnalysis()">
+    <span class="sticky-btn-icon">💕</span>
+    <span>심층분석 보기</span>
+  </button>
+</div>
+
+<!-- ===== 공유 모달 ===== -->
+<div class="modal-bg" id="shareModal" onclick="closeModal(event, 'shareModal')">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <h3 class="modal-title">결과 공유하기</h3>
+    <p class="modal-sub">친구에게 보여주고 같이 해봐요</p>
+    <div class="modal-options">
+      <button class="modal-option" onclick="saveCard()">
+        <span class="modal-option-icon">🖼️</span>
+        <span>결과 이미지 저장 (스토리용)</span>
+      </button>
+      <button class="modal-option" onclick="shareTo('kakao')">
+        <span class="modal-option-icon">💬</span>
+        <span>카카오톡으로 보내기</span>
+      </button>
+      <button class="modal-option" onclick="shareTo('link')">
+        <span class="modal-option-icon">🔗</span>
+        <span>링크 복사</span>
+      </button>
+    </div>
+    <button class="modal-cancel" onclick="closeModal(null, 'shareModal')">취소</button>
+  </div>
+</div>
+
+<!-- ===== 카드 미리보기 모달 ===== -->
+<div class="modal-bg" id="cardModal" onclick="closeModal(event, 'cardModal')">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <h3 class="modal-title">결과 카드</h3>
+    <p class="modal-sub">이미지를 길게 눌러 저장하거나, 아래 버튼으로 저장하세요</p>
+    <div id="cardPreview" style="display:flex; justify-content:center; margin:1rem 0;">
+      <!-- canvas가 이미지로 변환되어 여기 들어감 -->
+    </div>
+    <button class="modal-option" style="width:100%; justify-content:center;" onclick="downloadCard()">
+      <span class="modal-option-icon">⬇️</span>
+      <span>이미지 저장</span>
+    </button>
+    <button class="modal-cancel" onclick="closeModal(null, 'cardModal')">닫기</button>
+  </div>
+</div>
+
+<!-- ===== 다시 테스트 모달 ===== -->
+<div class="modal-bg" id="retakeModal" onclick="closeModal(event, 'retakeModal')">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <h3 class="modal-title">다시 해볼래요?</h3>
+    <p class="modal-sub">이전 결과는 사라지고,<br>답을 더 솔직하게 다시 골라볼 수 있어요</p>
+    <div class="modal-options">
+      <button class="modal-option" onclick="confirmRetake()">
+        <span class="modal-option-icon">🔄</span>
+        <span>네, 다시 할래요</span>
+      </button>
+    </div>
+    <button class="modal-cancel" onclick="closeModal(null, 'retakeModal')">아니요, 그냥 둘래요</button>
+  </div>
+</div>
+
+<script>
+  // ===== 16유형 데이터 =====
+  const TYPES = {
+    ECRF: {
+      emoji: '🌹', name: '열정 로맨티시스트',
+      tagline: '사랑은 내 삶의 메인 테마. 좋아하면 온 마음으로, 온 세상에 알리고 싶어.',
+      features: [
+        { icon: '✨', title: '사랑이 곧 당신의 언어', desc: '마음을 숨기는 법을 모르고, 좋아하는 사람 앞에서는 표정부터 달라지는 사람.' },
+        { icon: '💕', title: '함께 있는 시간 = 사랑의 증거', desc: '자주 보고 자주 연락해야 사랑받고 있다고 느끼는 본능.' },
+        { icon: '⚡', title: '갈등은 미루면 곪는다', desc: '싸우면 그 자리에서 풀어야 직성이 풀리는 정면돌파형.' }
+      ]
+    },
+    ECRA: {
+      emoji: '🎀', name: '츤데레 로맨티스트',
+      tagline: '좋아할 땐 다 보여주는데, 삐지면 며칠은 가야 해. 사랑은 뜨겁게, 화해는 천천히.',
+      features: [
+        { icon: '💖', title: '평소엔 가장 사랑스러운 사람', desc: '애교 많고 다정하고 챙김도 만점. 함께 있는 시간이 즐거운 분위기 메이커.' },
+        { icon: '🌪️', title: '한번 삐지면 다른 사람', desc: '마음 상하면 답장이 짧아지고 결국 잠수에 가까워지는 모드 전환.' },
+        { icon: '🍰', title: '화해 후의 사랑이 가장 진해짐', desc: '잠수 → 화해의 사이클을 지나면 평소보다 더 애틋해지는 회복형.' }
+      ]
+    },
+    ECLF: {
+      emoji: '💼', name: '직진 현실주의자',
+      tagline: '좋아하면 표현해. 근데 우리 미래는 어떻게 될까? — 라고 3개월 차에 묻는 사람.',
+      features: [
+        { icon: '📋', title: '사랑도 진지하게 임하는 사람', desc: '"이 사람과 5년 후가 가능한가"를 떠올리는 책임감 있는 사랑.' },
+        { icon: '💕', title: '표현은 아끼지 않음', desc: '좋아한다 분명히 말하고 자주 보고 싶어하고 챙김도 잘하는 직진러.' },
+        { icon: '🎯', title: '빠른 단계 진입을 원함', desc: '"썸"이 길어지는 걸 못 견디고 미래·결혼 얘기를 빨리 꺼내는 타입.' }
+      ]
+    },
+    ECLA: {
+      emoji: '📋', name: '표현형 신중파',
+      tagline: '좋아한다는 말은 자주, 결정은 천천히, 싸울 땐 한 박자 쉬어가기.',
+      features: [
+        { icon: '🍃', title: '다정함과 신중함의 공존', desc: '살갑게 표현하면서도 머리는 늘 차분한 균형의 사람.' },
+        { icon: '📝', title: '결정 전에 시간이 필요', desc: '사귀자는 고백에도 "생각해볼게"라고 답하는 신중함의 정수.' },
+        { icon: '🌙', title: '갈등 앞에선 한 박자 쉬어가기', desc: '그 자리에서 결론 내리지 않고 차분해진 후 대화하는 어른의 방식.' }
+      ]
+    },
+    ESRF: {
+      emoji: '🦋', name: '자유로운 로맨티스트',
+      tagline: '사랑해. 근데 이번 주말은 혼자 있을게 — 라고 말해도 어색하지 않은 사람.',
+      features: [
+        { icon: '🌿', title: '사랑하지만 잠식되긴 싫음', desc: '좋아하는 사람이 생겨도 자기 자신을 잃지 않는 건강한 자기 인식.' },
+        { icon: '💌', title: '표현은 아끼지 않음', desc: '거리를 둔다고 표현까지 아끼는 건 아닌, 농도 짙은 사랑.' },
+        { icon: '⚡', title: '갈등은 빠르게, 깔끔하게', desc: '미루지 않고 차분히 합의점을 찾는 효율적이고 어른스러운 스타일.' }
+      ]
+    },
+    ESRA: {
+      emoji: '🖤', name: '시크한 로맨티스트',
+      tagline: '좋아해. 근데 며칠 답장 없어도 너무 걱정하진 마 — 내 스타일이야.',
+      features: [
+        { icon: '🖤', title: '절제된 표현의 미학', desc: '매일 "좋아해" 하지 않지만 한번 하면 무게감 있는 사랑.' },
+        { icon: '🌙', title: '혼자 있는 시간이 곧 충전', desc: '좋아하는 사람이라도 정기적으로 거리가 필요한 본질의 사람.' },
+        { icon: '🌫️', title: '갈등 나면 사라지는 사람', desc: '답장이 끊기고 며칠 잠수하며 자기 안에서 정리하는 미스터리 타입.' }
+      ]
+    },
+    ESLF: {
+      emoji: '⚡', name: '쿨한 직진러',
+      tagline: '좋아하면 좋아한다. 별로면 별로다. 갈등은 그 자리에서 — 시간 낭비 싫어.',
+      features: [
+        { icon: '⚡', title: '명확함이 곧 사랑의 방식', desc: '좋으면 좋다, 안 맞으면 끝, 시간 낭비 없는 효율의 미덕.' },
+        { icon: '💼', title: '일과 연애의 균형', desc: '사랑이 인생의 전부가 아니라 중요한 한 축, 둘 다 잘하는 사람.' },
+        { icon: '🚀', title: '갈등 = 빠른 해결', desc: '그 자리에서 핵심을 짚고 결론까지 도출하는 단호한 스타일.' }
+      ]
+    },
+    ESLA: {
+      emoji: '🍷', name: '어른 연애러',
+      tagline: '표현은 적당히, 거리는 적당히, 결정은 신중히, 갈등은 식혀서. — 가장 균형 잡힌 사랑.',
+      features: [
+        { icon: '🍷', title: '균형 잡힌 어른의 사랑', desc: '매일 "사랑해" 외치진 않지만 매일 챙기는 안정감의 정수.' },
+        { icon: '🌿', title: '적절한 거리감의 미학', desc: '본능적으로 정해진 "적정선"이 안정적인 관계를 만드는 사람.' },
+        { icon: '🌸', title: '관계의 안정성이 곧 행복', desc: '두근거림보단 편안함, 격렬함보단 신뢰를 추구하는 어른.' }
+      ]
+    },
+    HCRF: {
+      emoji: '🐰', name: '소심한 껌딱지',
+      tagline: '보고 싶은데 말 못 하겠어. 같이 있고 싶은데 먼저 연락 못 하겠어. 근데… 우리 진짜 얘기 좀 해.',
+      features: [
+        { icon: '🐰', title: '마음은 큰데 입은 작은 사람', desc: '하고 싶은 말이 가득하지만 막상 입을 열려 하면 목에 걸리는 타입.' },
+        { icon: '🥺', title: '같이 있고 싶다는 마음은 누구보다 큼', desc: '매일 만나고 싶은데 먼저 요구할 용기가 없는 모순의 사람.' },
+        { icon: '⚡', title: '무섭지만 갈등은 풀어야 함', desc: '떨면서도 "얘기 좀 해야 할 것 같아"라고 꺼내는 의외의 단단함.' }
+      ]
+    },
+    HCRA: {
+      emoji: '🥺', name: '속앓이 로맨티스트',
+      tagline: '좋아한다 말 못 했어. 서운하다 말 못 했어. 헤어지자도 말 못 했어. 일기장만 두꺼워져.',
+      features: [
+        { icon: '🥺', title: '일기장이 가장 두꺼운 사람', desc: '모든 감정을 안으로 삼키며 메모장에 쌓아두는 깊이의 소유자.' },
+        { icon: '💔', title: '서운함을 절대 말 못 함', desc: '"내가 너무 예민한 건가" 자기 검열로 입을 닫는 사람.' },
+        { icon: '🌧️', title: '갈등 = 잠수 + 자책', desc: '답장 끊고 며칠 사라지며 자기 탓 모드로 돌입하는 패턴.' }
+      ]
+    },
+    HCLF: {
+      emoji: '📖', name: '조용한 진심파',
+      tagline: '말은 적게. 행동은 확실히. 미래는 같이. 갈등은 똑바로.',
+      features: [
+        { icon: '📖', title: '묵직한 진심의 사람', desc: '"좋아해" 자주 외치진 않지만 매일 곁에 있는 일기예보 같은 사랑.' },
+        { icon: '🏠', title: '함께하는 일상이 곧 행복', desc: '거창한 이벤트보다 일상의 시간이 가장 소중한 결혼 체질.' },
+        { icon: '⚡', title: '의외의 갈등 정면돌파', desc: '평소엔 조용해도 갈등 앞에선 단호하게 짚고 가는 단단함.' }
+      ]
+    },
+    HCLA: {
+      emoji: '🗝️', name: '무뚝뚝한 로열티',
+      tagline: '말은 안 해도 매일 챙겨. 싸우면 며칠 말 안 해. 근데 내 사람이야 — 평생.',
+      features: [
+        { icon: '🗝️', title: '표현이 가장 적은 사랑꾼', desc: '"좋아해"는 1년에 몇 번뿐이지만 매일 챙기는 행동파.' },
+        { icon: '🐕', title: '한번 정한 사람은 평생', desc: '흔들림 없이 한눈팔지 않고 끝까지 곁에 있는 충성스러운 사랑.' },
+        { icon: '🌧️', title: '며칠 말 안 해도 결국 풀러 옴', desc: '"밥 먹자" 한마디로 풀어내는 묵직한 사과의 방식.' }
+      ]
+    },
+    HSRF: {
+      emoji: '🔮', name: '신비주의 로맨티스트',
+      tagline: '평소엔 멀리 있어. 그런데 결정적 순간에 — 갑자기 훅 들어와.',
+      features: [
+        { icon: '🔮', title: '거리감 안의 낭만주의자', desc: '겉은 차가워 보여도 속은 가장 감성적인 갭의 소유자.' },
+        { icon: '✨', title: '결정적 순간에 훅 들어옴', desc: '자주 안 하기에 한 번이 임팩트 어마어마한 미스터리 매력.' },
+        { icon: '⚡', title: '갈등은 미루지 않음', desc: '평소엔 조용해도 "이건 짚어야 한다"고 분명히 말하는 의외의 단단함.' }
+      ]
+    },
+    HSRA: {
+      emoji: '🌙', name: '고독한 몽상가',
+      tagline: '혼자만의 세계가 있어. 그 세계를 보여줄 사람을 만나는 것 — 평생 한두 번뿐일지도 몰라.',
+      features: [
+        { icon: '🌙', title: '자기 안에 우주를 가진 사람', desc: '혼자 있는 시간이 가장 풍요로운 충만한 고독의 소유자.' },
+        { icon: '🌌', title: '사람이 많이 필요하지 않음', desc: '깊이 있는 관계 한둘이 얕은 관계 백 명보다 가치 있다고 믿음.' },
+        { icon: '🌫️', title: '갈등 = 사라짐', desc: '답장 끊고 며칠~몇 주 보이지 않다가 조용히 돌아오는 신비로움.' }
+      ]
+    },
+    HSLF: {
+      emoji: '🦉', name: '침착한 관찰자',
+      tagline: '표현은 적게. 거리는 유지. 가치관은 분명. 갈등은 똑바로. — 어른 of 어른.',
+      features: [
+        { icon: '🦉', title: '모든 걸 차분히 보는 사람', desc: '좋아도 차분, 화나도 차분, 한 발 떨어져 관찰하는 어른의 방식.' },
+        { icon: '📐', title: '가치관이 곧 사랑의 기반', desc: '안 맞는 사람과는 시작 자체를 안 하는 신중함의 정수.' },
+        { icon: '🍷', title: '갈등은 정면돌파, 우아하게', desc: '큰소리 없이 핵심만 짚어 결론까지 끌고 가는 사람.' }
+      ]
+    },
+    HSLA: {
+      emoji: '🏔️', name: '신중한 거리유지러',
+      tagline: '마음을 여는 데 평생이 걸릴지도 몰라. 근데 한번 열면 — 그것도 평생이야.',
+      features: [
+        { icon: '🏔️', title: '가장 높은 마음의 산', desc: '다가가기 어려울수록 매력적인 신비로움을 가진 짝사랑 유발자.' },
+        { icon: '🌑', title: '자기 세계가 가장 깊은 사람', desc: '사람과 함께하는 시간보다 혼자 있는 시간이 본질인 사람.' },
+        { icon: '🗝️', title: '한번 열면 평생 가는 마음', desc: '여는 데 평생이 걸리지만 한번 열면 흔들림 없이 끝까지.' }
+      ]
+    }
+  };
+
+  // ===== 축 라벨 =====
+  const AXIS_LABELS = {
+    E: '직진러', H: '은은파',
+    C: '껌딱지', S: '독립파',
+    R: '감성파', L: '현실파',
+    F: '정면돌파', A: '회피형'
+  };
+
+  // ===== 결과 가져오기 =====
+  function getResult() {
+    // 1. URL 파라미터에서 type 가져오기
+    const params = new URLSearchParams(window.location.search);
+    const urlType = params.get('type');
+    if (urlType && TYPES[urlType.toUpperCase()]) {
+      return { type: urlType.toUpperCase() };
+    }
+
+    // 2. sessionStorage에서 가져오기
+    try {
+      const saved = sessionStorage.getItem('lt16_result');
+      if (saved) return JSON.parse(saved);
+    } catch (e) {}
+
+    // 3. 데모용 기본값
+    return { type: 'ECRF' };
+  }
+
+  // ===== 페이지 렌더링 =====
+  function renderResult() {
+    const result = getResult();
+    const type = result.type;
+    const data = TYPES[type];
+
+    if (!data) {
+      alert('결과를 찾을 수 없어요. 테스트를 다시 해주세요.');
+      window.location.href = 'index.html';
+      return;
+    }
+
+    // 히어로
+    document.getElementById('typeEmoji').textContent = data.emoji;
+    document.getElementById('typeCode').textContent = type;
+    document.getElementById('typeName').textContent = data.name;
+    document.getElementById('typeTagline').textContent = data.tagline;
+    document.title = `${type} ${data.name} — Love Type 16`;
+
+    // 4축 미리보기
+    const axesGrid = document.getElementById('axesGrid');
+    const letters = type.split('');
+    axesGrid.innerHTML = letters.map(letter => `
+      <div class="axis-pill">
+        <div class="axis-letter">${letter}</div>
+        <div class="axis-label">${AXIS_LABELS[letter]}</div>
+      </div>
+    `).join('');
+
+    // 핵심 특징 3개
+    const featuresList = document.getElementById('featuresList');
+    featuresList.innerHTML = data.features.map(f => `
+      <div class="feature reveal">
+        <div class="feature-icon">${f.icon}</div>
+        <div class="feature-title">${f.title}</div>
+        <div class="feature-desc">${f.desc}</div>
+      </div>
+    `).join('');
+
+    // 등장 애니메이션 적용
+    initReveal();
+  }
+
+  // ===== 등장 애니메이션 =====
+  function initReveal() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('in'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  }
+
+  // ===== 모달 제어 =====
+  function openModal(id) {
+    document.getElementById(id).classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(event, id) {
+    if (event && event.target.closest('.modal') && !event.target.closest('.modal-cancel')) return;
+    document.getElementById(id).classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  // ===== 액션 함수 =====
+  function openShare() { openModal('shareModal'); }
+  function retakeTest() { openModal('retakeModal'); }
+
+  // ===== 심층분석으로 이동 (무료) =====
+  function goToDeepAnalysis() {
+    const result = getResult();
+
+    // 점수를 URL로도 전달 (sessionStorage 유실 대비)
+    let scoreParam = '';
+    try {
+      const s = result.scores;
+      if (s) {
+        scoreParam = `${s.E}${s.H}${s.C}${s.S}${s.R}${s.L}${s.F}${s.A}`;
+      }
+    } catch (e) {}
+
+    let url = `deep-analysis.html?type=${result.type}`;
+    if (scoreParam) url += `&s=${scoreParam}`;
+    window.location.href = url;
+  }
+
+  // 카카오 SDK 초기화 (한 번만)
+  const KAKAO_JS_KEY = 'a6db46afc20b7f856e3d2cffe055e8ac';
+  if (window.Kakao && !Kakao.isInitialized()) {
+    try { Kakao.init(KAKAO_JS_KEY); } catch (e) {}
+  }
+
+  function shareTo(platform) {
+    const result = getResult();
+    const data = TYPES[result.type];
+    const text = `나는 ${result.type} ${data.emoji} ${data.name}!\n너의 연애 유형은?\nlovetype16.xyz`;
+
+    closeModal(null, 'shareModal');
+
+    if (platform === 'link') {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('링크가 복사됐어요 ✨');
+      }).catch(() => alert('복사 실패. 다시 시도해주세요.'));
+    } else if (platform === 'kakao') {
+      // 카카오톡 공유 — 유형별 OG 이미지 + 테스트하기 버튼
+      const ogImage = `https://lovetype16.xyz/og-${result.type.toLowerCase()}.png`;
+      const myUrl = `https://lovetype16.xyz/result.html?type=${result.type}`;
+      if (window.Kakao && Kakao.isInitialized() && Kakao.Share) {
+        try {
+          Kakao.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+              title: `나는 ${data.emoji} ${data.name}`,
+              description: data.tagline,
+              imageUrl: ogImage,
+              link: { mobileWebUrl: myUrl, webUrl: myUrl }
+            },
+            buttons: [
+              { title: '내 결과 보기', link: { mobileWebUrl: myUrl, webUrl: myUrl } },
+              { title: '나도 테스트하기', link: { mobileWebUrl: 'https://lovetype16.xyz/test.html', webUrl: 'https://lovetype16.xyz/test.html' } }
+            ]
+          });
+        } catch (e) {
+          navigator.clipboard.writeText(text).then(() => showToast('공유 문구를 복사했어요 💬'));
+        }
+      } else {
+        // SDK 미로드 시 폴백: 문구 복사
+        navigator.clipboard.writeText(text).then(() => {
+          showToast('공유 문구를 복사했어요. 카톡에 붙여넣으세요 💬');
+        }).catch(() => showToast('복사 실패. 다시 시도해주세요.'));
+      }
+    }
+  }
+
+  function confirmRetake() {
+    closeModal(null, 'retakeModal');
+    try {
+      sessionStorage.removeItem('lt16_result');
+      localStorage.removeItem('lt16_last_result');
+    } catch (e) {}
+    setTimeout(() => {
+      window.location.href = 'test.html';
+    }, 200);
+  }
+
+  // ===== 결과 이미지 카드 생성 =====
+  let cardDataUrl = null;
+
+  function drawCard() {
+    const result = getResult();
+    const data = TYPES[result.type];
+
+    // 인스타 스토리 비율 (1080 x 1920)
+    const W = 1080, H = 1920;
+    const canvas = document.createElement('canvas');
+    canvas.width = W; canvas.height = H;
+    const ctx = canvas.getContext('2d');
+
+    // 배경 그라데이션 (와인 → 와인 딥)
+    const bg = ctx.createLinearGradient(0, 0, W, H);
+    bg.addColorStop(0, '#5c1f2e');
+    bg.addColorStop(1, '#3d1420');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, W, H);
+
+    // 골드 장식 원 (가운데 위쪽)
+    ctx.strokeStyle = 'rgba(201,169,97,0.25)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(W/2, 620, 280, 0, Math.PI*2);
+    ctx.stroke();
+    ctx.strokeStyle = 'rgba(201,169,97,0.4)';
+    ctx.setLineDash([6, 10]);
+    ctx.beginPath();
+    ctx.arc(W/2, 620, 230, 0, Math.PI*2);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    ctx.textAlign = 'center';
+
+    // 상단 라벨
+    ctx.fillStyle = '#c9a961';
+    ctx.font = '600 30px Pretendard, sans-serif';
+    ctx.fillText('L O V E   T Y P E   1 6', W/2, 200);
+
+    // 이모지 (큰 사이즈)
+    ctx.font = '260px serif';
+    ctx.fillText(data.emoji, W/2, 720);
+
+    // 유형 코드
+    ctx.fillStyle = '#e0c896';
+    ctx.font = '700 64px Pretendard, sans-serif';
+    ctx.fillText(result.type, W/2, 900);
+
+    // 유형 이름
+    ctx.fillStyle = '#f5ede0';
+    ctx.font = '800 96px Pretendard, sans-serif';
+    ctx.fillText(data.name, W/2, 1020);
+
+    // 구분선
+    ctx.strokeStyle = 'rgba(201,169,97,0.5)';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(W/2 - 80, 1090);
+    ctx.lineTo(W/2 + 80, 1090);
+    ctx.stroke();
+
+    // 한 줄 설명 (자동 줄바꿈)
+    ctx.fillStyle = 'rgba(245,237,224,0.9)';
+    ctx.font = '400 42px Pretendard, sans-serif';
+    wrapText(ctx, data.tagline, W/2, 1200, 880, 62);
+
+    // 하단 CTA
+    ctx.fillStyle = '#c9a961';
+    ctx.font = '600 40px Pretendard, sans-serif';
+    ctx.fillText('너의 연애 유형은?', W/2, 1750);
+    ctx.fillStyle = 'rgba(245,237,224,0.7)';
+    ctx.font = '400 36px Pretendard, sans-serif';
+    ctx.fillText('lovetype16.xyz', W/2, 1810);
+
+    return canvas;
+  }
+
+  // 텍스트 자동 줄바꿈 헬퍼
+  function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
+    const chars = text.split('');
+    let line = '';
+    let lines = [];
+    for (let i = 0; i < chars.length; i++) {
+      const test = line + chars[i];
+      if (ctx.measureText(test).width > maxWidth && line !== '') {
+        lines.push(line);
+        line = chars[i];
+      } else {
+        line = test;
+      }
+    }
+    lines.push(line);
+    // 세로 가운데 정렬되게 시작 y 조정
+    const startY = y - (lines.length - 1) * lineHeight / 2;
+    lines.forEach((l, i) => ctx.fillText(l.trim(), x, startY + i * lineHeight));
+  }
+
+  function saveCard() {
+    closeModal(null, 'shareModal');
+    // 폰트 로딩 보장 후 그리기
+    const render = () => {
+      const canvas = drawCard();
+      cardDataUrl = canvas.toDataURL('image/png');
+      const preview = document.getElementById('cardPreview');
+      preview.innerHTML = `<img src="${cardDataUrl}" style="width:200px; border-radius:16px; box-shadow:0 12px 40px rgba(0,0,0,0.3);" alt="결과 카드">`;
+      openModal('cardModal');
+    };
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(render);
+    } else {
+      render();
+    }
+  }
+
+  function downloadCard() {
+    if (!cardDataUrl) return;
+    const result = getResult();
+    const link = document.createElement('a');
+    link.download = `lovetype16-${result.type}.png`;
+    link.href = cardDataUrl;
+    link.click();
+    showToast('이미지를 저장했어요 ✨');
+  }
+
+  // ===== Toast 알림 =====
+  function showToast(message) {
+    const toast = document.createElement('div');
+    toast.style.cssText = `
+      position: fixed; top: 5rem; left: 50%; transform: translateX(-50%);
+      background: var(--wine); color: var(--cream); padding: 0.8rem 1.5rem;
+      border-radius: 100px; font-size: 0.85rem; font-weight: 500;
+      box-shadow: 0 12px 30px rgba(92, 31, 46, 0.3);
+      z-index: 300; opacity: 0; transition: all 0.3s;
+    `;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    requestAnimationFrame(() => {
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateX(-50%) translateY(10px)';
+    });
+
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      setTimeout(() => toast.remove(), 300);
+    }, 2500);
+  }
+
+  // ===== 초기화 =====
+  renderResult();
+</script>
+</body>
+</html>

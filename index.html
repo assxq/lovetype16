@@ -619,6 +619,13 @@
       max-width: 800px;
     }
   }
+
+  /* 모바일(터치) hover 잔상 방지 */
+  @media (hover: none) {
+    .final-cta-btn:hover { transform: none; }
+    .hero-cta:hover { transform: none; }
+    .nav-cta:hover { transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -627,6 +634,7 @@
   <div class="logo">Love Type<span class="num">16</span></div>
   <div style="display:flex; gap:0.7rem; align-items:center;">
     <a href="compatibility.html" style="font-size:0.85rem; color:var(--ink-soft); text-decoration:none; font-weight:500;">궁합</a>
+    <a href="gifts.html" style="font-size:0.85rem; color:var(--ink-soft); text-decoration:none; font-weight:500;">선물</a>
     <a href="blog.html" style="font-size:0.85rem; color:var(--ink-soft); text-decoration:none; font-weight:500;">러브레터</a>
     <button class="nav-cta" onclick="document.getElementById('start').scrollIntoView({behavior:'smooth'})">시작하기</button>
   </div>
@@ -735,6 +743,7 @@
 
   <div style="margin: 1.2rem 0; font-size: 0.78rem; color: var(--gold-soft); font-weight: 500;">
     <a href="compatibility.html" style="color: var(--gold-soft); text-decoration: none; margin: 0 0.5rem;">궁합 테스트</a>
+    <a href="gifts.html" style="color: var(--gold-soft); text-decoration: none; margin: 0 0.5rem;">선물 추천</a>
     <a href="blog.html" style="color: var(--gold-soft); text-decoration: none; margin: 0 0.5rem;">러브레터</a>
     <span style="opacity: 0.4;">·</span>
     <a href="terms.html" style="color: var(--gold-soft); text-decoration: none; margin: 0 0.5rem;">이용약관</a>

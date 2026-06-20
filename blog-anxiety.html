@@ -85,10 +85,35 @@
 
   /* 글 하단 네비 */
 
+
+  /* 쿠팡 추천 상품 박스 */
+  .product-box { margin: 2.2rem 0; padding: 1.4rem 1.5rem; background: #fffdf9; border: 1px solid rgba(201,169,97,0.3); border-radius: 16px; box-shadow: 0 6px 20px rgba(92,31,46,0.05); }
+  .product-label { font-size: 0.7rem; color: var(--gold); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  .product-name { font-size: 1.02rem; color: var(--wine); font-weight: 700; margin-bottom: 0.4rem; line-height: 1.4; }
+  .product-desc { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 1rem; }
+  .product-btn { display: inline-block; background: var(--wine); color: var(--cream); padding: 0.65rem 1.4rem; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+  .product-notice { font-size: 0.68rem; color: var(--ink-light); margin-top: 0.8rem; line-height: 1.5; }
+
   .ad-slot { max-width: 680px; margin: 2.2rem auto; }
   .ad-label { font-size: 0.65rem; letter-spacing: 0.15em; color: var(--ink-light); text-transform: uppercase; text-align: center; margin-bottom: 0.4rem; font-weight: 500; }
   .ad-inner { min-height: 100px; background: rgba(92, 31, 46, 0.03); border: 1px dashed rgba(92, 31, 46, 0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
   .ad-placeholder { font-size: 0.75rem; color: var(--ink-light); text-align: center; line-height: 1.5; padding: 1rem; }
+
+
+  /* 이전/다음 글 네비게이션 */
+  .post-nav { display: flex; gap: 0.8rem; margin-top: 2.5rem; }
+  .post-nav a { flex: 1; display: flex; flex-direction: column; gap: 0.3rem; padding: 1rem 1.2rem; background: var(--cream-soft); border: 1px solid rgba(92, 31, 46, 0.1); border-radius: 14px; text-decoration: none; transition: all 0.25s; }
+  .post-nav a:hover { border-color: var(--gold); background: var(--cream); }
+  @media (hover: none) { .post-nav a:hover { border-color: rgba(92,31,46,0.1); background: var(--cream-soft); } }
+  .post-nav .nav-dir { font-size: 0.72rem; color: var(--gold); font-weight: 600; }
+  .post-nav .nav-title { font-size: 0.88rem; color: var(--wine); font-weight: 600; line-height: 1.35; }
+  .post-nav a.next { text-align: right; }
+  .post-nav-empty { flex: 1; }
+  /* 러브레터 유도 박스 */
+  .more-letters { margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(92,31,46,0.04), rgba(201,169,97,0.06)); border: 1px solid rgba(201,169,97,0.2); border-radius: 16px; text-align: center; }
+  .more-letters-title { font-size: 1rem; color: var(--wine); font-weight: 700; margin-bottom: 0.3rem; }
+  .more-letters-sub { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 1rem; line-height: 1.5; }
+  .more-letters-btn { display: inline-block; background: var(--wine); color: var(--cream); padding: 0.7rem 1.5rem; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.88rem; }
 
   .post-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(92, 31, 46, 0.1); }
   .back-to-blog { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--wine); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
@@ -109,7 +134,7 @@
   <h1>내가 집착하는 건지 사랑하는 건지 모를 때</h1>
 
   <div class="post-meta">
-    <span>2026.06.01</span><span class="dot"></span><span>5분 읽기</span>
+    <span>2026.06.01</span><span class="dot"></span><span>완독 5분 소요</span>
   </div>
 
   <p class="lead">답장이 조금만 늦어도 불안하고, 그 사람의 모든 걸 알고 싶고, 확인받지 못하면 견딜 수 없어요. 이게 사랑인지 집착인지 헷갈리는 당신에게.</p>
@@ -135,6 +160,14 @@
     <!-- ▲▲▲ 애드센스 코드로 위 div를 교체 ▲▲▲ -->
   </div>
 </div>
+
+  <div class="product-box">
+    <div class="product-label">📚 함께 보면 좋아요</div>
+    <div class="product-name">불안 심리 책</div>
+    <div class="product-desc">연애 속 불안의 정체를 이해하는 데 도움이 되는 심리서예요.</div>
+    <a href="https://link.coupang.com/a/eJncJrCouG" class="product-btn" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
+    <div class="product-notice">이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>
+  </div>
 
   <h2>불안을 다스리는 법</h2>
 
@@ -164,6 +197,23 @@
   </div>
 
   <p>불안한 마음이 든다고 해서 당신이 사랑할 자격이 없는 건 아니에요. 그 마음을 이해하고 다스려가는 과정이, 더 건강한 사랑으로 가는 길이에요.</p>
+
+  <div class="post-nav">
+    <a href="blog-breakup.html" class="prev">
+      <span class="nav-dir">← 이전 글</span>
+      <span class="nav-title">이별 후 가장 힘든 시기를 건너는 법</span>
+    </a>
+    <a href="blog-match.html" class="next">
+      <span class="nav-dir">다음 글 →</span>
+      <span class="nav-title">정반대 성격인데 잘 사귀는 커플의 비밀</span>
+    </a>
+  </div>
+
+  <div class="more-letters">
+    <div class="more-letters-title">💌 다른 연애 이야기도 있어요</div>
+    <div class="more-letters-sub">짝사랑부터 결혼까지, 연애의 모든 순간에 대한<br>15편의 러브레터를 모아뒀어요.</div>
+    <a href="blog.html" class="more-letters-btn">러브레터 전체 보기 →</a>
+  </div>
 
 </article>
 

@@ -230,6 +230,41 @@
   // 새 글을 추가하려면 이 배열에 항목을 넣고, 같은 slug의 HTML 파일을 만들면 돼요.
   const POSTS = [
     {
+      slug: 'blog-marriage',
+      cat: 'advice', catLabel: '연애 고민',
+      title: '이 사람과 결혼해도 될까 고민될 때',
+      excerpt: '연애와 결혼은 다를까요? 결혼 상대를 고를 때 설렘보다 중요한 것, 꼭 맞춰봐야 할 부분을 정리했어요.',
+      date: '2026.07.20', read: '5분'
+    },
+    {
+      slug: 'blog-firstlove',
+      cat: 'advice', catLabel: '연애 고민',
+      title: '첫 연애에서 누구나 하는 실수',
+      excerpt: '서툴러서 더 애틋한 첫 연애. 처음이라 누구나 겪는 시행착오와, 알았으면 좋았을 것들을 따뜻하게 정리했어요.',
+      date: '2026.07.13', read: '4분'
+    },
+    {
+      slug: 'blog-pushpull',
+      cat: 'advice', catLabel: '연애 고민',
+      title: '밀당, 정말 효과 있을까?',
+      excerpt: '연애 기술처럼 여겨지는 밀당. 정말 효과가 있는지, 오히려 사람을 잃는 경우는 언제인지 솔직하게 정리했어요.',
+      date: '2026.07.06', read: '4분'
+    },
+    {
+      slug: 'blog-reunion',
+      cat: 'advice', catLabel: '연애 고민',
+      title: '재회하기 전에 꼭 생각해야 할 것',
+      excerpt: '헤어진 연인과 다시 만나면 달라질까요? 재회가 잘 되는 경우와 안 되는 경우, 결정 전 점검할 것들.',
+      date: '2026.06.29', read: '5분'
+    },
+    {
+      slug: 'blog-longdistance',
+      cat: 'advice', catLabel: '연애 고민',
+      title: '장거리 연애, 오래 가는 커플의 규칙',
+      excerpt: '거리 때문에 멀어질까 불안한 장거리 연애. 롱디 커플이 헤어지는 진짜 이유와, 멀어도 가까운 사이를 만드는 법.',
+      date: '2026.06.22', read: '5분'
+    },
+    {
       slug: 'blog-contact',
       cat: 'advice', catLabel: '연애 고민',
       title: '연락 빈도 때문에 싸우는 커플에게',
@@ -311,7 +346,7 @@
         <div class="post-meta">
           <span>${p.date}</span>
           <span class="dot"></span>
-          <span>${p.read} 읽기</span>
+          <span>완독 ${p.read} 소요</span>
         </div>
       </a>
     `).join('');

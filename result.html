@@ -691,6 +691,26 @@
     max-height: 80vh;
     overflow-y: auto;
     animation: slideUp 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(92, 31, 46, 0.08);
+    color: var(--wine);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
   }
 
   @keyframes slideUp {
@@ -941,6 +961,16 @@
     line-height: 1.5;
     padding: 1rem;
   }
+
+  /* 모바일(터치) hover 잔상 방지 */
+  @media (hover: none) {
+    .axis-pill:hover { transform: none; }
+    .feature:hover { transform: none; }
+    .modal-option:hover { transform: none; }
+    .pricing-btn:hover { transform: none; }
+    .primary:hover { transform: none; }
+    .sticky-btn:hover { transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -1014,6 +1044,15 @@
   <div class="price-meta reveal" style="margin-top:1.2rem;">전부 무료로 공개돼요 ✨</div>
 </section>
 
+<!-- ===== 러브레터(블로그) 유도 ===== -->
+<section class="reveal" style="max-width:540px; margin:1rem auto 0; padding:0 1.5rem;">
+  <a href="blog.html" style="display:block; text-decoration:none; background:linear-gradient(135deg, rgba(92,31,46,0.05), rgba(201,169,97,0.08)); border:1px solid rgba(201,169,97,0.25); border-radius:18px; padding:1.5rem; text-align:center;">
+    <div style="font-size:1.05rem; color:var(--wine); font-weight:700; margin-bottom:0.4rem;">💌 러브레터</div>
+    <div style="font-size:0.88rem; color:var(--ink-soft); line-height:1.55; margin-bottom:1rem;">짝사랑부터 결혼까지, 연애의 모든 순간에 대한<br>솔직한 이야기 15편을 모았어요.</div>
+    <span style="display:inline-block; background:var(--wine); color:var(--cream); padding:0.65rem 1.4rem; border-radius:100px; font-weight:600; font-size:0.85rem;">읽으러 가기 →</span>
+  </a>
+</section>
+
 <!-- ===== Sticky 하단 바 ===== -->
 <div class="sticky-bar">
   <button class="sticky-btn" onclick="openShare()">
@@ -1022,7 +1061,7 @@
   </button>
   <button class="sticky-btn" onclick="retakeTest()">
     <span class="sticky-btn-icon">🔄</span>
-    <span>다시</span>
+    <span>검사하기</span>
   </button>
   <button class="sticky-btn primary" onclick="goToDeepAnalysis()">
     <span class="sticky-btn-icon">💕</span>
@@ -1032,10 +1071,10 @@
 
 <!-- ===== 공유 모달 ===== -->
 <div class="modal-bg" id="shareModal" onclick="closeModal(event, 'shareModal')">
-  <div class="modal">
+  <div class="modal" style="text-align:center;">
+    <button class="modal-close" onclick="closeModal(null, 'shareModal')" aria-label="닫기">✕</button>
     <div class="modal-handle"></div>
     <h3 class="modal-title">결과 공유하기</h3>
-    <p class="modal-sub">친구에게 보여주고 같이 해봐요</p>
     <div class="modal-options">
       <button class="modal-option" onclick="saveCard()">
         <span class="modal-option-icon">🖼️</span>
@@ -1050,16 +1089,15 @@
         <span>링크 복사</span>
       </button>
     </div>
-    <button class="modal-cancel" onclick="closeModal(null, 'shareModal')">취소</button>
   </div>
 </div>
 
 <!-- ===== 카드 미리보기 모달 ===== -->
 <div class="modal-bg" id="cardModal" onclick="closeModal(event, 'cardModal')">
-  <div class="modal">
+  <div class="modal" style="text-align:center;">
+    <button class="modal-close" onclick="closeModal(null, 'cardModal')" aria-label="닫기">✕</button>
     <div class="modal-handle"></div>
     <h3 class="modal-title">결과 카드</h3>
-    <p class="modal-sub">이미지를 길게 눌러 저장하거나, 아래 버튼으로 저장하세요</p>
     <div id="cardPreview" style="display:flex; justify-content:center; margin:1rem 0;">
       <!-- canvas가 이미지로 변환되어 여기 들어감 -->
     </div>
@@ -1067,7 +1105,6 @@
       <span class="modal-option-icon">⬇️</span>
       <span>이미지 저장</span>
     </button>
-    <button class="modal-cancel" onclick="closeModal(null, 'cardModal')">닫기</button>
   </div>
 </div>
 
@@ -1334,7 +1371,13 @@
 
   // ===== 액션 함수 =====
   function openShare() { openModal('shareModal'); }
-  function retakeTest() { openModal('retakeModal'); }
+  function retakeTest() {
+    // 결과 초기화 후 메인으로 (신규/재검사 모두 메인에서 시작)
+    try {
+      sessionStorage.removeItem('lt16_result');
+    } catch (e) {}
+    window.location.href = 'index.html';
+  }
 
   // ===== 심층분석으로 이동 (무료) =====
   function goToDeepAnalysis() {
@@ -1387,7 +1430,7 @@
             },
             buttons: [
               { title: '내 결과 보기', link: { mobileWebUrl: myUrl, webUrl: myUrl } },
-              { title: '나도 테스트하기', link: { mobileWebUrl: 'https://lovetype16.xyz/test.html', webUrl: 'https://lovetype16.xyz/test.html' } }
+              { title: '나도 테스트하기', link: { mobileWebUrl: 'https://lovetype16.xyz/', webUrl: 'https://lovetype16.xyz/' } }
             ]
           });
         } catch (e) {
@@ -1518,7 +1561,7 @@
       const canvas = drawCard();
       cardDataUrl = canvas.toDataURL('image/png');
       const preview = document.getElementById('cardPreview');
-      preview.innerHTML = `<img src="${cardDataUrl}" style="width:200px; border-radius:16px; box-shadow:0 12px 40px rgba(0,0,0,0.3);" alt="결과 카드">`;
+      preview.innerHTML = `<img src="${cardDataUrl}" style="width:160px; border-radius:14px; box-shadow:0 12px 40px rgba(0,0,0,0.3);" alt="결과 카드">`;
       openModal('cardModal');
     };
     if (document.fonts && document.fonts.ready) {

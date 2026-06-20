@@ -17,8 +17,8 @@
 <meta property="og:site_name" content="Love Type 16">
 <meta property="og:title" content=""사랑한다 말 안 하는 사람" 이해하기">
 <meta property="og:description" content="표현 방식이 다른 것뿐일 수 있어요. 은은한 사랑을 읽는 법.">
-<meta property="og:image" content="https://www.lovetype16.xyz/og-image.png">
-<meta property="og:url" content="https://www.lovetype16.xyz/blog-expression.html">
+<meta property="og:image" content="https://lovetype16.xyz/og-image.png">
+<meta property="og:url" content="https://lovetype16.xyz/blog-expression.html">
 <meta property="og:locale" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -85,10 +85,35 @@
 
   /* 글 하단 네비 */
 
+
+  /* 쿠팡 추천 상품 박스 */
+  .product-box { margin: 2.2rem 0; padding: 1.4rem 1.5rem; background: #fffdf9; border: 1px solid rgba(201,169,97,0.3); border-radius: 16px; box-shadow: 0 6px 20px rgba(92,31,46,0.05); }
+  .product-label { font-size: 0.7rem; color: var(--gold); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  .product-name { font-size: 1.02rem; color: var(--wine); font-weight: 700; margin-bottom: 0.4rem; line-height: 1.4; }
+  .product-desc { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 1rem; }
+  .product-btn { display: inline-block; background: var(--wine); color: var(--cream); padding: 0.65rem 1.4rem; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+  .product-notice { font-size: 0.68rem; color: var(--ink-light); margin-top: 0.8rem; line-height: 1.5; }
+
   .ad-slot { max-width: 680px; margin: 2.2rem auto; }
   .ad-label { font-size: 0.65rem; letter-spacing: 0.15em; color: var(--ink-light); text-transform: uppercase; text-align: center; margin-bottom: 0.4rem; font-weight: 500; }
   .ad-inner { min-height: 100px; background: rgba(92, 31, 46, 0.03); border: 1px dashed rgba(92, 31, 46, 0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
   .ad-placeholder { font-size: 0.75rem; color: var(--ink-light); text-align: center; line-height: 1.5; padding: 1rem; }
+
+
+  /* 이전/다음 글 네비게이션 */
+  .post-nav { display: flex; gap: 0.8rem; margin-top: 2.5rem; }
+  .post-nav a { flex: 1; display: flex; flex-direction: column; gap: 0.3rem; padding: 1rem 1.2rem; background: var(--cream-soft); border: 1px solid rgba(92, 31, 46, 0.1); border-radius: 14px; text-decoration: none; transition: all 0.25s; }
+  .post-nav a:hover { border-color: var(--gold); background: var(--cream); }
+  @media (hover: none) { .post-nav a:hover { border-color: rgba(92,31,46,0.1); background: var(--cream-soft); } }
+  .post-nav .nav-dir { font-size: 0.72rem; color: var(--gold); font-weight: 600; }
+  .post-nav .nav-title { font-size: 0.88rem; color: var(--wine); font-weight: 600; line-height: 1.35; }
+  .post-nav a.next { text-align: right; }
+  .post-nav-empty { flex: 1; }
+  /* 러브레터 유도 박스 */
+  .more-letters { margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(92,31,46,0.04), rgba(201,169,97,0.06)); border: 1px solid rgba(201,169,97,0.2); border-radius: 16px; text-align: center; }
+  .more-letters-title { font-size: 1rem; color: var(--wine); font-weight: 700; margin-bottom: 0.3rem; }
+  .more-letters-sub { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 1rem; line-height: 1.5; }
+  .more-letters-btn { display: inline-block; background: var(--wine); color: var(--cream); padding: 0.7rem 1.5rem; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.88rem; }
 
   .post-footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(92, 31, 46, 0.1); }
   .back-to-blog { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--wine); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
@@ -108,7 +133,7 @@
   <span class="post-cat">연애 고민</span>
   <h1>"사랑한다 말 안 하는 사람" 이해하기</h1>
   <div class="post-meta">
-    <span>2026.05.04</span><span class="dot"></span><span>5분 읽기</span>
+    <span>2026.05.04</span><span class="dot"></span><span>완독 5분 소요</span>
   </div>
 
   <p class="lead">"좋아한다는 말 한 번 듣기가 이렇게 어려운 일인가요?" 표현이 적은 연인 곁에서 늘 마음 한구석이 허전한 당신에게.</p>
@@ -133,6 +158,14 @@
     <!-- ▲▲▲ 애드센스 코드로 위 div를 교체 ▲▲▲ -->
   </div>
 </div>
+
+  <div class="product-box">
+    <div class="product-label">📚 함께 보면 좋아요</div>
+    <div class="product-name">『5가지 사랑의 언어』</div>
+    <div class="product-desc">표현 방식이 다른 두 사람이 서로를 이해하는 데 도움이 되는 책이에요.</div>
+    <a href="https://link.coupang.com/a/eJm8pYctVI" class="product-btn" target="_blank" rel="noopener nofollow sponsored">쿠팡에서 보기 →</a>
+    <div class="product-notice">이 글은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</div>
+  </div>
 
   <h2>은은한 사랑을 읽는 법</h2>
 
@@ -166,6 +199,23 @@
   </div>
 
   <p>사랑한다는 말을 아끼는 사람도, 그 마음만은 아끼지 않을 수 있어요. 소리가 다를 뿐, 사랑은 거기 있어요. 그 언어를 읽어주는 순간, 허전했던 마음이 조금씩 채워질 거예요.</p>
+
+  <div class="post-nav">
+    <a href="blog-16types.html" class="prev">
+      <span class="nav-dir">← 이전 글</span>
+      <span class="nav-title">16가지 연애 유형, 한눈에 보기</span>
+    </a>
+    <a href="blog-tired.html" class="next">
+      <span class="nav-dir">다음 글 →</span>
+      <span class="nav-title">권태기가 왔을 때 읽는 글</span>
+    </a>
+  </div>
+
+  <div class="more-letters">
+    <div class="more-letters-title">💌 다른 연애 이야기도 있어요</div>
+    <div class="more-letters-sub">짝사랑부터 결혼까지, 연애의 모든 순간에 대한<br>15편의 러브레터를 모아뒀어요.</div>
+    <a href="blog.html" class="more-letters-btn">러브레터 전체 보기 →</a>
+  </div>
 
   <div class="post-footer">
     <a href="blog.html" class="back-to-blog">← 다른 글 보러 가기</a>

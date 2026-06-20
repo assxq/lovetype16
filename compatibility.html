@@ -191,6 +191,14 @@
     nav { padding:1.3rem 3rem; }
     .type-grid { grid-template-columns:1fr 1fr 1fr 1fr; }
   }
+
+  /* 모바일(터치) hover 잔상 방지 */
+  @media (hover: none) {
+    .ghost:hover { transform: none; }
+    .picker-box:hover { transform: none; }
+    .primary:hover { transform: none; }
+    .type-opt:hover { transform: none; }
+  }
 </style>
 </head>
 <body>
@@ -498,7 +506,7 @@ function shareKakao() {
         },
         buttons: [
           { title: '궁합 확인하기', link: { mobileWebUrl: 'https://lovetype16.xyz/compatibility.html', webUrl: 'https://lovetype16.xyz/compatibility.html' } },
-          { title: '내 유형 테스트', link: { mobileWebUrl: 'https://lovetype16.xyz/test.html', webUrl: 'https://lovetype16.xyz/test.html' } }
+          { title: '내 유형 테스트', link: { mobileWebUrl: 'https://lovetype16.xyz/', webUrl: 'https://lovetype16.xyz/' } }
         ]
       });
     } catch (e) {

@@ -272,6 +272,22 @@
     border-color: var(--wine);
   }
 
+  /* 터치 기기(모바일)에서는 hover 잔상 방지 — hover 효과 무효화 */
+  @media (hover: none) {
+    .option:hover {
+      border-color: rgba(92, 31, 46, 0.12);
+      background: var(--cream-soft);
+      transform: none;
+      box-shadow: none;
+    }
+    .option:hover .option-marker {
+      background: transparent;
+      color: var(--wine-soft);
+      border-color: var(--wine-soft);
+    }
+    .back-btn:hover { background: transparent; color: var(--wine); }
+  }
+
   /* 선택된 상태 (애니메이션 중) */
   .option.selected {
     background: var(--wine);
@@ -780,7 +796,25 @@
   }
 
   // ===== 초기 렌더링 =====
-  renderQuestion();
+  // 테스트 시작 시 상태 완전 초기화 (이전 답변/결과가 남지 않도록)
+  function startFresh() {
+    currentIndex = 0;
+    answers = [];
+    try {
+      sessionStorage.removeItem('lt16_result');
+    } catch (e) {}
+    renderQuestion();
+  }
+
+  startFresh();
+
+  // 뒤로가기 캐시(bfcache)로 복원될 때도 강제 새로고침 처리
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+      // 캐시에서 복원된 경우 페이지를 새로 로드해 상태 초기화
+      window.location.reload();
+    }
+  });
 
   // 키보드 지원 (A/B 키, 좌우 화살표)
   document.addEventListener('keydown', (e) => {

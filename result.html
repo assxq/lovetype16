@@ -1037,11 +1037,11 @@
   </div>
 
   <button class="pricing-btn reveal" onclick="goToDeepAnalysis()">
-    <span>심층분석 무료로 보기</span>
+    <span>심층분석 보기</span>
     <span>→</span>
   </button>
 
-  <div class="price-meta reveal" style="margin-top:1.2rem;">전부 무료로 공개돼요 ✨</div>
+  <div class="price-meta reveal" style="margin-top:1.2rem;">로그인 없이 바로 볼 수 있어요 ✨</div>
 </section>
 
 <!-- ===== 러브레터(블로그) 유도 ===== -->
@@ -1050,6 +1050,15 @@
     <div style="font-size:1.05rem; color:var(--wine); font-weight:700; margin-bottom:0.4rem;">💌 러브레터</div>
     <div style="font-size:0.88rem; color:var(--ink-soft); line-height:1.55; margin-bottom:1rem;">짝사랑부터 결혼까지, 연애의 모든 순간에 대한<br>솔직한 이야기 15편을 모았어요.</div>
     <span style="display:inline-block; background:var(--wine); color:var(--cream); padding:0.65rem 1.4rem; border-radius:100px; font-weight:600; font-size:0.85rem;">읽으러 가기 →</span>
+  </a>
+</section>
+
+<!-- ===== 유형 상세 페이지 유도 ===== -->
+<section class="reveal" style="max-width:540px; margin:1rem auto 0; padding:0 1.5rem;">
+  <a href="#" id="typeDetailLink" style="display:block; text-decoration:none; background:var(--cream-soft); border:1px solid rgba(92,31,46,0.12); border-radius:18px; padding:1.5rem; text-align:center;">
+    <div style="font-size:1.05rem; color:var(--wine); font-weight:700; margin-bottom:0.4rem;">📖 내 유형 자세히 보기</div>
+    <div style="font-size:0.88rem; color:var(--ink-soft); line-height:1.55; margin-bottom:1rem;">내 유형의 특징·강점·궁합을 한 페이지에<br>정리한 도감을 확인해보세요.</div>
+    <span style="display:inline-block; background:transparent; color:var(--wine); border:1px solid rgba(92,31,46,0.25); padding:0.65rem 1.4rem; border-radius:100px; font-weight:600; font-size:0.85rem;">유형 도감 보기 →</span>
   </a>
 </section>
 
@@ -1311,6 +1320,10 @@
       window.location.href = 'index.html';
       return;
     }
+
+    // 유형 상세 페이지 링크 연결
+    const typeDetailLink = document.getElementById('typeDetailLink');
+    if (typeDetailLink) typeDetailLink.href = `type-${type.toLowerCase()}.html`;
 
     // 히어로
     document.getElementById('typeEmoji').textContent = data.emoji;

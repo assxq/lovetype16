@@ -626,6 +626,20 @@
     .hero-cta:hover { transform: none; }
     .nav-cta:hover { transform: none; }
   }
+  /* 16유형 미리보기 */
+  .types-preview { max-width: 900px; margin: 0 auto; padding: 4rem 1.5rem; }
+  .types-preview-head { text-align: center; margin-bottom: 2.5rem; }
+  .tp-marker { font-size: 0.7rem; letter-spacing: 0.3em; color: var(--gold); font-weight: 600; margin-bottom: 0.8rem; }
+  .tp-title { font-size: clamp(1.6rem, 5vw, 2.2rem); color: var(--wine); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+  .tp-sub { font-size: 0.95rem; color: var(--ink-soft); }
+  .type-preview-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+  .type-preview-card { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; padding: 1.3rem 0.8rem; background: var(--cream-soft); border: 1px solid rgba(92,31,46,0.1); border-radius: 16px; text-decoration: none; transition: all 0.25s; text-align: center; }
+  .type-preview-card:hover { border-color: var(--gold); background: #fffdf9; transform: translateY(-3px); box-shadow: 0 10px 28px rgba(92,31,46,0.08); }
+  .tpc-emoji { font-size: 2rem; line-height: 1; margin-bottom: 0.2rem; }
+  .tpc-code { font-size: 0.68rem; color: var(--gold); font-weight: 700; letter-spacing: 0.05em; }
+  .tpc-name { font-size: 0.85rem; color: var(--wine); font-weight: 700; line-height: 1.3; }
+  @media (hover: none) { .type-preview-card:hover { transform: none; box-shadow: none; background: var(--cream-soft); border-color: rgba(92,31,46,0.1); } }
+  @media (min-width: 600px) { .type-preview-grid { grid-template-columns: repeat(4, 1fr); } }
 </style>
 </head>
 <body>
@@ -666,7 +680,7 @@
       <span class="dot"></span>
       <span>24문항</span>
       <span class="dot"></span>
-      <span>무료</span>
+      <span>3분 소요</span>
     </div>
   </div>
 </section>
@@ -694,17 +708,17 @@
       <div class="step-num">02</div>
       <div class="step-content">
         <h3 class="step-title">당신의 유형 확인하기</h3>
-        <p class="step-desc">16가지 유형 중 당신만의 캐릭터를 만나보세요. 결과는 무료로 공개돼요.</p>
-        <span class="step-time">— 무료</span>
+        <p class="step-desc">16가지 유형 중 당신만의 캐릭터를 만나보세요.</p>
+        <span class="step-time">— 결과 공개</span>
       </div>
     </div>
 
     <div class="step reveal">
       <div class="step-num">03</div>
       <div class="step-content">
-        <h3 class="step-title">심층분석까지 무료로 보기</h3>
-        <p class="step-desc">강점과 약점, 갈등 대처법, 찰떡·상극 궁합 TOP 3까지. 당신만을 위한 깊이 있는 리포트를 무료로.</p>
-        <span class="step-time">— 무료</span>
+        <h3 class="step-title">심층분석까지 살펴보기</h3>
+        <p class="step-desc">강점과 약점, 갈등 대처법, 찰떡·상극 궁합 TOP 3까지. 당신만을 위한 깊이 있는 리포트.</p>
+        <span class="step-time">— 리포트</span>
       </div>
     </div>
   </div>
@@ -719,6 +733,97 @@
       당신을 사랑할 사람을 찾는 첫걸음이에요.
     </p>
     <div class="quote-author">— Love Type 16</div>
+  </div>
+</section>
+
+<!-- ===== 16유형 미리보기 ===== -->
+<section class="types-preview reveal">
+  <div class="types-preview-head">
+    <div class="tp-marker">— 16 LOVE TYPES —</div>
+    <h2 class="tp-title">16가지 연애 유형</h2>
+    <p class="tp-sub">당신은 어떤 유형일까요? 먼저 둘러보세요.</p>
+  </div>
+  <div class="type-preview-grid">
+      <a href="type-ecrf.html" class="type-preview-card">
+        <span class="tpc-emoji">🌹</span>
+        <span class="tpc-code">ECRF</span>
+        <span class="tpc-name">열정 로맨티시스트</span>
+      </a>
+      <a href="type-ecra.html" class="type-preview-card">
+        <span class="tpc-emoji">🎀</span>
+        <span class="tpc-code">ECRA</span>
+        <span class="tpc-name">츤데레 로맨티스트</span>
+      </a>
+      <a href="type-eclf.html" class="type-preview-card">
+        <span class="tpc-emoji">💼</span>
+        <span class="tpc-code">ECLF</span>
+        <span class="tpc-name">직진 현실주의자</span>
+      </a>
+      <a href="type-ecla.html" class="type-preview-card">
+        <span class="tpc-emoji">📋</span>
+        <span class="tpc-code">ECLA</span>
+        <span class="tpc-name">표현형 신중파</span>
+      </a>
+      <a href="type-esrf.html" class="type-preview-card">
+        <span class="tpc-emoji">🦋</span>
+        <span class="tpc-code">ESRF</span>
+        <span class="tpc-name">자유로운 로맨티스트</span>
+      </a>
+      <a href="type-esra.html" class="type-preview-card">
+        <span class="tpc-emoji">🖤</span>
+        <span class="tpc-code">ESRA</span>
+        <span class="tpc-name">시크한 로맨티스트</span>
+      </a>
+      <a href="type-eslf.html" class="type-preview-card">
+        <span class="tpc-emoji">⚡</span>
+        <span class="tpc-code">ESLF</span>
+        <span class="tpc-name">쿨한 직진러</span>
+      </a>
+      <a href="type-esla.html" class="type-preview-card">
+        <span class="tpc-emoji">🍷</span>
+        <span class="tpc-code">ESLA</span>
+        <span class="tpc-name">어른 연애러</span>
+      </a>
+      <a href="type-hcrf.html" class="type-preview-card">
+        <span class="tpc-emoji">🐰</span>
+        <span class="tpc-code">HCRF</span>
+        <span class="tpc-name">소심한 껌딱지</span>
+      </a>
+      <a href="type-hcra.html" class="type-preview-card">
+        <span class="tpc-emoji">🥺</span>
+        <span class="tpc-code">HCRA</span>
+        <span class="tpc-name">속앓이 로맨티스트</span>
+      </a>
+      <a href="type-hclf.html" class="type-preview-card">
+        <span class="tpc-emoji">📖</span>
+        <span class="tpc-code">HCLF</span>
+        <span class="tpc-name">조용한 진심파</span>
+      </a>
+      <a href="type-hcla.html" class="type-preview-card">
+        <span class="tpc-emoji">🗝️</span>
+        <span class="tpc-code">HCLA</span>
+        <span class="tpc-name">무뚝뚝한 로열티</span>
+      </a>
+      <a href="type-hsrf.html" class="type-preview-card">
+        <span class="tpc-emoji">🔮</span>
+        <span class="tpc-code">HSRF</span>
+        <span class="tpc-name">신비주의 로맨티스트</span>
+      </a>
+      <a href="type-hsra.html" class="type-preview-card">
+        <span class="tpc-emoji">🌙</span>
+        <span class="tpc-code">HSRA</span>
+        <span class="tpc-name">고독한 몽상가</span>
+      </a>
+      <a href="type-hslf.html" class="type-preview-card">
+        <span class="tpc-emoji">🦉</span>
+        <span class="tpc-code">HSLF</span>
+        <span class="tpc-name">침착한 관찰자</span>
+      </a>
+      <a href="type-hsla.html" class="type-preview-card">
+        <span class="tpc-emoji">🏔️</span>
+        <span class="tpc-code">HSLA</span>
+        <span class="tpc-name">신중한 거리유지러</span>
+      </a>
   </div>
 </section>
 

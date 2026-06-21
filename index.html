@@ -908,50 +908,61 @@
 
   // 카카오 키
   const KAKAO_JS_KEY = '1704ee48e29d84e38b5a9cca02979089';
+  // SDK 로드되면 즉시 초기화 시도
+  try { if (window.Kakao && !Kakao.isInitialized()) Kakao.init(KAKAO_JS_KEY); } catch (e) {}
 
   function shareSite() {
+    const SHARE_URL = 'https://lovetype16.xyz/';
+
     // 1) 카카오 공유 시도
     try {
       if (window.Kakao) {
         if (!Kakao.isInitialized()) Kakao.init(KAKAO_JS_KEY);
-        if (Kakao.isInitialized() && Kakao.Share) {
+        if (Kakao.isInitialized() && Kakao.Share && typeof Kakao.Share.sendDefault === 'function') {
           Kakao.Share.sendDefault({
             objectType: 'feed',
             content: {
               title: 'Love Type 16 — 나의 연애 유형은?',
               description: 'MBTI처럼 16가지 유형으로 알아보는 나의 연애 스타일. 24문항으로 확인해보세요.',
               imageUrl: 'https://lovetype16.xyz/og-image.png?v=2',
-              link: { mobileWebUrl: 'https://lovetype16.xyz/', webUrl: 'https://lovetype16.xyz/' }
+              link: { mobileWebUrl: SHARE_URL, webUrl: SHARE_URL }
             },
             buttons: [{
               title: '테스트 하러 가기',
-              link: { mobileWebUrl: 'https://lovetype16.xyz/', webUrl: 'https://lovetype16.xyz/' }
+              link: { mobileWebUrl: SHARE_URL, webUrl: SHARE_URL }
             }]
           });
           return;
         }
       }
-    } catch (e) { /* 카카오 실패 시 아래 폴백으로 */ }
+    } catch (e) { /* 다음 단계로 */ }
 
-    // 2) 기기 기본 공유 시트
+    // 2) 기기 기본 공유 시트 (모바일 대부분 지원)
     try {
       if (navigator.share) {
-        navigator.share({ title: 'Love Type 16 — 나의 연애 유형은?', text: 'MBTI처럼 알아보는 나의 연애 유형', url: 'https://lovetype16.xyz/' });
+        navigator.share({
+          title: 'Love Type 16 — 나의 연애 유형은?',
+          text: 'MBTI처럼 알아보는 나의 연애 유형',
+          url: SHARE_URL
+        }).catch(() => {});
         return;
       }
-    } catch (e) {}
+    } catch (e) { /* 다음 단계로 */ }
 
-    // 3) 링크 복사
+    // 3) 클립보드 복사 (성공/실패 모두 사용자에게 알림)
     try {
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText('https://lovetype16.xyz/');
-        alert('링크가 복사되었어요! 친구에게 붙여넣기 해보세요 💌');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(SHARE_URL).then(function () {
+          alert('링크가 복사되었어요! 친구에게 붙여넣기 해보세요 💌\n\n' + SHARE_URL);
+        }).catch(function () {
+          window.prompt('아래 링크를 복사해서 친구에게 공유해보세요 💌', SHARE_URL);
+        });
         return;
       }
-    } catch (e) {}
+    } catch (e) { /* 다음 단계로 */ }
 
-    // 4) 최후 폴백
-    prompt('아래 링크를 복사해서 친구에게 공유해보세요 💌', 'https://lovetype16.xyz/');
+    // 4) 최후 폴백 — 무조건 prompt로 링크 노출 (무반응 방지)
+    window.prompt('아래 링크를 복사해서 친구에게 공유해보세요 💌', SHARE_URL);
   }
 </script>
 </body>

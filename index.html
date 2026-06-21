@@ -906,37 +906,52 @@
     window.location.href = 'test.html';
   }
 
-  // 카카오 초기화
+  // 카카오 키
   const KAKAO_JS_KEY = '1704ee48e29d84e38b5a9cca02979089';
-  if (window.Kakao && !Kakao.isInitialized()) {
-    try { Kakao.init(KAKAO_JS_KEY); } catch(e) {}
-  }
 
   function shareSite() {
-    // 카카오 공유 우선
-    if (window.Kakao && Kakao.isInitialized() && Kakao.Share) {
-      Kakao.Share.sendDefault({
-        objectType: 'feed',
-        content: {
-          title: 'Love Type 16 — 나의 연애 유형은?',
-          description: 'MBTI처럼 16가지 유형으로 알아보는 나의 연애 스타일. 24문항으로 확인해보세요.',
-          imageUrl: 'https://lovetype16.xyz/og-image.png',
-          link: { mobileWebUrl: 'https://lovetype16.xyz/', webUrl: 'https://lovetype16.xyz/' }
-        },
-        buttons: [{
-          title: '테스트 하러 가기',
-          link: { mobileWebUrl: 'https://lovetype16.xyz/', webUrl: 'https://lovetype16.xyz/' }
-        }]
-      });
-      return;
-    }
-    // 폴백: 기본 공유 또는 링크 복사
-    if (navigator.share) {
-      navigator.share({ title: 'Love Type 16', text: '나의 연애 유형은?', url: 'https://lovetype16.xyz/' }).catch(()=>{});
-    } else {
-      navigator.clipboard?.writeText('https://lovetype16.xyz/');
-      alert('링크가 복사되었어요! 친구에게 붙여넣기 해보세요 💌');
-    }
+    // 1) 카카오 공유 시도
+    try {
+      if (window.Kakao) {
+        if (!Kakao.isInitialized()) Kakao.init(KAKAO_JS_KEY);
+        if (Kakao.isInitialized() && Kakao.Share) {
+          Kakao.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+              title: 'Love Type 16 — 나의 연애 유형은?',
+              description: 'MBTI처럼 16가지 유형으로 알아보는 나의 연애 스타일. 24문항으로 확인해보세요.',
+              imageUrl: 'https://lovetype16.xyz/og-image.png',
+              link: { mobileWebUrl: 'https://lovetype16.xyz/', webUrl: 'https://lovetype16.xyz/' }
+            },
+            buttons: [{
+              title: '테스트 하러 가기',
+              link: { mobileWebUrl: 'https://lovetype16.xyz/', webUrl: 'https://lovetype16.xyz/' }
+            }]
+          });
+          return;
+        }
+      }
+    } catch (e) { /* 카카오 실패 시 아래 폴백으로 */ }
+
+    // 2) 기기 기본 공유 시트
+    try {
+      if (navigator.share) {
+        navigator.share({ title: 'Love Type 16 — 나의 연애 유형은?', text: 'MBTI처럼 알아보는 나의 연애 유형', url: 'https://lovetype16.xyz/' });
+        return;
+      }
+    } catch (e) {}
+
+    // 3) 링크 복사
+    try {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText('https://lovetype16.xyz/');
+        alert('링크가 복사되었어요! 친구에게 붙여넣기 해보세요 💌');
+        return;
+      }
+    } catch (e) {}
+
+    // 4) 최후 폴백
+    prompt('아래 링크를 복사해서 친구에게 공유해보세요 💌', 'https://lovetype16.xyz/');
   }
 </script>
 </body>

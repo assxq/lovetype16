@@ -6,6 +6,8 @@
 <title>Love Type 16 — 당신의 연애는 어떤 모양인가요</title>
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3042136140366202" crossorigin="anonymous"></script>
+<!-- Kakao SDK -->
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
 <!-- SEO -->
 <meta name="description" content="MBTI처럼 16가지 유형으로 알아보는 나의 연애 스타일. 24개의 질문, 단 3분이면 당신만의 사랑법을 찾아드려요.">
 <meta name="author" content="Love Type 16">
@@ -504,6 +506,27 @@
     background: var(--gold-soft);
   }
 
+  .final-share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    background: transparent;
+    color: var(--cream);
+    padding: 0.85rem 1.8rem;
+    border: 1px solid rgba(245, 237, 224, 0.35);
+    border-radius: 100px;
+    font-family: 'Pretendard', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .final-share-btn:hover, .final-share-btn:active {
+    background: rgba(245, 237, 224, 0.1);
+    border-color: var(--cream);
+  }
+
   .final-meta {
     margin-top: 1.8rem;
     font-size: 0.78rem;
@@ -679,8 +702,6 @@
       <span>약 3분 소요</span>
       <span class="dot"></span>
       <span>24문항</span>
-      <span class="dot"></span>
-      <span>3분 소요</span>
     </div>
   </div>
 </section>
@@ -840,6 +861,10 @@
     <span>테스트 시작하기</span>
     <span>→</span>
   </button>
+  <button class="final-share-btn" onclick="shareSite()">
+    <span>💌</span>
+    <span>친구에게 공유하기</span>
+  </button>
 </section>
 
 <footer>
@@ -879,6 +904,39 @@
 
   function startTest() {
     window.location.href = 'test.html';
+  }
+
+  // 카카오 초기화
+  const KAKAO_JS_KEY = '1704ee48e29d84e38b5a9cca02979089';
+  if (window.Kakao && !Kakao.isInitialized()) {
+    try { Kakao.init(KAKAO_JS_KEY); } catch(e) {}
+  }
+
+  function shareSite() {
+    // 카카오 공유 우선
+    if (window.Kakao && Kakao.isInitialized() && Kakao.Share) {
+      Kakao.Share.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: 'Love Type 16 — 나의 연애 유형은?',
+          description: 'MBTI처럼 16가지 유형으로 알아보는 나의 연애 스타일. 24문항으로 확인해보세요.',
+          imageUrl: 'https://lovetype16.xyz/og-image.png',
+          link: { mobileWebUrl: 'https://lovetype16.xyz/', webUrl: 'https://lovetype16.xyz/' }
+        },
+        buttons: [{
+          title: '테스트 하러 가기',
+          link: { mobileWebUrl: 'https://lovetype16.xyz/', webUrl: 'https://lovetype16.xyz/' }
+        }]
+      });
+      return;
+    }
+    // 폴백: 기본 공유 또는 링크 복사
+    if (navigator.share) {
+      navigator.share({ title: 'Love Type 16', text: '나의 연애 유형은?', url: 'https://lovetype16.xyz/' }).catch(()=>{});
+    } else {
+      navigator.clipboard?.writeText('https://lovetype16.xyz/');
+      alert('링크가 복사되었어요! 친구에게 붙여넣기 해보세요 💌');
+    }
   }
 </script>
 </body>

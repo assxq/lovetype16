@@ -303,15 +303,19 @@
     color: var(--wine-deep);
   }
 
-  /* 뒤로 갔을 때 이전 선택 표시 (selected보다 훨씬 은은하게) */
-  .option.preselected {
-    border-color: rgba(201, 169, 97, 0.5);
-    background: var(--cream-soft);
+  /* 뒤로 갔을 때 이전 선택 표시 (selected보다 은은하지만 또렷하게) */
+  .option.preselected,
+  .option.preselected:hover {
+    border-color: var(--gold) !important;
+    background: #faf3e4 !important;
+    box-shadow: 0 2px 12px rgba(201, 169, 97, 0.2) !important;
   }
 
-  .option.preselected .option-marker {
-    border-color: var(--gold);
-    color: var(--gold);
+  .option.preselected .option-marker,
+  .option.preselected:hover .option-marker {
+    background: var(--gold) !important;
+    border-color: var(--gold) !important;
+    color: #fff !important;
   }
 
   /* ===== 격려 메시지 ===== */
@@ -487,6 +491,7 @@
     { axis: 4, reverse: false, q: '연인과 다툰 직후 나는…',
       a: '"지금 얘기하자"고 바로 풀려 한다',
       b: '일단 자리를 피하고 시간을 갖는다',
+      c: '흥분을 가라앉히고 차분하게 대화해본다',
       scoreA: 'F', scoreB: 'A' },
     // Q4 [2축·정] C vs S
     { axis: 2, reverse: false, q: '카톡 답장이 3시간째 없을 때…',
@@ -527,6 +532,7 @@
     { axis: 4, reverse: true, q: '다툼 중 내 모습은?',
       a: '감정이 격해지면 자리를 뜨거나 입을 닫는다',
       b: '끝까지 대화로 결론을 내려 한다',
+      c: '감정을 추스른 뒤에 대화로 풀려 한다',
       scoreA: 'A', scoreB: 'F' },
     // Q12 [2축·정]
     { axis: 2, reverse: false, q: '연인과 이상적인 만남 빈도는?',
@@ -542,6 +548,7 @@
     { axis: 4, reverse: false, q: '연인이 잠수를 탔을 때…',
       a: '연락이 닿을 때까지 답답해서 못 견딘다',
       b: '시간이 필요한가 보다 하고 기다린다',
+      c: '조금 기다려보다가 안 되면 먼저 연락한다',
       scoreA: 'F', scoreB: 'A' },
     // Q15 [3축·정]
     { axis: 3, reverse: false, q: '연인의 어떤 모습에 더 끌리는가?',
@@ -582,6 +589,7 @@
     { axis: 4, reverse: false, q: '풀리지 않은 갈등이 있을 때…',
       a: '잠도 못 잘 정도로 신경 쓰여 결국 먼저 연락한다',
       b: '답답하지만 시간이 해결해줄 거라 둔다',
+      c: '상황을 보다가 필요하면 내가 먼저 푼다',
       scoreA: 'F', scoreB: 'A' },
     // Q23 [3축·역]
     { axis: 3, reverse: true, q: '연애 초반 가장 중요한 것은?',
@@ -639,6 +647,11 @@
             <span class="option-marker">B</span>
             ${q.b}
           </button>
+          ${q.c ? `
+          <button type="button" class="option ${saved === 'C' ? 'preselected' : ''}" onclick="selectAnswer('C')">
+            <span class="option-marker">C</span>
+            ${q.c}
+          </button>` : ''}
         </div>
       `;
 
@@ -666,12 +679,17 @@
   // ===== 답변 선택 =====
   function selectAnswer(choice) {
     const q = QUESTIONS[currentIndex];
-    const score = choice === 'A' ? q.scoreA : q.scoreB;
+    // A/B는 해당 축 점수, C(중간)는 양축 0.5씩 → score에 'mid' 표시
+    let score;
+    if (choice === 'A') score = q.scoreA;
+    else if (choice === 'B') score = q.scoreB;
+    else score = 'mid'; // 중간 답변
 
     // 시각적 선택 효과
     const options = document.querySelectorAll('.option');
     options.forEach(o => o.style.pointerEvents = 'none');
-    options[choice === 'A' ? 0 : 1].classList.add('selected');
+    const idx = choice === 'A' ? 0 : (choice === 'B' ? 1 : 2);
+    if (options[idx]) options[idx].classList.add('selected');
 
     // 답변 저장 (이전 답변이 있으면 덮어쓰기)
     answers[currentIndex] = { qIndex: currentIndex, choice, score, axis: q.axis };
@@ -722,7 +740,14 @@
     const scores = { E: 0, H: 0, C: 0, S: 0, R: 0, L: 0, F: 0, A: 0 };
 
     answers.forEach(ans => {
-      scores[ans.score]++;
+      if (ans.score === 'mid') {
+        // 중간 답변: 해당 문항 축의 양쪽에 0.5씩
+        const q = QUESTIONS[ans.qIndex];
+        scores[q.scoreA] += 0.5;
+        scores[q.scoreB] += 0.5;
+      } else {
+        scores[ans.score]++;
+      }
     });
 
     // 4축 각각 결과 결정

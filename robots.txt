@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lovetype16.xyz/sitemap.xml
+Sitemap: https://lovetype16.xyz/sitemap_index.xml

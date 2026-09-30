@@ -34,3 +34,6 @@ h2{font-size:1.05rem;color:var(--wine);margin-bottom:.7rem}
 @keyframes r{to{transform:rotate(360deg)}}
 .center{text-align:center}
 @media print{.noprint{display:none}body{background:#fff}.card{box-shadow:none}}
+
+.notice-box{margin-top:.9rem;padding:.85rem 1rem;border-radius:14px;background:#fff4e2;border:1px solid rgba(201,169,97,.6);font-size:.86rem;color:var(--ink-soft);line-height:1.6}
+.notice-box b:first-child{color:var(--wine);margin-right:.3rem}

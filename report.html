@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>커플 궁합 리포트 — Love Type 16</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="pay.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><a href="index.html">LOVE TYPE 16</a></header>
+  <div id="state" class="card center"><div class="spin"></div><div class="muted">리포트를 불러오는 중…</div></div>
+  <main id="report" style="display:none"></main>
+</div>
+<script>
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const state=document.getElementById('state'), out=document.getElementById('report');
+function msg(h,p,link){ state.innerHTML=`<h1 style="font-size:1.2rem">${h}</h1><p class="muted" style="margin:.6rem 0 1rem">${p}</p>${link||''}`; }
+
+(async()=>{
+  const qs=new URLSearchParams(location.search);
+  let token=new URLSearchParams(location.hash.slice(1)).get('t');
+  if(!token){
+    const a=(qs.get('a')||'').toUpperCase(), b=(qs.get('b')||'').toUpperCase();
+    try{ const m=JSON.parse(localStorage.getItem('lt16_tokens')||'{}'); token=m[[a,b].sort().join('_')]||null; }catch{}
+  }
+  if(!token) return msg('구매 내역을 찾을 수 없어요','이 기기에서 결제한 리포트가 없어요. 다른 기기에서 구매했다면 그때 저장한 주소로 접속해 주세요.','<a class="btn" href="compatibility.html">궁합 보러 가기</a>');
+  let d;
+  try{
+    const r=await fetch('/api/report?token='+encodeURIComponent(token)); d=await r.json();
+    if(!r.ok) return msg('열람할 수 없어요',esc(d.error||''),'<p class="muted">문의: <a href="mailto:assxq@naver.com">assxq@naver.com</a></p>');
+  }catch{ return msg('불러오지 못했어요','네트워크를 확인하고 새로고침해 주세요.'); }
+
+  const link=location.origin+'/report.html#t='+encodeURIComponent(token);
+  let h=`<div class="card"><span class="badge">COUPLE REPORT</span><h1>${esc(d.title)}</h1>
+    <div class="score"><span class="n">${d.score}점</span><span><b>${esc(d.label)}</b><br><span class="muted">${esc(d.summary)}</span></span></div></div>
+    <div class="card noprint"><h2>📌 이 주소를 저장해 두세요</h2><p class="muted">로그인 없이 이 주소로 언제든 다시 볼 수 있어요. 다른 기기에서 보려면 주소를 복사해 두세요.</p>
+    <button class="btn ghost" id="copy">주소 복사하기</button><button class="btn ghost" onclick="window.print()">PDF로 저장 / 인쇄</button></div>`;
+  for(const s of d.sections){
+    h+=`<section class="card sec"><h2>${esc(s.h)}</h2>`;
+    if(s.body) h+=`<p>${esc(s.body)}</p>`;
+    if(s.items) h+=`<ul>`+s.items.map(i=>`<li class="ax"><b>${esc(i.t)}</b>${esc(i.b)}</li>`).join('')+`</ul>`;
+    if(s.list) h+=`<ul>`+s.list.map(i=>`<li>${esc(i)}</li>`).join('')+`</ul>`;
+    if(s.scripts) h+=s.scripts.map(x=>`<p style="margin-top:.6rem"><b>${esc(x.who)}</b></p><ul>`+x.lines.map(l=>`<li><em class="say">${esc(l)}</em></li>`).join('')+`</ul>`).join('');
+    h+=`</section>`;
+  }
+  h+=`<p class="muted center" style="margin-top:1.2rem">${esc(d.notice||'')}</p>
+      <div class="noprint" style="margin-top:1rem"><a class="btn ghost" href="compatibility.html">다른 조합 보기</a></div>`;
+  out.innerHTML=h; state.style.display='none'; out.style.display='block';
+  document.getElementById('copy').onclick=async(e)=>{ try{ await navigator.clipboard.writeText(link); e.target.textContent='복사했어요 ✓'; }catch{ prompt('아래 주소를 복사하세요',link); } };
+})();
+</script>
+</body>
+</html>

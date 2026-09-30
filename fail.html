@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>결제 실패 — Love Type 16</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="pay.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><a href="index.html">LOVE TYPE 16</a></header>
+  <div class="card center">
+    <h1 style="font-size:1.25rem">결제가 완료되지 않았어요</h1>
+    <p class="muted" id="msg" style="margin:.6rem 0 1.1rem"></p>
+    <a class="btn" href="javascript:history.go(-2)">다시 시도하기</a>
+    <a class="btn ghost" href="compatibility.html">궁합 페이지로</a>
+  </div>
+</div>
+<script>
+  const q=new URLSearchParams(location.search);
+  const m=q.get('message');
+  document.getElementById('msg').textContent = m ? m : '결제를 취소했거나 문제가 생겼어요. 요금은 청구되지 않았어요.';
+</script>
+</body>
+</html>

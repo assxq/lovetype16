@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Love Type 16 — 당신의 연애는 어떤 모양인가요</title>
 <link rel="canonical" href="https://www.lovetype16.xyz/">
 <!-- Google AdSense -->
@@ -643,6 +643,69 @@
   .tpc-name { font-size: 0.85rem; color: var(--wine); font-weight: 700; line-height: 1.3; }
   @media (hover: none) { .type-preview-card:hover { transform: none; box-shadow: none; background: var(--cream-soft); border-color: rgba(92,31,46,0.1); } }
   @media (min-width: 600px) { .type-preview-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  /* ===== 업그레이드: 히어로 보조 요소 ===== */
+  .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.2rem; }
+  .hero-link {
+    font-size: 0.9rem; color: var(--wine); font-weight: 600; text-decoration: none;
+    border-bottom: 1px solid rgba(92,31,46,0.35); padding-bottom: 2px; font-family: inherit;
+  }
+  .hero-link:hover { border-bottom-color: var(--wine); }
+  .trust-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.6rem; list-style: none; }
+  .trust-chips li {
+    font-size: 0.75rem; color: var(--wine); font-weight: 600;
+    background: rgba(255,255,255,0.55); border: 1px solid rgba(92,31,46,0.12);
+    padding: 0.35rem 0.8rem; border-radius: 100px;
+  }
+  .trust-chips li::before { content: '✓'; color: var(--gold); margin-right: 0.4rem; font-weight: 700; }
+
+  /* ===== 업그레이드: 궁합 섹션 ===== */
+  .match-promo { background: var(--cream-soft); text-align: center; }
+  .match-promo-inner {
+    max-width: 640px; margin: 0 auto; padding: 2.4rem 1.5rem;
+    background: #fffdf9; border: 1px solid rgba(92,31,46,0.1); border-radius: 24px;
+    box-shadow: 0 14px 40px var(--shadow);
+  }
+  .match-pair { display: flex; justify-content: center; align-items: center; gap: 0.9rem; margin-bottom: 1.2rem; font-size: 2.2rem; }
+  .match-pair .x { font-size: 1rem; color: var(--gold); font-weight: 700; }
+  .match-promo p { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.75; margin-bottom: 1.6rem; }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    border: 1.5px solid var(--wine); color: var(--wine); background: transparent;
+    padding: 0.95rem 1.8rem; border-radius: 100px; font-size: 0.92rem; font-weight: 600;
+    font-family: inherit; text-decoration: none; cursor: pointer; transition: all 0.3s;
+  }
+  .btn-outline:hover { background: var(--wine); color: var(--cream); }
+
+  /* ===== 업그레이드: 공유 ===== */
+  .share-row { background: var(--cream); text-align: center; padding: 3.5rem 1.5rem; }
+  .share-row h2 { font-size: 1.25rem; color: var(--wine); font-weight: 700; margin-bottom: 0.4rem; letter-spacing: -0.02em; }
+  .share-row p { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 1.3rem; }
+
+  /* ===== 업그레이드: 모바일 하단 고정 CTA ===== */
+  .sticky-cta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    padding: 0.8rem 1rem calc(0.8rem + env(safe-area-inset-bottom));
+    background: rgba(245,237,224,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(60,20,30,0.08);
+    transform: translateY(110%); transition: transform 0.35s ease;
+  }
+  .sticky-cta.show { transform: translateY(0); }
+  .sticky-cta button {
+    width: 100%; background: var(--wine); color: var(--cream); border: none; border-radius: 100px;
+    padding: 0.95rem 1rem; font-size: 0.95rem; font-weight: 600; font-family: inherit; cursor: pointer;
+  }
+  @media (min-width: 768px) { .sticky-cta { display: none; } }
+  footer { padding-bottom: 5.5rem; }
+  @media (min-width: 768px) { footer { padding-bottom: 2rem; } }
+
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero-floating { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .sticky-cta { transition: none; }
+  }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TB6F95LG0V"></script>
@@ -682,15 +745,18 @@
       MBTI처럼 16가지 유형으로 알아보는 나의 연애 스타일.<br>
       24개의 질문으로 당신만의 사랑법을 찾아드려요.
     </p>
-    <button class="hero-cta" onclick="startTest()">
-      <span>테스트 시작하기</span>
-      <span class="arrow">→</span>
-    </button>
-    <div class="hero-meta">
-      <span>약 3분 소요</span>
-      <span class="dot"></span>
-      <span>24문항</span>
+    <div class="hero-actions">
+      <button class="hero-cta" onclick="startTest('hero')">
+        <span>내 연애 유형 알아보기</span>
+        <span class="arrow">→</span>
+      </button>
+      <a class="hero-link" href="compatibility.html" onclick="track('cta_click',{location:'hero_compat'})">궁합부터 볼래요</a>
     </div>
+    <ul class="trust-chips" aria-label="이용 안내">
+      <li>무료</li>
+      <li>로그인 없이</li>
+      <li>약 3분 · 24문항</li>
+    </ul>
   </div>
 </section>
 
@@ -836,6 +902,19 @@
   </div>
 </section>
 
+<!-- ===== 궁합 안내 ===== -->
+<section class="match-promo">
+  <div class="match-promo-inner reveal">
+    <div class="section-marker">— Compatibility</div>
+    <div class="match-pair" aria-hidden="true"><span>🌹</span><span class="x">×</span><span>🗝️</span></div>
+    <h2 class="section-title" style="margin-bottom:0.8rem;">우리, 얼마나 잘 맞을까?</h2>
+    <p>두 사람의 유형을 고르면 궁합 점수와 관계 포인트를 바로 보여드려요.<br>썸 상대, 연인, 친구와 함께 해보세요.</p>
+    <a class="btn-outline" href="compatibility.html" onclick="track('cta_click',{location:'home_compat'})">
+      <span>궁합 확인하기</span><span>→</span>
+    </a>
+  </div>
+</section>
+
 <section class="final-cta" id="start">
   <div class="final-marker">— Ready to Begin —</div>
   <h2 class="final-title">
@@ -845,11 +924,23 @@
     24개의 질문, 단 3분.<br>
     당신만의 연애 유형을 만나보세요.
   </p>
-  <button class="final-cta-btn" onclick="startTest()">
+  <button class="final-cta-btn" onclick="startTest('final')">
     <span>테스트 시작하기</span>
     <span>→</span>
   </button>
 </section>
+
+<section class="share-row">
+  <h2>친구는 어떤 유형일까요?</h2>
+  <p>링크를 보내고 서로의 유형을 비교해 보세요.</p>
+  <button class="btn-outline" onclick="track('share_click',{location:'home'}); shareSite()">
+    <span>💌 친구에게 공유하기</span>
+  </button>
+</section>
+
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <button type="button" tabindex="-1" onclick="startTest('sticky')">내 연애 유형 알아보기 →</button>
+</div>
 
 <footer>
   <div class="footer-logo">Love Type 16</div>
@@ -888,9 +979,38 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  function startTest() {
-    window.location.href = 'test.html';
+  // GA 이벤트 (gtag 미로드 시에도 안전)
+  function track(name, params) {
+    try { if (window.gtag) gtag('event', name, params || {}); } catch (e) {}
   }
+
+  function startTest(location) {
+    track('cta_click', { location: location || 'nav' });
+    // 이벤트 전송 여유를 주되 이동은 지연시키지 않음
+    window.location.href = 'test.html' + (window.location.search || '');
+  }
+
+  // 유형 카드 클릭 추적
+  document.querySelectorAll('.type-preview-card').forEach(a => {
+    a.addEventListener('click', () => track('type_card_click', { type: a.querySelector('.tpc-code').textContent }));
+  });
+
+  // 모바일 하단 고정 CTA: 히어로 CTA가 화면에서 사라지면 표시, 최종 CTA 근처에서는 숨김
+  (function () {
+    const sticky = document.getElementById('stickyCta');
+    const heroCta = document.querySelector('.hero-cta');
+    const finalCta = document.getElementById('start');
+    if (!sticky || !heroCta || !('IntersectionObserver' in window)) return;
+    let heroOut = false, finalIn = false;
+    const update = () => {
+      const on = heroOut && !finalIn;
+      sticky.classList.toggle('show', on);
+      sticky.setAttribute('aria-hidden', on ? 'false' : 'true');
+      sticky.querySelector('button').tabIndex = on ? 0 : -1;
+    };
+    new IntersectionObserver(([e]) => { heroOut = !e.isIntersecting && e.boundingClientRect.top < 0; update(); }).observe(heroCta);
+    new IntersectionObserver(([e]) => { finalIn = e.isIntersecting; update(); }).observe(finalCta);
+  })();
 
   // 카카오 키
   const KAKAO_JS_KEY = '1704ee48e29d84e38b5a9cca02979089';

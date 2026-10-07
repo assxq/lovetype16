@@ -386,8 +386,15 @@ let lastResult = null;
 (function initFromUrl(){
   const params = new URLSearchParams(location.search);
   const myType = params.get('me');
+  const partnerType = (params.get('partner') || '').toUpperCase();
   if (myType && TYPES[myType.toUpperCase()]) {
     setType('A', myType.toUpperCase());
+    // 커플 초대로 들어온 경우: 상대 유형까지 채우고 바로 결과 표시
+    if (TYPES[partnerType]) {
+      setType('B', partnerType);
+      try { if (window.gtag) gtag('event', 'invite_compat_view', { pair: myType.toUpperCase() + '-' + partnerType }); } catch (e) {}
+      setTimeout(calculate, 0);
+    }
   } else {
     // sessionStorage의 테스트 결과 활용
     try {

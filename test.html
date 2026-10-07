@@ -431,6 +431,18 @@
       font-size: 1rem;
     }
   }
+  .invite-banner {
+    max-width: 540px;
+    margin: 0 auto 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 14px;
+    background: rgba(212, 129, 141, 0.12);
+    border: 1px solid rgba(212, 129, 141, 0.35);
+    color: var(--wine, #5c1f2e);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    text-align: center;
+  }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TB6F95LG0V"></script>
@@ -837,7 +849,7 @@
       const scoreParam = `${s.E}${s.H}${s.C}${s.S}${s.R}${s.L}${s.F}${s.A}`;
 
       setTimeout(() => {
-        window.location.href = `result.html?type=${result.type}&s=${scoreParam}`;
+        window.location.href = `result.html?type=${result.type}&s=${scoreParam}` + (inviteFrom ? `&with=${inviteFrom}` : '');
       }, 1800);
     }, 400);
   }
@@ -855,6 +867,26 @@
 
   startFresh();
   track('test_start');
+
+  // ===== 커플 초대 (?with=유형) — 보낸 사람 유형을 기억해 두고 결과에서 궁합 연결 =====
+  const INVITE_TYPES = ['ECRF','ECRA','ECLF','ECLA','ESRF','ESRA','ESLF','ESLA','HCRF','HCRA','HCLF','HCLA','HSRF','HSRA','HSLF','HSLA'];
+  let inviteFrom = null;
+  (function initInvite() {
+    const w = (new URLSearchParams(location.search).get('with') || '').toUpperCase();
+    if (INVITE_TYPES.includes(w)) {
+      inviteFrom = w;
+      try { sessionStorage.setItem('lt16_with', w); } catch (e) {}
+      track('invite_open', { from_type: w });
+      const banner = document.createElement('div');
+      banner.className = 'invite-banner';
+      banner.textContent = '💌 궁합 초대를 받았어요! 테스트가 끝나면 보낸 사람과의 궁합이 바로 나와요';
+      const main = document.querySelector('main');
+      if (main) main.insertBefore(banner, main.firstChild);
+    } else {
+      try { inviteFrom = sessionStorage.getItem('lt16_with'); } catch (e) {}
+      if (!INVITE_TYPES.includes(inviteFrom)) inviteFrom = null;
+    }
+  })();
 
   // 뒤로가기 캐시(bfcache)로 복원될 때도 강제 새로고침 처리
   window.addEventListener('pageshow', (e) => {

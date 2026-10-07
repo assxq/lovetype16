@@ -685,6 +685,12 @@
     document.getElementById('progressFill').style.width = pct + '%';
   }
 
+  // ===== GA 이벤트 (gtag 미로드/차단 시에도 안전) =====
+  const firedMilestones = new Set();
+  function track(name, params) {
+    try { if (window.gtag) gtag('event', name, params || {}); } catch (e) {}
+  }
+
   // ===== 답변 선택 =====
   function selectAnswer(choice) {
     const q = QUESTIONS[currentIndex];
@@ -707,6 +713,12 @@
     const qNum = currentIndex + 1;
     if (ENCOURAGEMENTS[qNum]) {
       showEncouragement(ENCOURAGEMENTS[qNum]);
+    }
+
+    // 진행도 이벤트 (5문항 단위, 되돌아가도 한 번만)
+    if (qNum % 5 === 0 && qNum < QUESTIONS.length && !firedMilestones.has(qNum)) {
+      firedMilestones.add(qNum);
+      track('test_progress', { question: qNum });
     }
 
     // 다음 문항 또는 결과
@@ -801,6 +813,7 @@
 
       // 결과 계산
       const result = calculateResult();
+      track('test_complete', { type: result.type });
 
       // 확장용 payload (답변 원본 + 메타데이터)
       const payload = {
@@ -841,6 +854,7 @@
   }
 
   startFresh();
+  track('test_start');
 
   // 뒤로가기 캐시(bfcache)로 복원될 때도 강제 새로고침 처리
   window.addEventListener('pageshow', (e) => {

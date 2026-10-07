@@ -1053,6 +1053,15 @@
   <div class="price-meta reveal" style="margin-top:1.2rem;">로그인 없이 바로 볼 수 있어요 ✨</div>
 </section>
 
+<!-- ===== 궁합 유도 ===== -->
+<section class="reveal" style="max-width:540px; margin:1rem auto 0; padding:0 1.5rem;">
+  <a href="compatibility.html" id="compatLink" onclick="trackEvent('compat_click', { from: 'result' })" style="display:block; text-decoration:none; background:linear-gradient(135deg, rgba(212,129,141,0.12), rgba(201,169,97,0.10)); border:1px solid rgba(212,129,141,0.35); border-radius:18px; padding:1.5rem; text-align:center;">
+    <div style="font-size:1.05rem; color:var(--wine); font-weight:700; margin-bottom:0.4rem;">💞 우리, 얼마나 잘 맞을까?</div>
+    <div style="font-size:0.88rem; color:var(--ink-soft); line-height:1.55; margin-bottom:1rem;">내 유형은 이미 채워 뒀어요.<br>상대 유형만 고르면 궁합 점수가 바로 나와요.</div>
+    <span style="display:inline-block; background:var(--wine); color:var(--cream); padding:0.65rem 1.4rem; border-radius:100px; font-weight:600; font-size:0.85rem;">궁합 확인하기 →</span>
+  </a>
+</section>
+
 <!-- ===== 러브레터(블로그) 유도 ===== -->
 <section class="reveal" style="max-width:540px; margin:1rem auto 0; padding:0 1.5rem;">
   <a href="blog.html" style="display:block; text-decoration:none; background:linear-gradient(135deg, rgba(92,31,46,0.05), rgba(201,169,97,0.08)); border:1px solid rgba(201,169,97,0.25); border-radius:18px; padding:1.5rem; text-align:center;">
@@ -1334,6 +1343,11 @@
     const typeDetailLink = document.getElementById('typeDetailLink');
     if (typeDetailLink) typeDetailLink.href = `type-${type.toLowerCase()}.html`;
 
+    // 궁합 링크에 내 유형 전달 (compatibility.html이 ?me= 를 읽음)
+    const compatLink = document.getElementById('compatLink');
+    if (compatLink) compatLink.href = `compatibility.html?me=${type}`;
+    trackEvent('result_view', { type: type });
+
     // 히어로
     document.getElementById('typeEmoji').textContent = data.emoji;
     document.getElementById('typeCode').textContent = type;
@@ -1392,7 +1406,12 @@
   }
 
   // ===== 액션 함수 =====
-  function openShare() { openModal('shareModal'); }
+  // GA 이벤트 (gtag 미로드/차단 시에도 안전)
+  function trackEvent(name, params) {
+    try { if (window.gtag) gtag('event', name, params || {}); } catch (e) {}
+  }
+
+  function openShare() { trackEvent('share_open'); openModal('shareModal'); }
   function retakeTest() {
     // 결과 초기화 후 메인으로 (신규/재검사 모두 메인에서 시작)
     try {
@@ -1404,6 +1423,7 @@
   // ===== 심층분석으로 이동 (무료) =====
   function goToDeepAnalysis() {
     const result = getResult();
+    trackEvent('deep_click', { type: result.type });
 
     // 점수를 URL로도 전달 (sessionStorage 유실 대비)
     let scoreParam = '';

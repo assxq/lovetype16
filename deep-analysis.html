@@ -37,17 +37,17 @@
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" crossorigin="anonymous"></script>
 <style>
   :root {
-    --cream: #f5ede0;
-    --cream-soft: #faf4ea;
-    --cream-deep: #ebe0cf;
-    --wine: #5c1f2e;
-    --wine-deep: #3d1420;
-    --wine-soft: #8a3a4d;
-    --gold: #c9a961;
-    --gold-soft: #e0c896;
-    --ink: #2a1810;
-    --ink-soft: #5a4438;
-    --ink-light: #8a7468;
+    --cream: #f4f2ee;
+    --cream-soft: #fbfaf8;
+    --cream-deep: #e6e3dd;
+    --wine: #141210;
+    --wine-deep: #0a0908;
+    --wine-soft: #57534d;
+    --gold: #b8352a;
+    --gold-soft: #cfc9c0;
+    --ink: #1a1816;
+    --ink-soft: #5f5a54;
+    --ink-light: #8f8a83;
     --success: #4a7c4e;
     --danger: #b04848;
   }
@@ -87,10 +87,10 @@
     right: 0;
     z-index: 50;
     padding: 0.95rem 1.2rem;
-    background: rgba(245, 237, 224, 0.85);
+    background: rgba(244, 242, 238, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(60, 20, 30, 0.06);
+    border-bottom: 1px solid rgba(20, 18, 16, 0.06);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,7 +120,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: rgba(92, 31, 46, 0.08);
+    background: rgba(20, 18, 16, 0.08);
     z-index: 50;
   }
   .scroll-fill {
@@ -179,7 +179,7 @@
     transform: translate(-50%, -50%);
     width: 280px;
     height: 280px;
-    border: 1px solid rgba(92, 31, 46, 0.06);
+    border: 1px solid rgba(20, 18, 16, 0.06);
     border-radius: 50%;
     pointer-events: none;
   }
@@ -187,7 +187,7 @@
     content: '';
     position: absolute;
     inset: 30px;
-    border: 1px dashed rgba(201, 169, 97, 0.25);
+    border: 1px dashed rgba(20, 18, 16, 0.25);
     border-radius: 50%;
   }
 
@@ -206,7 +206,7 @@
     margin-bottom: 1rem;
     position: relative;
     animation: gentleFloat 4s ease-in-out infinite;
-    filter: drop-shadow(0 8px 20px rgba(92, 31, 46, 0.15));
+    filter: drop-shadow(0 8px 20px rgba(20, 18, 16, 0.15));
   }
   @keyframes gentleFloat {
     0%, 100% { transform: translateY(0); }
@@ -239,10 +239,10 @@
     margin: 0 auto 1.5rem;
     font-weight: 400;
     padding: 1.4rem 1.5rem;
-    background: #fffdf9;
-    border-radius: 16px;
-    border: 1px solid rgba(201, 169, 97, 0.25);
-    box-shadow: 0 8px 24px rgba(92, 31, 46, 0.07);
+    background: #ffffff;
+    border-radius: 6px;
+    border: 1px solid rgba(20, 18, 16, 0.25);
+    box-shadow: 0 8px 24px rgba(20, 18, 16, 0.07);
     position: relative;
   }
   .hero-tagline::before, .hero-tagline::after {
@@ -273,8 +273,8 @@
 
   .section-tinted {
     background: var(--cream-soft);
-    border-top: 1px solid rgba(92, 31, 46, 0.06);
-    border-bottom: 1px solid rgba(92, 31, 46, 0.06);
+    border-top: 1px solid rgba(20, 18, 16, 0.06);
+    border-bottom: 1px solid rgba(20, 18, 16, 0.06);
   }
 
   /* ===== Chapter 1: 4축 점수 그래프 ===== */
@@ -331,8 +331,8 @@
 
   .axis-bar-track {
     height: 8px;
-    background: rgba(245, 237, 224, 0.1);
-    border-radius: 100px;
+    background: rgba(244, 242, 238, 0.1);
+    border-radius: 2px;
     overflow: hidden;
     position: relative;
   }
@@ -340,7 +340,7 @@
   .axis-bar-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--gold-soft), var(--gold));
-    border-radius: 100px;
+    border-radius: 2px;
     width: 0%;
     transition: width 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: relative;
@@ -356,7 +356,7 @@
     height: 12px;
     border-radius: 50%;
     background: var(--gold);
-    box-shadow: 0 0 12px rgba(201, 169, 97, 0.6);
+    box-shadow: 0 0 12px rgba(20, 18, 16, 0.6);
   }
 
   .axis-bar-pct {
@@ -428,8 +428,8 @@
 
   .love-card {
     padding: 1.5rem 1.4rem;
-    border-radius: 16px;
-    border: 1px solid rgba(92, 31, 46, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(20, 18, 16, 0.1);
     background: var(--cream);
   }
 
@@ -485,8 +485,8 @@
   .pattern-card {
     background: linear-gradient(135deg, var(--cream-soft), var(--cream));
     padding: 1.5rem 1.4rem;
-    border-radius: 16px;
-    border: 1px solid rgba(201, 169, 97, 0.3);
+    border-radius: 6px;
+    border: 1px solid rgba(20, 18, 16, 0.3);
   }
 
   .pattern-label {
@@ -523,7 +523,7 @@
   .conflict-warning {
     background: rgba(176, 72, 72, 0.06);
     border: 1px solid rgba(176, 72, 72, 0.2);
-    border-radius: 14px;
+    border-radius: 6px;
     padding: 1.2rem 1.3rem;
     font-size: 0.88rem;
     color: var(--ink);
@@ -545,7 +545,7 @@
     padding: 0.95rem 1.1rem;
     background: rgba(74, 124, 78, 0.06);
     border: 1px solid rgba(74, 124, 78, 0.15);
-    border-radius: 12px;
+    border-radius: 6px;
     font-weight: 400;
     display: flex;
     align-items: flex-start;
@@ -582,8 +582,8 @@
 
   .match-item {
     background: var(--cream);
-    border: 1px solid rgba(92, 31, 46, 0.1);
-    border-radius: 14px;
+    border: 1px solid rgba(20, 18, 16, 0.1);
+    border-radius: 6px;
     padding: 1.1rem 1.3rem;
     display: flex;
     gap: 1rem;
@@ -638,9 +638,9 @@
 
   .ideal-card {
     background: var(--cream);
-    border-radius: 16px;
+    border-radius: 6px;
     padding: 1.4rem 1.4rem;
-    border: 1px solid rgba(92, 31, 46, 0.1);
+    border: 1px solid rgba(20, 18, 16, 0.1);
   }
 
   .ideal-card-title {
@@ -691,7 +691,7 @@
     left: -10%;
     right: -10%;
     bottom: -10%;
-    background: radial-gradient(circle at 30% 20%, rgba(201, 169, 97, 0.1), transparent 50%);
+    background: radial-gradient(circle at 30% 20%, rgba(20, 18, 16, 0.1), transparent 50%);
     pointer-events: none;
   }
 
@@ -699,11 +699,11 @@
     max-width: 540px;
     margin: 0 auto;
     background: var(--cream);
-    border-radius: 24px;
+    border-radius: 6px;
     padding: 2.5rem 2rem;
-    box-shadow: 0 20px 60px rgba(92, 31, 46, 0.12);
+    box-shadow: 0 20px 60px rgba(20, 18, 16, 0.12);
     position: relative;
-    border: 1px solid rgba(201, 169, 97, 0.3);
+    border: 1px solid rgba(20, 18, 16, 0.3);
   }
 
   .letter-mark {
@@ -740,7 +740,7 @@
   .letter-footer {
     margin-top: 2rem;
     padding-top: 1.5rem;
-    border-top: 1px dashed rgba(201, 169, 97, 0.4);
+    border-top: 1px dashed rgba(20, 18, 16, 0.4);
     text-align: right;
     font-size: 0.78rem;
     color: var(--ink-soft);
@@ -760,7 +760,7 @@
   /* ===== Chapter 8: 추천템 ===== */
   .recommend-section {
     background: var(--cream-soft);
-    border-top: 1px solid rgba(92, 31, 46, 0.06);
+    border-top: 1px solid rgba(20, 18, 16, 0.06);
   }
 
   .recommend-intro {
@@ -781,8 +781,8 @@
     align-items: center;
     gap: 1rem;
     background: var(--cream);
-    border: 1px solid rgba(92, 31, 46, 0.1);
-    border-radius: 16px;
+    border: 1px solid rgba(20, 18, 16, 0.1);
+    border-radius: 6px;
     padding: 1.1rem 1.2rem;
     text-decoration: none;
     transition: all 0.3s;
@@ -791,7 +791,7 @@
   .recommend-card:hover, .recommend-card:active {
     transform: translateY(-2px);
     border-color: var(--gold);
-    box-shadow: 0 10px 28px rgba(92, 31, 46, 0.1);
+    box-shadow: 0 10px 28px rgba(20, 18, 16, 0.1);
   }
 
   .recommend-emoji {
@@ -802,7 +802,7 @@
     align-items: center;
     justify-content: center;
     background: var(--cream-soft);
-    border-radius: 12px;
+    border-radius: 6px;
     flex-shrink: 0;
   }
 
@@ -832,7 +832,7 @@
     color: var(--cream);
     background: var(--wine);
     padding: 0.5rem 0.9rem;
-    border-radius: 100px;
+    border-radius: 2px;
     font-weight: 600;
     white-space: nowrap;
   }
@@ -843,8 +843,8 @@
     line-height: 1.6;
     margin-top: 1.5rem;
     padding: 0.9rem 1rem;
-    background: rgba(92, 31, 46, 0.04);
-    border-radius: 10px;
+    background: rgba(20, 18, 16, 0.04);
+    border-radius: 4px;
     text-align: center;
     font-weight: 400;
   }
@@ -885,7 +885,7 @@
     border: 1px solid var(--gold);
     color: var(--gold);
     padding: 0.85rem 1.4rem;
-    border-radius: 100px;
+    border-radius: 2px;
     font-family: 'Pretendard', sans-serif;
     font-size: 0.85rem;
     font-weight: 500;
@@ -918,24 +918,24 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(245, 237, 224, 0.95);
+    background: rgba(244, 242, 238, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(60, 20, 30, 0.08);
+    border-top: 1px solid rgba(20, 18, 16, 0.08);
     padding: 0.7rem 1rem;
     z-index: 80;
     display: flex;
     gap: 0.5rem;
-    box-shadow: 0 -10px 30px rgba(60, 20, 30, 0.06);
+    box-shadow: 0 -10px 30px rgba(20, 18, 16, 0.06);
   }
 
   .sticky-btn {
     flex: 1;
     background: transparent;
-    border: 1px solid rgba(92, 31, 46, 0.15);
+    border: 1px solid rgba(20, 18, 16, 0.15);
     color: var(--wine);
     padding: 0.85rem 0.5rem;
-    border-radius: 100px;
+    border-radius: 2px;
     font-family: 'Pretendard', sans-serif;
     font-size: 0.82rem;
     font-weight: 500;
@@ -1002,7 +1002,7 @@
     background: var(--wine);
     color: var(--cream);
     padding: 1rem 1.8rem;
-    border-radius: 100px;
+    border-radius: 2px;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.92rem;
@@ -1036,9 +1036,9 @@
   }
   .ad-inner {
     min-height: 100px;
-    background: rgba(92, 31, 46, 0.03);
-    border: 1px dashed rgba(92, 31, 46, 0.15);
-    border-radius: 12px;
+    background: rgba(20, 18, 16, 0.03);
+    border: 1px dashed rgba(20, 18, 16, 0.15);
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1099,14 +1099,14 @@
   /* ===== 공유 모달 ===== */
   .modal-bg {
     position: fixed; inset: 0;
-    background: rgba(45, 20, 25, 0.55);
+    background: rgba(20, 18, 16, 0.55);
     backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     z-index: 200; display: flex; align-items: flex-end; justify-content: center;
     opacity: 0; pointer-events: none; transition: opacity 0.3s;
   }
   .modal-bg.show { opacity: 1; pointer-events: auto; }
   .modal {
-    background: var(--cream); border-radius: 24px 24px 16px 16px;
+    background: var(--cream); border-radius: 6px 24px 16px 16px;
     padding: 2rem 1.5rem 1.5rem; max-width: 460px; width: 100%;
     max-height: 80vh; overflow-y: auto; position: relative; text-align: center;
     transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1);
@@ -1115,23 +1115,23 @@
   .modal-bg.show .modal { transform: translateY(0); }
   .modal-close {
     position: absolute; top: 1rem; right: 1rem; width: 32px; height: 32px;
-    border-radius: 50%; border: none; background: rgba(92,31,46,0.08);
+    border-radius: 50%; border: none; background: rgba(20, 18, 16,0.08);
     color: var(--wine); font-size: 1.1rem; line-height: 1; cursor: pointer;
     display: flex; align-items: center; justify-content: center; z-index: 5;
   }
-  .modal-handle { width: 40px; height: 4px; background: rgba(92,31,46,0.2); border-radius: 100px; margin: 0 auto 1rem; }
+  .modal-handle { width: 40px; height: 4px; background: rgba(20, 18, 16,0.2); border-radius: 2px; margin: 0 auto 1rem; }
   .modal-title { font-size: 1.15rem; color: var(--wine); font-weight: 700; margin-bottom: 1rem; }
   .modal-options { display: flex; flex-direction: column; gap: 0.7rem; }
   .modal-option {
     display: flex; align-items: center; gap: 0.8rem; width: 100%;
     padding: 1rem 1.2rem; background: var(--cream-soft);
-    border: 1px solid rgba(92,31,46,0.1); border-radius: 14px;
+    border: 1px solid rgba(20, 18, 16,0.1); border-radius: 6px;
     font-family: 'Pretendard', sans-serif; font-size: 0.95rem; font-weight: 600;
     color: var(--wine); cursor: pointer; transition: all 0.25s; text-align: left;
   }
   .modal-option:hover { background: var(--cream); border-color: var(--gold); }
   .modal-option-icon { font-size: 1.2rem; }
-  @media (hover: none) { .modal-option:hover { background: var(--cream-soft); border-color: rgba(92,31,46,0.1); } }
+  @media (hover: none) { .modal-option:hover { background: var(--cream-soft); border-color: rgba(20, 18, 16,0.1); } }
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TB6F95LG0V"></script>
@@ -1141,6 +1141,7 @@
   gtag('js', new Date());
   gtag('config', 'G-TB6F95LG0V');
 </script>
+<link rel="stylesheet" href="/theme.css">
 </head>
 <body>
 
@@ -1167,7 +1168,7 @@
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-deco"></div>
-  <div class="hero-marker">— Deep Analysis Report —</div>
+  <div class="hero-marker">Deep Analysis Report</div>
   <div class="hero-emoji" id="heroEmoji">🌹</div>
   <div class="hero-code" id="heroCode">ECRF</div>
   <div class="hero-name" id="heroName">열정 로맨티시스트</div>
@@ -1317,7 +1318,7 @@
 <section class="letter-section">
   <div class="letter-card reveal">
     <div class="letter-mark">"</div>
-    <div class="letter-marker">— A Letter to Yourself —</div>
+    <div class="letter-marker">A Letter to Yourself</div>
     <div class="letter-body" id="letterBody"></div>
     <div class="letter-footer">— Love Type 16</div>
   </div>
@@ -1344,7 +1345,7 @@
 
 <!-- ===== Outro ===== -->
 <section class="outro">
-  <div class="outro-marker">— End of Report —</div>
+  <div class="outro-marker">End of Report</div>
   <h2 class="outro-title">분석은 여기까지예요</h2>
   <p class="outro-sub">
     이제 상대와의 궁합도 확인해볼까요?<br>
@@ -2346,30 +2347,30 @@ function drawCard() {
   const ctx = canvas.getContext('2d');
 
   const bg = ctx.createLinearGradient(0, 0, W, H);
-  bg.addColorStop(0, '#5c1f2e'); bg.addColorStop(1, '#3d1420');
+  bg.addColorStop(0, '#141210'); bg.addColorStop(1, '#0a0908');
   ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
 
-  ctx.strokeStyle = 'rgba(201,169,97,0.25)'; ctx.lineWidth = 2;
+  ctx.strokeStyle = 'rgba(20, 18, 16,0.25)'; ctx.lineWidth = 2;
   ctx.beginPath(); ctx.arc(W/2, 620, 280, 0, Math.PI*2); ctx.stroke();
-  ctx.strokeStyle = 'rgba(201,169,97,0.4)'; ctx.setLineDash([6, 10]);
+  ctx.strokeStyle = 'rgba(20, 18, 16,0.4)'; ctx.setLineDash([6, 10]);
   ctx.beginPath(); ctx.arc(W/2, 620, 230, 0, Math.PI*2); ctx.stroke();
   ctx.setLineDash([]);
 
   ctx.textAlign = 'center';
-  ctx.fillStyle = '#c9a961'; ctx.font = '600 30px Pretendard, sans-serif';
+  ctx.fillStyle = '#b8352a'; ctx.font = '600 30px Pretendard, sans-serif';
   ctx.fillText('L O V E   T Y P E   1 6', W/2, 200);
   ctx.font = '260px serif'; ctx.fillText(data.emoji, W/2, 720);
-  ctx.fillStyle = '#e0c896'; ctx.font = '700 64px Pretendard, sans-serif';
+  ctx.fillStyle = '#cfc9c0'; ctx.font = '700 64px Pretendard, sans-serif';
   ctx.fillText(type, W/2, 900);
-  ctx.fillStyle = '#f5ede0'; ctx.font = '800 96px Pretendard, sans-serif';
+  ctx.fillStyle = '#f4f2ee'; ctx.font = '800 96px Pretendard, sans-serif';
   ctx.fillText(data.name, W/2, 1020);
-  ctx.strokeStyle = 'rgba(201,169,97,0.5)'; ctx.lineWidth = 3;
+  ctx.strokeStyle = 'rgba(20, 18, 16,0.5)'; ctx.lineWidth = 3;
   ctx.beginPath(); ctx.moveTo(W/2-80, 1090); ctx.lineTo(W/2+80, 1090); ctx.stroke();
-  ctx.fillStyle = 'rgba(245,237,224,0.9)'; ctx.font = '400 42px Pretendard, sans-serif';
+  ctx.fillStyle = 'rgba(244, 242, 238,0.9)'; ctx.font = '400 42px Pretendard, sans-serif';
   wrapCardText(ctx, data.tagline, W/2, 1200, 880, 62);
-  ctx.fillStyle = '#c9a961'; ctx.font = '600 40px Pretendard, sans-serif';
+  ctx.fillStyle = '#b8352a'; ctx.font = '600 40px Pretendard, sans-serif';
   ctx.fillText('너의 연애 유형은?', W/2, 1750);
-  ctx.fillStyle = 'rgba(245,237,224,0.7)'; ctx.font = '400 36px Pretendard, sans-serif';
+  ctx.fillStyle = 'rgba(244, 242, 238,0.7)'; ctx.font = '400 36px Pretendard, sans-serif';
   ctx.fillText('lovetype16.xyz', W/2, 1810);
   return canvas;
 }
@@ -2394,7 +2395,7 @@ function saveCard() {
     const canvas = drawCard();
     cardDataUrl = canvas.toDataURL('image/png');
     document.getElementById('cardPreview').innerHTML =
-      `<img src="${cardDataUrl}" style="width:160px; border-radius:14px; box-shadow:0 12px 40px rgba(0,0,0,0.3);" alt="결과 카드">`;
+      `<img src="${cardDataUrl}" style="width:160px; border-radius:6px; box-shadow:0 12px 40px rgba(0,0,0,0.3);" alt="결과 카드">`;
     document.getElementById('cardModal').classList.add('show');
   };
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(render);
@@ -2424,8 +2425,8 @@ function showToast(msg) {
   toast.style.cssText = `
     position: fixed; top: 5rem; left: 50%; transform: translateX(-50%);
     background: var(--wine); color: var(--cream); padding: 0.8rem 1.5rem;
-    border-radius: 100px; font-size: 0.85rem; font-weight: 500;
-    box-shadow: 0 12px 30px rgba(92, 31, 46, 0.3);
+    border-radius: 2px; font-size: 0.85rem; font-weight: 500;
+    box-shadow: 0 12px 30px rgba(20, 18, 16, 0.3);
     z-index: 300; opacity: 0; transition: all 0.3s;
   `;
   toast.textContent = msg;

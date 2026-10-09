@@ -1,0 +1,160 @@
+/* =========================================================
+   Love Type 16 — Editorial theme
+   모든 페이지의 인라인 스타일 뒤에 로드되어 타이포·장식을 통일한다.
+   색상 토큰은 각 페이지 :root 값을 그대로 쓰고, 여기서는 보정만 한다.
+   ========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+KR:wght@500;600;700&display=swap');
+
+:root {
+  --serif-kr: 'Noto Serif KR', 'Nanum Myeongjo', serif;
+  --serif-en: 'Instrument Serif', 'Noto Serif KR', serif;
+  --mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+  --accent: #b8352a;
+  --rule: rgba(20, 18, 16, 0.14);
+}
+
+/* ---------- 바탕 ---------- */
+body::before { display: none !important; }
+body { letter-spacing: -0.01em; text-rendering: optimizeLegibility; }
+::selection { background: #141210; color: #f4f2ee; }
+
+/* ---------- 제목: 명조 ---------- */
+h1, h2,
+.hero-title, .section-title, .final-title, .tp-title, .question, .loading-title,
+.type-name, .pricing-title, .modal-title, .feature-title, .locked-title,
+.intro-title, .sheet-title, .result-person-name, .chapter-title, .deep-title,
+.denied-title, .outro-title, .match-title, .love-card-title, .ideal-card-title,
+.hero-name, .cta-title, .blog-title, .blog-cta-title, .post-title,
+.more-letters-title, .type-link-title, .card-title, .toc-title, .step-title,
+.quote-text, .gift-name, .result-name {
+  font-family: var(--serif-kr) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.035em !important;
+}
+.hero-title { font-weight: 500 !important; line-height: 1.18 !important; }
+.question { font-weight: 500 !important; line-height: 1.45 !important; }
+.hero-title .accent, .final-title .accent { color: var(--accent) !important; font-style: normal; }
+
+/* ---------- 유형 코드·숫자: 세리프 라틴 ---------- */
+.type-code, .hero-code, .score-num, .result-code, .step-num, .chapter-num, .card-num, .axis-letter {
+  font-family: var(--serif-en) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em !important;
+}
+.type-code, .hero-code { font-size: clamp(3.6rem, 16vw, 5.5rem) !important; line-height: 1 !important; }
+.score-num { font-style: italic; }
+
+/* ---------- 작은 라벨: 고정폭 대문자 ---------- */
+.hero-marker, .section-marker, .final-marker, .tp-marker, .q-num, .intro-marker,
+.chapter-marker, .letter-marker, .outro-marker, .blog-marker, .doc-marker, .h-marker,
+.sec-label, .ad-label, .badge-beta, .quote-author, .tpc-code, .type-opt-code, .picker-code,
+.progress-text {
+  font-family: var(--mono) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase;
+  font-size: 0.68rem !important;
+}
+.hero-marker::before, .q-num::before { background: currentColor !important; width: 18px !important; }
+.section-marker, .tp-marker, .final-marker, .intro-marker, .chapter-marker { color: var(--accent) !important; }
+
+/* ---------- 로고 ---------- */
+.logo, .footer-logo {
+  font-family: var(--serif-en) !important;
+  font-weight: 400 !important;
+  font-size: 1.3rem !important;
+  letter-spacing: -0.01em !important;
+}
+.logo .num, .footer-logo .num { font-style: italic; color: var(--accent) !important; }
+
+/* ---------- 버튼: 각진 잉크 블록, 그림자 없음 ---------- */
+.hero-cta, .final-cta-btn, .pricing-btn, .calc-btn, .cta-btn, .blog-cta-btn,
+.outro-btn, .denied-btn, .action-btn, .sticky-cta button, .btn-outline, .nav-cta,
+.copy-btn, .product-btn, .more-letters-btn, .type-link-btn, .sticky-btn.primary {
+  box-shadow: none !important;
+  letter-spacing: 0 !important;
+  font-weight: 500 !important;
+}
+.hero-cta:hover, .final-cta-btn:hover, .pricing-btn:hover, .calc-btn:hover, .cta-btn:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  opacity: 0.88;
+}
+.final-cta-btn { background: #f4f2ee !important; color: #141210 !important; }
+
+/* ---------- 카드: 테두리만, 떠오르는 효과 제거 ---------- */
+.feature, .type-preview-card, .match-card, .option, .axis-pill, .type-opt,
+.match-promo-inner, .report-preview-item, .love-card, .ideal-card {
+  box-shadow: none !important;
+}
+.type-preview-card:hover, .feature:hover, .axis-pill:hover, .match-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: #141210 !important;
+}
+.option:hover { transform: none !important; box-shadow: none !important; border-color: #141210 !important; }
+.option.selected { transform: none !important; box-shadow: none !important; }
+
+/* ---------- 체크 칩: 기호 대신 얇은 선 ---------- */
+.trust-chips li { background: transparent !important; }
+.trust-chips li::before { content: '' !important; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); margin-right: 0.5rem; vertical-align: middle; }
+
+/* ---------- 장식 요소 정리 ---------- */
+.hero-floating, .hero-deco-2 { display: none !important; }
+.hero-deco-1 { border-color: var(--rule) !important; }
+.final-cta::before { display: none !important; }
+.quote-mark { font-family: var(--serif-en) !important; font-weight: 400 !important; color: var(--accent) !important; }
+
+/* ---------- 진행 바: 단색 ---------- */
+.progress-fill, .axis-fill { background: #141210 !important; }
+
+/* ---------- 내비게이션 ---------- */
+nav, header { box-shadow: none !important; }
+
+/* ---------- 포커스 ---------- */
+:focus-visible { outline: 2px solid var(--accent) !important; outline-offset: 3px; }
+
+/* ---------- 한글 라벨: 고정폭 대신 촘촘한 산세리프 ---------- */
+.axis-tag, .score-label, .step-time, .match-kind, .locked-tag, .product-label, .picker-label {
+  letter-spacing: 0 !important;
+  font-weight: 500 !important;
+}
+
+/* ---------- 결과·유형 히어로: 장식 원·떠다니는 효과 제거 ---------- */
+.hero .hero-deco { display: none !important; }
+.type-emoji, .hero-emoji { filter: none !important; animation: none !important; }
+.type-tagline, .hero-tagline {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  border-top: 1px solid var(--rule) !important;
+  border-bottom: 1px solid var(--rule) !important;
+  border-radius: 0 !important;
+  font-family: var(--serif-kr) !important;
+  font-style: normal !important;
+}
+
+/* ---------- 특징 목록: 왼쪽 색 띠 카드 → 가는 선으로 나눈 목록 ---------- */
+.feature {
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid var(--rule) !important;
+  border-radius: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ---------- 어두운 섹션 위 버튼은 종이색 ---------- */
+.pricing-btn { background: #f4f2ee !important; color: #141210 !important; }
+
+/* ---------- 하단 고정 바: 이모지 아이콘 숨김 ---------- */
+.sticky-btn-icon { display: none !important; }
+
+/* ---------- 테스트 보기: 줄바꿈 시 표식 아래로 말려 들어가지 않게 ---------- */
+.option { display: flex !important; align-items: center; }
+
+/* ---------- 모바일 홈: 장식 원 숨김 ---------- */
+@media (max-width: 767px) { .hero-deco-1 { display: none !important; } }
+
+/* ---------- 푸터 로고 ---------- */
+footer .footer-logo { color: #f4f2ee !important; }

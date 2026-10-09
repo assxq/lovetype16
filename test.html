@@ -688,6 +688,7 @@
       }
 
       updateProgress();
+      isAnimating = false;
     }, direction !== 'normal' ? 250 : 0);
   }
 
@@ -704,8 +705,13 @@
   }
 
   // ===== 답변 선택 =====
+  let isAnimating = false;
   function selectAnswer(choice) {
     const q = QUESTIONS[currentIndex];
+    // 전환 애니메이션 중 키보드 연타로 다음 문항이 건너뛰어지는 것 방지
+    if (isAnimating) return;
+    if (choice === 'C' && !q.c) return;
+    isAnimating = true;
     // A/B는 해당 축 점수, C(중간)는 양축 0.5씩 → score에 'mid' 표시
     let score;
     if (choice === 'A') score = q.scoreA;
@@ -758,6 +764,7 @@
 
   // ===== 뒤로 가기 =====
   function goBack() {
+    if (isAnimating) return;
     if (currentIndex === 0) {
       if (confirm('테스트를 그만두시겠어요? 진행 상황이 사라져요.')) {
         window.location.href = 'index.html';
@@ -845,8 +852,9 @@
       }
 
       // 점수를 URL로 압축 전달 (공유 가능 + 결과 페이지가 실제 점수 반영)
+      // 중간(C) 답변은 0.5점이라 그대로 붙이면 8자리 형식이 깨짐 → 반올림(축 내 대소관계는 유지됨)
       const s = result.scores;
-      const scoreParam = `${s.E}${s.H}${s.C}${s.S}${s.R}${s.L}${s.F}${s.A}`;
+      const scoreParam = [s.E, s.H, s.C, s.S, s.R, s.L, s.F, s.A].map(Math.round).join('');
 
       setTimeout(() => {
         window.location.href = `result.html?type=${result.type}&s=${scoreParam}` + (inviteFrom ? `&with=${inviteFrom}` : '');
@@ -901,6 +909,7 @@
     if (document.getElementById('loading').classList.contains('show')) return;
     if (e.key === '1' || e.key === 'a' || e.key === 'A') selectAnswer('A');
     else if (e.key === '2' || e.key === 'b' || e.key === 'B') selectAnswer('B');
+    else if (e.key === '3' || e.key === 'c' || e.key === 'C') selectAnswer('C');
     else if (e.key === 'ArrowLeft') goBack();
   });
 </script>

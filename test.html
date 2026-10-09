@@ -36,16 +36,16 @@
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
   :root {
-    --cream: #f5ede0;
-    --cream-soft: #faf4ea;
-    --cream-deep: #ebe0cf;
-    --wine: #5c1f2e;
-    --wine-deep: #3d1420;
-    --wine-soft: #8a3a4d;
-    --gold: #c9a961;
-    --gold-soft: #e0c896;
-    --ink: #2a1810;
-    --ink-soft: #5a4438;
+    --cream: #f4f2ee;
+    --cream-soft: #fbfaf8;
+    --cream-deep: #e6e3dd;
+    --wine: #141210;
+    --wine-deep: #0a0908;
+    --wine-soft: #57534d;
+    --gold: #b8352a;
+    --gold-soft: #cfc9c0;
+    --ink: #1a1816;
+    --ink-soft: #5f5a54;
   }
 
   * {
@@ -86,10 +86,10 @@
     right: 0;
     z-index: 50;
     padding: 1.2rem 1.5rem 1rem;
-    background: rgba(245, 237, 224, 0.92);
+    background: rgba(244, 242, 238, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(60, 20, 30, 0.06);
+    border-bottom: 1px solid rgba(20, 18, 16, 0.06);
   }
 
   .header-row {
@@ -141,15 +141,15 @@
   .progress-bar {
     width: 100%;
     height: 3px;
-    background: rgba(92, 31, 46, 0.1);
-    border-radius: 100px;
+    background: rgba(20, 18, 16, 0.1);
+    border-radius: 2px;
     overflow: hidden;
   }
 
   .progress-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--wine), var(--gold));
-    border-radius: 100px;
+    border-radius: 2px;
     transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
     width: 0%;
   }
@@ -226,8 +226,8 @@
 
   .option {
     background: var(--cream-soft);
-    border: 1.5px solid rgba(92, 31, 46, 0.12);
-    border-radius: 16px;
+    border: 1.5px solid rgba(20, 18, 16, 0.12);
+    border-radius: 6px;
     padding: 1.3rem 1.4rem;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -246,7 +246,7 @@
     border-color: var(--wine-soft);
     background: var(--cream);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(92, 31, 46, 0.08);
+    box-shadow: 0 8px 25px rgba(20, 18, 16, 0.08);
   }
 
   .option-marker {
@@ -276,7 +276,7 @@
   /* 터치 기기(모바일)에서는 hover 잔상 방지 — hover 효과 무효화 */
   @media (hover: none) {
     .option:hover {
-      border-color: rgba(92, 31, 46, 0.12);
+      border-color: rgba(20, 18, 16, 0.12);
       background: var(--cream-soft);
       transform: none;
       box-shadow: none;
@@ -295,7 +295,7 @@
     border-color: var(--wine);
     color: var(--cream);
     transform: scale(1.02);
-    box-shadow: 0 12px 30px rgba(92, 31, 46, 0.25);
+    box-shadow: 0 12px 30px rgba(20, 18, 16, 0.25);
   }
 
   .option.selected .option-marker {
@@ -308,8 +308,8 @@
   .option.preselected,
   .option.preselected:hover {
     border-color: var(--gold) !important;
-    background: #faf3e4 !important;
-    box-shadow: 0 2px 12px rgba(201, 169, 97, 0.2) !important;
+    background: #f6ecea !important;
+    box-shadow: 0 2px 12px rgba(20, 18, 16, 0.2) !important;
   }
 
   .option.preselected .option-marker,
@@ -328,10 +328,10 @@
     background: var(--wine);
     color: var(--cream);
     padding: 0.7rem 1.4rem;
-    border-radius: 100px;
+    border-radius: 2px;
     font-size: 0.85rem;
     font-weight: 500;
-    box-shadow: 0 12px 30px rgba(92, 31, 46, 0.3);
+    box-shadow: 0 12px 30px rgba(20, 18, 16, 0.3);
     opacity: 0;
     pointer-events: none;
     transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -435,10 +435,10 @@
     max-width: 540px;
     margin: 0 auto 1rem;
     padding: 0.8rem 1rem;
-    border-radius: 14px;
-    background: rgba(212, 129, 141, 0.12);
-    border: 1px solid rgba(212, 129, 141, 0.35);
-    color: var(--wine, #5c1f2e);
+    border-radius: 6px;
+    background: rgba(184, 53, 42, 0.12);
+    border: 1px solid rgba(184, 53, 42, 0.35);
+    color: var(--wine, #141210);
     font-size: 0.88rem;
     line-height: 1.5;
     text-align: center;
@@ -452,6 +452,7 @@
   gtag('js', new Date());
   gtag('config', 'G-TB6F95LG0V');
 </script>
+<link rel="stylesheet" href="/theme.css">
 </head>
 <body>
 

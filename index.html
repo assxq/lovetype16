@@ -38,18 +38,18 @@
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
   :root {
-    --cream: #f5ede0;
-    --cream-soft: #faf4ea;
-    --cream-deep: #ebe0cf;
-    --wine: #5c1f2e;
-    --wine-deep: #3d1420;
-    --wine-soft: #8a3a4d;
-    --gold: #c9a961;
-    --gold-soft: #e0c896;
-    --ink: #2a1810;
-    --ink-soft: #5a4438;
-    --rose: #d4818d;
-    --shadow: rgba(60, 20, 30, 0.08);
+    --cream: #f4f2ee;
+    --cream-soft: #fbfaf8;
+    --cream-deep: #e6e3dd;
+    --wine: #141210;
+    --wine-deep: #0a0908;
+    --wine-soft: #57534d;
+    --gold: #b8352a;
+    --gold-soft: #cfc9c0;
+    --ink: #1a1816;
+    --ink-soft: #5f5a54;
+    --rose: #b8352a;
+    --shadow: rgba(20, 18, 16, 0.08);
   }
 
   * {
@@ -93,10 +93,10 @@
     right: 0;
     z-index: 50;
     padding: 1.1rem 1.5rem;
-    background: rgba(245, 237, 224, 0.85);
+    background: rgba(244, 242, 238, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(60, 20, 30, 0.06);
+    border-bottom: 1px solid rgba(20, 18, 16, 0.06);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,7 +120,7 @@
     color: var(--wine);
     border: 1px solid var(--wine);
     padding: 0.5rem 1rem;
-    border-radius: 100px;
+    border-radius: 2px;
     background: transparent;
     font-weight: 500;
     font-family: 'Pretendard', sans-serif;
@@ -193,20 +193,20 @@
     color: var(--cream);
     padding: 1.05rem 1.9rem;
     border: none;
-    border-radius: 100px;
+    border-radius: 2px;
     font-family: 'Pretendard', sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
     letter-spacing: -0.01em;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-    box-shadow: 0 8px 30px rgba(92, 31, 46, 0.25);
+    box-shadow: 0 8px 30px rgba(20, 18, 16, 0.25);
     align-self: flex-start;
   }
 
   .hero-cta:hover, .hero-cta:active {
     transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(92, 31, 46, 0.35);
+    box-shadow: 0 12px 40px rgba(20, 18, 16, 0.35);
     background: var(--wine-deep);
   }
 
@@ -246,7 +246,7 @@
     right: -50px;
     width: 200px;
     height: 200px;
-    border: 1px solid rgba(92, 31, 46, 0.12);
+    border: 1px solid rgba(20, 18, 16, 0.12);
     border-radius: 50%;
   }
 
@@ -347,7 +347,7 @@
     align-items: flex-start;
     position: relative;
     padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(245, 237, 224, 0.1);
+    border-bottom: 1px solid rgba(244, 242, 238, 0.1);
   }
 
   .step:last-child {
@@ -447,7 +447,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at center, rgba(201, 169, 97, 0.08), transparent 50%);
+    background: radial-gradient(circle at center, rgba(20, 18, 16, 0.08), transparent 50%);
   }
 
   .final-marker {
@@ -491,7 +491,7 @@
     color: var(--wine-deep);
     padding: 1.15rem 2.2rem;
     border: none;
-    border-radius: 100px;
+    border-radius: 2px;
     font-family: 'Pretendard', sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -499,7 +499,7 @@
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
     position: relative;
-    box-shadow: 0 10px 40px rgba(201, 169, 97, 0.35);
+    box-shadow: 0 10px 40px rgba(20, 18, 16, 0.35);
   }
 
   .final-cta-btn:hover, .final-cta-btn:active {
@@ -636,26 +636,26 @@
   .tp-title { font-size: clamp(1.6rem, 5vw, 2.2rem); color: var(--wine); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
   .tp-sub { font-size: 0.95rem; color: var(--ink-soft); }
   .type-preview-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
-  .type-preview-card { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; padding: 1.3rem 0.8rem; background: var(--cream-soft); border: 1px solid rgba(92,31,46,0.1); border-radius: 16px; text-decoration: none; transition: all 0.25s; text-align: center; }
-  .type-preview-card:hover { border-color: var(--gold); background: #fffdf9; transform: translateY(-3px); box-shadow: 0 10px 28px rgba(92,31,46,0.08); }
+  .type-preview-card { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; padding: 1.3rem 0.8rem; background: var(--cream-soft); border: 1px solid rgba(20, 18, 16,0.1); border-radius: 6px; text-decoration: none; transition: all 0.25s; text-align: center; }
+  .type-preview-card:hover { border-color: var(--gold); background: #ffffff; transform: translateY(-3px); box-shadow: 0 10px 28px rgba(20, 18, 16,0.08); }
   .tpc-emoji { font-size: 2rem; line-height: 1; margin-bottom: 0.2rem; }
   .tpc-code { font-size: 0.68rem; color: var(--gold); font-weight: 700; letter-spacing: 0.05em; }
   .tpc-name { font-size: 0.85rem; color: var(--wine); font-weight: 700; line-height: 1.3; }
-  @media (hover: none) { .type-preview-card:hover { transform: none; box-shadow: none; background: var(--cream-soft); border-color: rgba(92,31,46,0.1); } }
+  @media (hover: none) { .type-preview-card:hover { transform: none; box-shadow: none; background: var(--cream-soft); border-color: rgba(20, 18, 16,0.1); } }
   @media (min-width: 600px) { .type-preview-grid { grid-template-columns: repeat(4, 1fr); } }
 
   /* ===== 업그레이드: 히어로 보조 요소 ===== */
   .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.2rem; }
   .hero-link {
     font-size: 0.9rem; color: var(--wine); font-weight: 600; text-decoration: none;
-    border-bottom: 1px solid rgba(92,31,46,0.35); padding-bottom: 2px; font-family: inherit;
+    border-bottom: 1px solid rgba(20, 18, 16,0.35); padding-bottom: 2px; font-family: inherit;
   }
   .hero-link:hover { border-bottom-color: var(--wine); }
   .trust-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.6rem; list-style: none; }
   .trust-chips li {
     font-size: 0.75rem; color: var(--wine); font-weight: 600;
-    background: rgba(255,255,255,0.55); border: 1px solid rgba(92,31,46,0.12);
-    padding: 0.35rem 0.8rem; border-radius: 100px;
+    background: rgba(255,255,255,0.55); border: 1px solid rgba(20, 18, 16,0.12);
+    padding: 0.35rem 0.8rem; border-radius: 2px;
   }
   .trust-chips li::before { content: '✓'; color: var(--gold); margin-right: 0.4rem; font-weight: 700; }
 
@@ -663,7 +663,7 @@
   .match-promo { background: var(--cream-soft); text-align: center; }
   .match-promo-inner {
     max-width: 640px; margin: 0 auto; padding: 2.4rem 1.5rem;
-    background: #fffdf9; border: 1px solid rgba(92,31,46,0.1); border-radius: 24px;
+    background: #ffffff; border: 1px solid rgba(20, 18, 16,0.1); border-radius: 6px;
     box-shadow: 0 14px 40px var(--shadow);
   }
   .match-pair { display: flex; justify-content: center; align-items: center; gap: 0.9rem; margin-bottom: 1.2rem; font-size: 2.2rem; }
@@ -672,7 +672,7 @@
   .btn-outline {
     display: inline-flex; align-items: center; gap: 0.6rem;
     border: 1.5px solid var(--wine); color: var(--wine); background: transparent;
-    padding: 0.95rem 1.8rem; border-radius: 100px; font-size: 0.92rem; font-weight: 600;
+    padding: 0.95rem 1.8rem; border-radius: 2px; font-size: 0.92rem; font-weight: 600;
     font-family: inherit; text-decoration: none; cursor: pointer; transition: all 0.3s;
   }
   .btn-outline:hover { background: var(--wine); color: var(--cream); }
@@ -686,13 +686,13 @@
   .sticky-cta {
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
     padding: 0.8rem 1rem calc(0.8rem + env(safe-area-inset-bottom));
-    background: rgba(245,237,224,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(60,20,30,0.08);
+    background: rgba(244, 242, 238,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(20, 18, 16,0.08);
     transform: translateY(110%); transition: transform 0.35s ease;
   }
   .sticky-cta.show { transform: translateY(0); }
   .sticky-cta button {
-    width: 100%; background: var(--wine); color: var(--cream); border: none; border-radius: 100px;
+    width: 100%; background: var(--wine); color: var(--cream); border: none; border-radius: 2px;
     padding: 0.95rem 1rem; font-size: 0.95rem; font-weight: 600; font-family: inherit; cursor: pointer;
   }
   @media (min-width: 768px) { .sticky-cta { display: none; } }
@@ -715,6 +715,7 @@
   gtag('js', new Date());
   gtag('config', 'G-TB6F95LG0V');
 </script>
+<link rel="stylesheet" href="/theme.css">
 </head>
 <body>
 
@@ -762,7 +763,7 @@
 
 <section class="how">
   <div class="reveal">
-    <div class="section-marker">— How It Works</div>
+    <div class="section-marker">How It Works</div>
     <h2 class="section-title">
       세 단계로<br>
       당신을 발견해요
@@ -814,7 +815,7 @@
 <!-- ===== 16유형 미리보기 ===== -->
 <section class="types-preview reveal">
   <div class="types-preview-head">
-    <div class="tp-marker">— 16 LOVE TYPES —</div>
+    <div class="tp-marker">16 LOVE TYPES</div>
     <h2 class="tp-title">16가지 연애 유형</h2>
     <p class="tp-sub">당신은 어떤 유형일까요? 먼저 둘러보세요.</p>
   </div>
@@ -905,7 +906,7 @@
 <!-- ===== 궁합 안내 ===== -->
 <section class="match-promo">
   <div class="match-promo-inner reveal">
-    <div class="section-marker">— Compatibility</div>
+    <div class="section-marker">Compatibility</div>
     <div class="match-pair" aria-hidden="true"><span>🌹</span><span class="x">×</span><span>🗝️</span></div>
     <h2 class="section-title" style="margin-bottom:0.8rem;">우리, 얼마나 잘 맞을까?</h2>
     <p>두 사람의 유형을 고르면 궁합 점수와 관계 포인트를 바로 보여드려요.<br>썸 상대, 연인, 친구와 함께 해보세요.</p>
@@ -916,7 +917,7 @@
 </section>
 
 <section class="final-cta" id="start">
-  <div class="final-marker">— Ready to Begin —</div>
+  <div class="final-marker">Ready to Begin</div>
   <h2 class="final-title">
     이제, 당신의 <span class="accent">차례</span>예요.
   </h2>

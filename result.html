@@ -37,16 +37,16 @@
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" crossorigin="anonymous"></script>
 <style>
   :root {
-    --cream: #f5ede0;
-    --cream-soft: #faf4ea;
-    --cream-deep: #ebe0cf;
-    --wine: #5c1f2e;
-    --wine-deep: #3d1420;
-    --wine-soft: #8a3a4d;
-    --gold: #c9a961;
-    --gold-soft: #e0c896;
-    --ink: #2a1810;
-    --ink-soft: #5a4438;
+    --cream: #f4f2ee;
+    --cream-soft: #fbfaf8;
+    --cream-deep: #e6e3dd;
+    --wine: #141210;
+    --wine-deep: #0a0908;
+    --wine-soft: #57534d;
+    --gold: #b8352a;
+    --gold-soft: #cfc9c0;
+    --ink: #1a1816;
+    --ink-soft: #5f5a54;
   }
 
   * {
@@ -89,10 +89,10 @@
     right: 0;
     z-index: 50;
     padding: 1.1rem 1.5rem;
-    background: rgba(245, 237, 224, 0.85);
+    background: rgba(244, 242, 238, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(60, 20, 30, 0.06);
+    border-bottom: 1px solid rgba(20, 18, 16, 0.06);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -135,7 +135,7 @@
     transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
-    border: 1px solid rgba(92, 31, 46, 0.08);
+    border: 1px solid rgba(20, 18, 16, 0.08);
     border-radius: 50%;
     pointer-events: none;
   }
@@ -144,7 +144,7 @@
     content: '';
     position: absolute;
     inset: 30px;
-    border: 1px dashed rgba(201, 169, 97, 0.3);
+    border: 1px dashed rgba(20, 18, 16, 0.3);
     border-radius: 50%;
   }
 
@@ -162,7 +162,7 @@
     font-size: 4.5rem;
     line-height: 1;
     margin-bottom: 1.2rem;
-    filter: drop-shadow(0 8px 20px rgba(92, 31, 46, 0.15));
+    filter: drop-shadow(0 8px 20px rgba(20, 18, 16, 0.15));
     position: relative;
     animation: gentleFloat 4s ease-in-out infinite;
   }
@@ -199,10 +199,10 @@
     font-weight: 400;
     position: relative;
     padding: 1.4rem 1.5rem;
-    background: #fffdf9;
-    border-radius: 16px;
-    border: 1px solid rgba(201, 169, 97, 0.25);
-    box-shadow: 0 8px 24px rgba(92, 31, 46, 0.07);
+    background: #ffffff;
+    border-radius: 6px;
+    border: 1px solid rgba(20, 18, 16, 0.25);
+    box-shadow: 0 8px 24px rgba(20, 18, 16, 0.07);
   }
 
   .type-tagline::before, .type-tagline::after {
@@ -239,8 +239,8 @@
 
   .axis-pill {
     background: var(--cream-soft);
-    border: 1px solid rgba(92, 31, 46, 0.1);
-    border-radius: 12px;
+    border: 1px solid rgba(20, 18, 16, 0.1);
+    border-radius: 6px;
     padding: 0.9rem 0.4rem;
     text-align: center;
     transition: all 0.3s;
@@ -289,15 +289,15 @@
   .axis-track {
     position: relative;
     height: 8px;
-    background: rgba(92, 31, 46, 0.1);
-    border-radius: 100px;
+    background: rgba(20, 18, 16, 0.1);
+    border-radius: 2px;
     overflow: hidden;
   }
   .axis-fill {
     position: absolute;
     top: 0; bottom: 0;
     background: linear-gradient(90deg, var(--wine), var(--gold));
-    border-radius: 100px;
+    border-radius: 2px;
   }
   .axis-bars-note {
     max-width: 500px;
@@ -320,8 +320,8 @@
     display: block;
     text-decoration: none;
     background: var(--cream-soft);
-    border: 1px solid rgba(92, 31, 46, 0.12);
-    border-radius: 16px;
+    border: 1px solid rgba(20, 18, 16, 0.12);
+    border-radius: 6px;
     padding: 1.1rem 0.8rem;
     text-align: center;
     color: var(--ink);
@@ -360,8 +360,8 @@
   /* ===== 핵심 특징 (무료) ===== */
   .features {
     background: var(--cream-soft);
-    border-top: 1px solid rgba(92, 31, 46, 0.06);
-    border-bottom: 1px solid rgba(92, 31, 46, 0.06);
+    border-top: 1px solid rgba(20, 18, 16, 0.06);
+    border-bottom: 1px solid rgba(20, 18, 16, 0.06);
   }
 
   .features-list {
@@ -374,7 +374,7 @@
 
   .feature {
     background: var(--cream);
-    border-radius: 16px;
+    border-radius: 6px;
     padding: 1.5rem 1.4rem;
     border-left: 3px solid var(--gold);
     transition: all 0.3s;
@@ -383,7 +383,7 @@
   .feature:hover {
     transform: translateX(3px);
     border-left-color: var(--wine);
-    box-shadow: 0 6px 20px rgba(92, 31, 46, 0.06);
+    box-shadow: 0 6px 20px rgba(20, 18, 16, 0.06);
   }
 
   .feature-icon {
@@ -450,8 +450,8 @@
 
   .locked-item {
     background: var(--cream-soft);
-    border: 1px solid rgba(92, 31, 46, 0.1);
-    border-radius: 12px;
+    border: 1px solid rgba(20, 18, 16, 0.1);
+    border-radius: 6px;
     padding: 1.1rem 1.3rem;
     display: flex;
     align-items: center;
@@ -464,7 +464,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, transparent 60%, rgba(245, 237, 224, 0.7));
+    background: linear-gradient(90deg, transparent 60%, rgba(244, 242, 238, 0.7));
     pointer-events: none;
   }
 
@@ -499,9 +499,9 @@
   .locked-tag {
     font-size: 0.65rem;
     color: var(--wine-soft);
-    background: rgba(92, 31, 46, 0.08);
+    background: rgba(20, 18, 16, 0.08);
     padding: 0.2rem 0.5rem;
-    border-radius: 100px;
+    border-radius: 2px;
     font-weight: 600;
     letter-spacing: 0.05em;
     flex-shrink: 0;
@@ -525,7 +525,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at center, rgba(201, 169, 97, 0.08), transparent 50%);
+    background: radial-gradient(circle at center, rgba(20, 18, 16, 0.08), transparent 50%);
   }
 
   .badge-beta {
@@ -533,7 +533,7 @@
     padding: 0.4rem 0.9rem;
     border: 1px solid var(--gold);
     color: var(--gold);
-    border-radius: 100px;
+    border-radius: 2px;
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.2em;
@@ -605,9 +605,9 @@
   }
 
   .report-preview-item {
-    background: rgba(245, 237, 224, 0.06);
-    border: 1px solid rgba(201, 169, 97, 0.2);
-    border-radius: 10px;
+    background: rgba(244, 242, 238, 0.06);
+    border: 1px solid rgba(20, 18, 16, 0.2);
+    border-radius: 4px;
     padding: 0.85rem 0.7rem;
     font-size: 0.82rem;
     color: var(--gold-soft);
@@ -623,14 +623,14 @@
     color: var(--wine-deep);
     padding: 1.15rem 2.2rem;
     border: none;
-    border-radius: 100px;
+    border-radius: 2px;
     font-family: 'Pretendard', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: -0.01em;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-    box-shadow: 0 10px 40px rgba(201, 169, 97, 0.35);
+    box-shadow: 0 10px 40px rgba(20, 18, 16, 0.35);
     position: relative;
   }
 
@@ -668,24 +668,24 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(245, 237, 224, 0.95);
+    background: rgba(244, 242, 238, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(60, 20, 30, 0.08);
+    border-top: 1px solid rgba(20, 18, 16, 0.08);
     padding: 0.8rem 1rem;
     z-index: 90;
     display: flex;
     gap: 0.5rem;
-    box-shadow: 0 -10px 30px rgba(60, 20, 30, 0.06);
+    box-shadow: 0 -10px 30px rgba(20, 18, 16, 0.06);
   }
 
   .sticky-btn {
     flex: 1;
     background: transparent;
-    border: 1px solid rgba(92, 31, 46, 0.15);
+    border: 1px solid rgba(20, 18, 16, 0.15);
     color: var(--wine);
     padding: 0.85rem 0.5rem;
-    border-radius: 100px;
+    border-radius: 2px;
     font-family: 'Pretendard', sans-serif;
     font-size: 0.8rem;
     font-weight: 500;
@@ -711,13 +711,13 @@
     color: var(--cream);
     border-color: var(--wine);
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(92, 31, 46, 0.25);
+    box-shadow: 0 4px 15px rgba(20, 18, 16, 0.25);
   }
 
   .sticky-btn.primary:hover, .sticky-btn.primary:active {
     background: var(--wine-deep);
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(92, 31, 46, 0.35);
+    box-shadow: 0 6px 20px rgba(20, 18, 16, 0.35);
   }
 
   .sticky-btn-icon {
@@ -728,7 +728,7 @@
   .modal-bg {
     position: fixed;
     inset: 0;
-    background: rgba(45, 20, 25, 0.55);
+    background: rgba(20, 18, 16, 0.55);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 200;
@@ -750,7 +750,7 @@
 
   .modal {
     background: var(--cream);
-    border-radius: 24px 24px 16px 16px;
+    border-radius: 6px 24px 16px 16px;
     padding: 2rem 1.5rem 1.5rem;
     max-width: 460px;
     width: 100%;
@@ -768,7 +768,7 @@
     height: 32px;
     border-radius: 50%;
     border: none;
-    background: rgba(92, 31, 46, 0.08);
+    background: rgba(20, 18, 16, 0.08);
     color: var(--wine);
     font-size: 1.1rem;
     line-height: 1;
@@ -787,8 +787,8 @@
   .modal-handle {
     width: 36px;
     height: 4px;
-    background: rgba(92, 31, 46, 0.2);
-    border-radius: 100px;
+    background: rgba(20, 18, 16, 0.2);
+    border-radius: 2px;
     margin: -0.8rem auto 1.2rem;
   }
 
@@ -817,8 +817,8 @@
 
   .modal-option {
     background: var(--cream-soft);
-    border: 1px solid rgba(92, 31, 46, 0.1);
-    border-radius: 14px;
+    border: 1px solid rgba(20, 18, 16, 0.1);
+    border-radius: 6px;
     padding: 1rem 1.2rem;
     display: flex;
     align-items: center;
@@ -861,8 +861,8 @@
   /* ===== 약관 동의 영역 ===== */
   .payment-agree {
     background: var(--cream-soft);
-    border: 1px solid rgba(92, 31, 46, 0.1);
-    border-radius: 12px;
+    border: 1px solid rgba(20, 18, 16, 0.1);
+    border-radius: 6px;
     padding: 1rem 1.1rem;
     margin-bottom: 1.2rem;
   }
@@ -884,7 +884,7 @@
     -webkit-appearance: none;
     width: 18px;
     height: 18px;
-    border: 1.5px solid rgba(92, 31, 46, 0.3);
+    border: 1.5px solid rgba(20, 18, 16, 0.3);
     border-radius: 4px;
     flex-shrink: 0;
     margin-top: 1px;
@@ -924,7 +924,7 @@
   .agree-text a {
     color: var(--wine);
     text-decoration: underline;
-    text-decoration-color: rgba(92, 31, 46, 0.3);
+    text-decoration-color: rgba(20, 18, 16, 0.3);
     text-underline-offset: 2px;
     font-weight: 500;
   }
@@ -935,7 +935,7 @@
 
   .agree-divider {
     height: 1px;
-    background: rgba(92, 31, 46, 0.1);
+    background: rgba(20, 18, 16, 0.1);
     margin: 0.4rem 0;
   }
 
@@ -1002,9 +1002,9 @@
   }
   .ad-inner {
     min-height: 100px;
-    background: rgba(92, 31, 46, 0.03);
-    border: 1px dashed rgba(92, 31, 46, 0.15);
-    border-radius: 12px;
+    background: rgba(20, 18, 16, 0.03);
+    border: 1px dashed rgba(20, 18, 16, 0.15);
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1046,6 +1046,7 @@
   gtag('js', new Date());
   gtag('config', 'G-TB6F95LG0V');
 </script>
+<link rel="stylesheet" href="/theme.css">
 </head>
 <body>
 
@@ -1058,7 +1059,7 @@
 <!-- ===== HERO (유형 결과) ===== -->
 <section class="hero">
   <div class="hero-deco"></div>
-  <div class="hero-marker">— Your Love Type —</div>
+  <div class="hero-marker">Your Love Type</div>
   <div class="type-emoji" id="typeEmoji">🌹</div>
   <div class="type-code" id="typeCode">ECRF</div>
   <div class="type-name" id="typeName">열정 로맨티시스트</div>
@@ -1067,10 +1068,10 @@
 
 <!-- ===== 초대받은 경우: 보낸 사람과의 궁합 바로 보기 ===== -->
 <section id="inviteResult" style="display:none; max-width:540px; margin:0 auto 1.5rem; padding:0 1.5rem;">
-  <a id="inviteResultLink" href="compatibility.html" onclick="trackEvent('invite_compat_click')" style="display:block; text-decoration:none; background:var(--wine); color:var(--cream); border-radius:18px; padding:1.4rem; text-align:center;">
+  <a id="inviteResultLink" href="compatibility.html" onclick="trackEvent('invite_compat_click')" style="display:block; text-decoration:none; background:var(--wine); color:var(--cream); border-radius:6px; padding:1.4rem; text-align:center;">
     <div style="font-size:0.85rem; opacity:0.85; margin-bottom:0.35rem;">💌 궁합 초대를 보낸 사람은</div>
     <div id="inviteFromName" style="font-size:1.1rem; font-weight:700; margin-bottom:0.9rem;"></div>
-    <span style="display:inline-block; background:var(--cream); color:var(--wine); padding:0.65rem 1.4rem; border-radius:100px; font-weight:700; font-size:0.9rem;">우리 궁합 점수 바로 보기 →</span>
+    <span style="display:inline-block; background:var(--cream); color:var(--wine); padding:0.65rem 1.4rem; border-radius:2px; font-weight:700; font-size:0.9rem;">우리 궁합 점수 바로 보기 →</span>
   </a>
 </section>
 
@@ -1086,7 +1087,7 @@
 <!-- ===== 핵심 특징 3개 (무료) ===== -->
 <section class="features">
   <div class="reveal">
-    <div class="section-marker">— Key Traits</div>
+    <div class="section-marker">Key Traits</div>
     <h2 class="section-title">당신의 핵심 특징</h2>
   </div>
   <div class="features-list" id="featuresList">
@@ -1097,7 +1098,7 @@
 <!-- ===== 잘 맞는 / 어려운 유형 (궁합 계산식 기준) ===== -->
 <section class="match-preview" style="padding-top:0;">
   <div class="reveal" style="text-align:center;">
-    <div class="section-marker">— Match</div>
+    <div class="section-marker">Match</div>
     <h2 class="section-title">나와 잘 맞는 유형은?</h2>
   </div>
   <div class="match-duo reveal" id="matchDuo"></div>
@@ -1116,7 +1117,7 @@
 
 <!-- ===== 심층분석 안내 (무료) ===== -->
 <section class="pricing-cta">
-  <div class="badge-beta reveal">— Full Report —</div>
+  <div class="badge-beta reveal">Full Report</div>
   <h2 class="pricing-title reveal">
     더 깊은 <span class="accent">나의 연애</span>가<br>
     기다리고 있어요
@@ -1141,31 +1142,31 @@
 
 <!-- ===== 궁합 유도 ===== -->
 <section class="reveal" style="max-width:540px; margin:1rem auto 0; padding:0 1.5rem;">
-  <a href="compatibility.html" id="compatLink" onclick="trackEvent('compat_click', { from: 'result' })" style="display:block; text-decoration:none; background:linear-gradient(135deg, rgba(212,129,141,0.12), rgba(201,169,97,0.10)); border:1px solid rgba(212,129,141,0.35); border-radius:18px; padding:1.5rem; text-align:center;">
+  <a href="compatibility.html" id="compatLink" onclick="trackEvent('compat_click', { from: 'result' })" style="display:block; text-decoration:none; background:linear-gradient(135deg, rgba(184, 53, 42,0.12), rgba(20, 18, 16,0.10)); border:1px solid rgba(184, 53, 42,0.35); border-radius:6px; padding:1.5rem; text-align:center;">
     <div style="font-size:1.05rem; color:var(--wine); font-weight:700; margin-bottom:0.4rem;">💞 우리, 얼마나 잘 맞을까?</div>
     <div style="font-size:0.88rem; color:var(--ink-soft); line-height:1.55; margin-bottom:1rem;">내 유형은 이미 채워 뒀어요.<br>상대 유형만 고르면 궁합 점수가 바로 나와요.</div>
-    <span style="display:inline-block; background:var(--wine); color:var(--cream); padding:0.65rem 1.4rem; border-radius:100px; font-weight:600; font-size:0.85rem;">궁합 확인하기 →</span>
+    <span style="display:inline-block; background:var(--wine); color:var(--cream); padding:0.65rem 1.4rem; border-radius:2px; font-weight:600; font-size:0.85rem;">궁합 확인하기 →</span>
   </a>
-  <button type="button" onclick="shareTo('invite', 'compat_card')" style="display:block; width:100%; margin-top:0.6rem; background:transparent; border:1px dashed rgba(212,129,141,0.6); border-radius:14px; padding:0.9rem; color:var(--wine); font-family:'Pretendard', sans-serif; font-size:0.88rem; font-weight:600; cursor:pointer;">
+  <button type="button" onclick="shareTo('invite', 'compat_card')" style="display:block; width:100%; margin-top:0.6rem; background:transparent; border:1px dashed rgba(184, 53, 42,0.6); border-radius:6px; padding:0.9rem; color:var(--wine); font-family:'Pretendard', sans-serif; font-size:0.88rem; font-weight:600; cursor:pointer;">
     상대 유형을 모르면? 💌 테스트 보내고 궁합 받기
   </button>
 </section>
 
 <!-- ===== 러브레터(블로그) 유도 ===== -->
 <section class="reveal" style="max-width:540px; margin:1rem auto 0; padding:0 1.5rem;">
-  <a href="blog.html" style="display:block; text-decoration:none; background:linear-gradient(135deg, rgba(92,31,46,0.05), rgba(201,169,97,0.08)); border:1px solid rgba(201,169,97,0.25); border-radius:18px; padding:1.5rem; text-align:center;">
+  <a href="blog.html" style="display:block; text-decoration:none; background:linear-gradient(135deg, rgba(20, 18, 16,0.05), rgba(20, 18, 16,0.08)); border:1px solid rgba(20, 18, 16,0.25); border-radius:6px; padding:1.5rem; text-align:center;">
     <div style="font-size:1.05rem; color:var(--wine); font-weight:700; margin-bottom:0.4rem;">💌 러브레터</div>
     <div style="font-size:0.88rem; color:var(--ink-soft); line-height:1.55; margin-bottom:1rem;">짝사랑부터 결혼까지, 연애의 모든 순간에 대한<br>솔직한 이야기 15편을 모았어요.</div>
-    <span style="display:inline-block; background:var(--wine); color:var(--cream); padding:0.65rem 1.4rem; border-radius:100px; font-weight:600; font-size:0.85rem;">읽으러 가기 →</span>
+    <span style="display:inline-block; background:var(--wine); color:var(--cream); padding:0.65rem 1.4rem; border-radius:2px; font-weight:600; font-size:0.85rem;">읽으러 가기 →</span>
   </a>
 </section>
 
 <!-- ===== 유형 상세 페이지 유도 ===== -->
 <section class="reveal" style="max-width:540px; margin:1rem auto 0; padding:0 1.5rem;">
-  <a href="#" id="typeDetailLink" style="display:block; text-decoration:none; background:var(--cream-soft); border:1px solid rgba(92,31,46,0.12); border-radius:18px; padding:1.5rem; text-align:center;">
+  <a href="#" id="typeDetailLink" style="display:block; text-decoration:none; background:var(--cream-soft); border:1px solid rgba(20, 18, 16,0.12); border-radius:6px; padding:1.5rem; text-align:center;">
     <div style="font-size:1.05rem; color:var(--wine); font-weight:700; margin-bottom:0.4rem;">📖 내 유형 자세히 보기</div>
     <div style="font-size:0.88rem; color:var(--ink-soft); line-height:1.55; margin-bottom:1rem;">내 유형의 특징·강점·궁합을 한 페이지에<br>정리한 도감을 확인해보세요.</div>
-    <span style="display:inline-block; background:transparent; color:var(--wine); border:1px solid rgba(92,31,46,0.25); padding:0.65rem 1.4rem; border-radius:100px; font-weight:600; font-size:0.85rem;">유형 도감 보기 →</span>
+    <span style="display:inline-block; background:transparent; color:var(--wine); border:1px solid rgba(20, 18, 16,0.25); padding:0.65rem 1.4rem; border-radius:2px; font-weight:600; font-size:0.85rem;">유형 도감 보기 →</span>
   </a>
 </section>
 
@@ -1192,7 +1193,7 @@
     <div class="modal-handle"></div>
     <h3 class="modal-title">결과 공유하기</h3>
     <div class="modal-options">
-      <button class="modal-option" onclick="shareTo('invite', 'share_modal')" style="border-color:rgba(212,129,141,0.6); background:rgba(212,129,141,0.10);">
+      <button class="modal-option" onclick="shareTo('invite', 'share_modal')" style="border-color:rgba(184, 53, 42,0.6); background:rgba(184, 53, 42,0.10);">
         <span class="modal-option-icon">💞</span>
         <span><b>애인·썸 상대에게 보내기</b><br><small>상대가 테스트하면 우리 궁합이 바로 나와요</small></span>
       </button>
@@ -1732,18 +1733,18 @@
 
     // 배경 그라데이션 (와인 → 와인 딥)
     const bg = ctx.createLinearGradient(0, 0, W, H);
-    bg.addColorStop(0, '#5c1f2e');
-    bg.addColorStop(1, '#3d1420');
+    bg.addColorStop(0, '#141210');
+    bg.addColorStop(1, '#0a0908');
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, W, H);
 
     // 골드 장식 원 (가운데 위쪽)
-    ctx.strokeStyle = 'rgba(201,169,97,0.25)';
+    ctx.strokeStyle = 'rgba(20, 18, 16,0.25)';
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.arc(W/2, 620, 280, 0, Math.PI*2);
     ctx.stroke();
-    ctx.strokeStyle = 'rgba(201,169,97,0.4)';
+    ctx.strokeStyle = 'rgba(20, 18, 16,0.4)';
     ctx.setLineDash([6, 10]);
     ctx.beginPath();
     ctx.arc(W/2, 620, 230, 0, Math.PI*2);
@@ -1753,7 +1754,7 @@
     ctx.textAlign = 'center';
 
     // 상단 라벨
-    ctx.fillStyle = '#c9a961';
+    ctx.fillStyle = '#b8352a';
     ctx.font = '600 30px Pretendard, sans-serif';
     ctx.fillText('L O V E   T Y P E   1 6', W/2, 200);
 
@@ -1762,17 +1763,17 @@
     ctx.fillText(data.emoji, W/2, 720);
 
     // 유형 코드
-    ctx.fillStyle = '#e0c896';
+    ctx.fillStyle = '#cfc9c0';
     ctx.font = '700 64px Pretendard, sans-serif';
     ctx.fillText(result.type, W/2, 900);
 
     // 유형 이름
-    ctx.fillStyle = '#f5ede0';
+    ctx.fillStyle = '#f4f2ee';
     ctx.font = '800 96px Pretendard, sans-serif';
     ctx.fillText(data.name, W/2, 1020);
 
     // 구분선
-    ctx.strokeStyle = 'rgba(201,169,97,0.5)';
+    ctx.strokeStyle = 'rgba(20, 18, 16,0.5)';
     ctx.lineWidth = 3;
     ctx.beginPath();
     ctx.moveTo(W/2 - 80, 1090);
@@ -1780,15 +1781,15 @@
     ctx.stroke();
 
     // 한 줄 설명 (자동 줄바꿈)
-    ctx.fillStyle = 'rgba(245,237,224,0.9)';
+    ctx.fillStyle = 'rgba(244, 242, 238,0.9)';
     ctx.font = '400 42px Pretendard, sans-serif';
     wrapText(ctx, data.tagline, W/2, 1200, 880, 62);
 
     // 하단 CTA
-    ctx.fillStyle = '#c9a961';
+    ctx.fillStyle = '#b8352a';
     ctx.font = '600 40px Pretendard, sans-serif';
     ctx.fillText('너의 연애 유형은?', W/2, 1750);
-    ctx.fillStyle = 'rgba(245,237,224,0.7)';
+    ctx.fillStyle = 'rgba(244, 242, 238,0.7)';
     ctx.font = '400 36px Pretendard, sans-serif';
     ctx.fillText('lovetype16.xyz', W/2, 1810);
 
@@ -1822,7 +1823,7 @@
       const canvas = drawCard();
       cardDataUrl = canvas.toDataURL('image/png');
       const preview = document.getElementById('cardPreview');
-      preview.innerHTML = `<img src="${cardDataUrl}" style="width:160px; border-radius:14px; box-shadow:0 12px 40px rgba(0,0,0,0.3);" alt="결과 카드">`;
+      preview.innerHTML = `<img src="${cardDataUrl}" style="width:160px; border-radius:6px; box-shadow:0 12px 40px rgba(0,0,0,0.3);" alt="결과 카드">`;
       openModal('cardModal');
     };
     if (document.fonts && document.fonts.ready) {
@@ -1848,8 +1849,8 @@
     toast.style.cssText = `
       position: fixed; top: 5rem; left: 50%; transform: translateX(-50%);
       background: var(--wine); color: var(--cream); padding: 0.8rem 1.5rem;
-      border-radius: 100px; font-size: 0.85rem; font-weight: 500;
-      box-shadow: 0 12px 30px rgba(92, 31, 46, 0.3);
+      border-radius: 2px; font-size: 0.85rem; font-weight: 500;
+      box-shadow: 0 12px 30px rgba(20, 18, 16, 0.3);
       z-index: 300; opacity: 0; transition: all 0.3s;
     `;
     toast.textContent = message;

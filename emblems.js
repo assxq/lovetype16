@@ -153,6 +153,12 @@
     var parts = EMBLEMS[code];
     if (!parts) return '';
     opt = opt || {};
+    var out = svgFrom(parts, opt);
+    return out.replace('aria-label=""', 'aria-label="' + (NAMES[code] || code) + '"');
+  }
+
+  function svgFrom(parts, opt) {
+    opt = opt || {};
     var ink = opt.ink || 'currentColor';
     var accent = opt.accent || ACCENT;
     var body = parts.map(function (p) {
@@ -168,9 +174,11 @@
       return '<' + tag + ' ' + attrs.join(' ') + '/>';
     }).join('');
     var size = opt.size ? ' width="' + opt.size + '" height="' + opt.size + '"' : '';
-    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"' + size +
-      ' stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lt-emblem-svg"' +
-      ' role="img" aria-label="' + (NAMES[code] || code) + '">' + body + '</svg>';
+    var box = opt.box || 48, sw = opt.sw || 1.5;
+    var label = opt.box ? ' aria-hidden="true"' : ' role="img" aria-label=""';
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + box + ' ' + box + '"' + size +
+      ' stroke-width="' + sw + '" stroke-linecap="round" stroke-linejoin="round" class="lt-emblem-svg"' +
+      label + '>' + body + '</svg>';
   }
 
   // 캔버스용 이미지 (공유 카드)
@@ -203,9 +211,165 @@
   }
 
   function scan(root) {
-    if (!root || !root.querySelectorAll) return;
+    if (!root) return;
+    if (root.nodeType === 3) { swapText(root); return; }
+    if (!root.querySelectorAll) return;
     if (root.matches && root.matches('[class*="emoji"]')) swapEl(root);
     root.querySelectorAll('[class*="emoji"], .match-pair > span').forEach(swapEl);
+    numberSlots(root);
+    swapText(root);
+  }
+
+  // ===== 일반 아이콘 (24×24, 문장 속 장식 이모지 대체) =====
+  // h=1 이면 포인트 색. 같은 의미의 이모지는 같은 아이콘을 쓴다.
+  var ICONS = {
+    talk:    [['path', { d: 'M4 5.5h16v10H10l-4 3.5v-3.5H4z' }]],
+    caution: [['path', { d: 'M12 4 21 19.5H3z' }], ['path', { d: 'M12 10v4.2' }], ['circle', { cx: 12, cy: 16.9, r: 0.7, fill: 1, nostroke: 1 }]],
+    letter:  [['rect', { x: 3.5, y: 6, width: 17, height: 12.5, rx: 1 }], ['path', { d: 'M4 7l8 6 8-6' }]],
+    spark:   [['path', { d: 'M12 3.5l1.8 5.2 5.2 1.8-5.2 1.8L12 17.5l-1.8-5.2L5 10.5l5.2-1.8z', a: 1 }]],
+    magnet:  [['path', { d: 'M5.5 4.5h4V12a2.5 2.5 0 0 0 5 0V4.5h4V12a6.5 6.5 0 0 1-13 0z' }], ['path', { d: 'M5.5 8h4M14.5 8h4' }]],
+    link:    [['path', { d: 'M10 14l4-4M8.6 11.4l-2 2a3 3 0 0 0 4.2 4.2l2-2M15.4 12.6l2-2a3 3 0 0 0-4.2-4.2l-2 2' }]],
+    leaf:    [['path', { d: 'M5 19C5 10 10 5 19 5c0 9-5 14-14 14z' }], ['path', { d: 'M5 19 13 11' }]],
+    calendar:[['rect', { x: 4, y: 5.5, width: 16, height: 14.5, rx: 1 }], ['path', { d: 'M4 10h16M8.5 3.5v4M15.5 3.5v4' }]],
+    compass: [['circle', { cx: 12, cy: 12, r: 8.5 }], ['path', { d: 'M14.8 9.2l-1.6 4-4 1.6 1.6-4z', a: 1 }]],
+    heart:   [['path', { d: 'M12 19.5C6.5 15.8 3.5 12.6 3.5 9.2A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 8.5 2.2c0 3.4-3 6.6-8.5 10.3z', a: 1 }]],
+    broken:  [['path', { d: 'M12 19.5C6.5 15.8 3.5 12.6 3.5 9.2A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 8.5 2.2c0 3.4-3 6.6-8.5 10.3z' }], ['path', { d: 'M12 7l-1.6 4 2.6 2-1.6 4', a: 1 }]],
+    flame:   [['path', { d: 'M12 3.5c1 3.5 5.5 5.5 5.5 10a5.5 5.5 0 0 1-11 0c0-2.5 1.5-4 2.5-5 .3 1.8 1 2.8 2 3.2-.5-3.2.2-5.8 1-8.2z' }]],
+    sprout:  [['path', { d: 'M12 20v-8' }], ['path', { d: 'M12 12c0-3.5-2.5-6-6.5-6 0 3.5 2.5 6 6.5 6zM12 14.5c0-3 2-5 5.5-5 0 3-2 5-5.5 5z' }]],
+    halfmoon:[['circle', { cx: 12, cy: 12, r: 8 }], ['path', { d: 'M12 4a8 8 0 0 1 0 16z', fill: 1 }]],
+    bulb:    [['path', { d: 'M12 3.5a5.5 5.5 0 0 0-3.2 10c.4.3.7.9.7 1.4v1.6h5v-1.6c0-.5.3-1.1.7-1.4A5.5 5.5 0 0 0 12 3.5z' }], ['path', { d: 'M10 19.5h4' }]],
+    book:    [['path', { d: 'M12 6.5C9.5 5 6.5 4.8 4 5.3v12.5c2.5-.5 5.5-.3 8 1.2 2.5-1.5 5.5-1.7 8-1.2V5.3c-2.5-.5-5.5-.3-8 1.2zM12 6.5V19' }]],
+    pen:     [['path', { d: 'M15.5 4.5l4 4L9 19H5v-4z' }], ['path', { d: 'M13.5 6.5l4 4' }]],
+    target:  [['circle', { cx: 12, cy: 12, r: 8.5 }], ['circle', { cx: 12, cy: 12, r: 4.5 }], ['circle', { cx: 12, cy: 12, r: 1.3, a: 1, fill: 1, nostroke: 1 }]],
+    pin:     [['path', { d: 'M9 3.5h6l-1 5 3 3H7l3-3z' }], ['path', { d: 'M12 11.5V20' }]],
+    image:   [['rect', { x: 4, y: 5, width: 16, height: 14, rx: 1 }], ['path', { d: 'M4 16l4.5-4.5 4 4 2.5-2.5L20 18' }], ['circle', { cx: 15.5, cy: 9.5, r: 1.4 }]],
+    home:    [['path', { d: 'M4 11 12 4.5 20 11M6 9.5v10h12v-10' }]],
+    cloud:   [['path', { d: 'M7.5 18h9.5a3.5 3.5 0 0 0 .4-7A5.5 5.5 0 0 0 6.8 10 4 4 0 0 0 7.5 18z' }]],
+    cup:     [['path', { d: 'M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5zM16 10.5h1.5a2.5 2.5 0 0 1 0 5H16M8.5 3.5v3M12 3.5v3' }]],
+    share:   [['path', { d: 'M12 15V4M8 7.5 12 3.5l4 4M6 11v8.5h12V11' }]],
+    refresh: [['path', { d: 'M19 8a7.5 7.5 0 1 0 .5 6.5M19.5 3.5v5h-5' }]],
+    gift:    [['rect', { x: 4, y: 9, width: 16, height: 4 }], ['path', { d: 'M5.5 13v7h13v-7M12 9v11M12 9c-2-3.5-6-3.5-5.5-1S12 9 12 9zM12 9c2-3.5 6-3.5 5.5-1S12 9 12 9z' }]],
+    lock:    [['rect', { x: 5, y: 10.5, width: 14, height: 9.5, rx: 1 }], ['path', { d: 'M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5' }]],
+    chart:   [['path', { d: 'M4 20h16M7 16.5V11M12 16.5V6.5M17 16.5v-4', a: 0 }]],
+    bolt:    [['path', { d: 'M13.5 3 6 13.5h5L9.5 21 18 10h-5z' }]],
+    moon:    [['path', { d: 'M15 4a8.5 8.5 0 1 0 5 12.5A7 7 0 1 1 15 4z' }]],
+    eye:     [['path', { d: 'M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z' }], ['circle', { cx: 12, cy: 12, r: 2.5 }]],
+    clock:   [['circle', { cx: 12, cy: 12, r: 8.5 }], ['path', { d: 'M12 7.5V12l3 2' }]],
+    music:   [['path', { d: 'M9 17.5V6l10-2v11.5' }], ['circle', { cx: 7, cy: 17.5, r: 2 }], ['circle', { cx: 17, cy: 15.5, r: 2 }]],
+    person:  [['circle', { cx: 12, cy: 8, r: 3.5 }], ['path', { d: 'M5 20c.8-4 3.5-6 7-6s6.2 2 7 6' }]]
+  };
+  var ICON_OF = {};
+  function mapIcons(name, list) { list.split(' ').forEach(function (e) { ICON_OF[e] = name; }); }
+  mapIcons('talk', '💬 🗨 🗣 📞 📱');
+  mapIcons('caution', '⚠ 🚨 ❗ ❕ ‼');
+  mapIcons('letter', '💌 ✉ 📩 📨 📮');
+  mapIcons('spark', '✨ 🌟 ⭐ 💫 🎉 🎊 🌈 💎');
+  mapIcons('magnet', '🧲');
+  mapIcons('link', '🔗 🤝');
+  mapIcons('leaf', '🕊 🍃 🌿 🌸 🌷 🌼 🍀');
+  mapIcons('calendar', '📅 🗓 📆');
+  mapIcons('compass', '🧭 🗺');
+  mapIcons('heart', '🫶 💞 💕 💝 💘 💖 💗 💓 ❤ ♥ 💚 💛 🧡 💙 💜 🤍 🩷 😍 🥰 😘 💑 💏 💍');
+  mapIcons('broken', '💔');
+  mapIcons('flame', '🔥');
+  mapIcons('sprout', '🌱 🪴');
+  mapIcons('halfmoon', '🌗 🌓 🌑 🌕 ☯');
+  mapIcons('bulb', '💡 🤔 🧠');
+  mapIcons('book', '📚 📓 📕 📗 📘 📙 📜');
+  mapIcons('pen', '📝 🖋 ✏ ✍ 🖊');
+  mapIcons('target', '🎯 💪 🚀 🏆');
+  mapIcons('pin', '📌 📍 📐 📎');
+  mapIcons('image', '🖼 📸 📷 🎨 🎬');
+  mapIcons('home', '🏠 🏡');
+  mapIcons('cloud', '🌫 🌧 🌪 ☁ ⛅ 🌦 🌊 😢 😭 😔 😞');
+  mapIcons('cup', '☕ 🍵 🕯 🍽');
+  mapIcons('share', '📤 📣 📢');
+  mapIcons('refresh', '🔄 🔁 ♻');
+  mapIcons('gift', '🎁 🧸 🍰 🎂 🍫 💐');
+  mapIcons('lock', '🔒 🔐 🔑');
+  mapIcons('chart', '📊 📈 📉');
+  mapIcons('eye', '👀 👁 🔍 🔎');
+  mapIcons('clock', '⏰ ⏳ ⌛ 🕐');
+  mapIcons('music', '🎵 🎶 🎧');
+  mapIcons('person', '👤 👥 🙋 🧑');
+  var MEDAL = { '🥇': '1', '🥈': '2', '🥉': '3' };
+  // 그대로 둘 기호 (글자로 쓰는 것)
+  var KEEP = { '✓': 1, '✔': 1, '✕': 1, '✗': 1, '✘': 1, '★': 1, '☆': 1, '♪': 1, '©': 1, '®': 1, '™': 1 };
+  var EMOJI_RE = /(?:[←-⇿⌀-⏿①-⓿■-➿⤴⤵⬅-⭕〰〽㊗㊙]|[\uD83C-\uDBFF][\uDC00-\uDFFF])(?:️|‍(?:[☀-➿]|[\uD83C-\uDBFF][\uDC00-\uDFFF])️?|[\uD83C][\uDFFB-\uDFFF])*/g;
+  var ARROWS = /^[←-⇿⌀-⏿①-⓿■-◿⬅-⬇]$/; // 화살표·도형·원문자 등은 글자 그대로
+
+  function iconSvg(name) {
+    return svgFrom(ICONS[name], { box: 24, sw: 1.6 });
+  }
+
+  function replacementFor(raw) {
+    var e = norm(raw.replace(/‍.*$/, ''));
+    if (KEEP[e] || ARROWS.test(e)) return null;            // 그대로
+    if (MEDAL[e]) return { html: '<span class="lt-num">' + MEDAL[e] + '</span>' };
+    if (EMOJI[e]) return { html: '<span class="lt-ico lt-ico-type">' + svg(EMOJI[e]) + '</span>' };
+    if (ICON_OF[e]) return { html: '<span class="lt-ico">' + iconSvg(ICON_OF[e]) + '</span>' };
+    return { html: '' };                                    // 그 밖의 장식 이모지는 지움
+  }
+
+  var SKIP_TAGS = { SCRIPT: 1, STYLE: 1, TEXTAREA: 1, NOSCRIPT: 1, TITLE: 1, OPTION: 1, svg: 1, SVG: 1 };
+  function swapText(root) {
+    if (!root) return;
+    if (root.nodeType === 3) { swapTextNode(root); return; }
+    if (root.nodeType !== 1 || SKIP_TAGS[root.nodeName] || (root.closest && root.closest('svg'))) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        var p = n.parentNode;
+        if (!p || SKIP_TAGS[p.nodeName] || (p.closest && p.closest('svg, [contenteditable]'))) return NodeFilter.FILTER_REJECT;
+        EMOJI_RE.lastIndex = 0;
+        return EMOJI_RE.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+      }
+    });
+    var list = [];
+    while (walker.nextNode()) list.push(walker.currentNode);
+    list.forEach(swapTextNode);
+  }
+  function swapTextNode(node) {
+    var p = node.parentNode;
+    if (!p || SKIP_TAGS[p.nodeName] || (p.closest && p.closest('svg'))) return;
+    var text = node.nodeValue, out = '', last = 0, changed = false, m;
+    EMOJI_RE.lastIndex = 0;
+    var esc = function (s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
+    while ((m = EMOJI_RE.exec(text))) {
+      var r = replacementFor(m[0]);
+      if (!r) continue;
+      changed = true;
+      var before = text.slice(last, m.index);
+      var after = m.index + m[0].length;
+      if (r.html === '') {
+        // 지운 자리에 공백이 겹치지 않게
+        if (/\s$/.test(before) || before === '') { while (text[after] === ' ') after++; }
+      }
+      out += esc(before) + r.html;
+      last = after;
+      EMOJI_RE.lastIndex = after;
+    }
+    if (!changed) return;
+    out += esc(text.slice(last));
+    var tpl = document.createElement('template');
+    tpl.innerHTML = out;
+    p.replaceChild(tpl.content, node);
+  }
+
+  // 특징 목록처럼 '항목마다 다른 이모지'를 쓰는 슬롯은 01·02·03 번호로
+  var NUMBER_SLOTS = '.feature-icon';
+  function numberSlots(root) {
+    var scope = root && root.querySelectorAll ? root : document;
+    var els = [];
+    if (scope.matches && scope.matches(NUMBER_SLOTS)) els.push(scope);
+    scope.querySelectorAll(NUMBER_SLOTS).forEach(function (e) { els.push(e); });
+    els.forEach(function (el) {
+      if (el.classList.contains('lt-num-slot')) return;
+      var sibs = el.parentElement && el.parentElement.parentElement
+        ? el.parentElement.parentElement.querySelectorAll(NUMBER_SLOTS) : [el];
+      var i = Array.prototype.indexOf.call(sibs, el);
+      el.textContent = String((i < 0 ? 0 : i) + 1).padStart(2, '0');
+      el.classList.add('lt-num-slot');
+    });
   }
 
   // 캔버스는 동기로 그리므로 이미지를 미리 만들어 둔다 (어두운 카드용 밝은 선 / 밝은 카드용 어두운 선)
@@ -239,8 +403,11 @@
         if (t && t.closest) {
           var host = t.closest('[class*="emoji"], .match-pair > span');
           if (host) swapEl(host);
+          var slot = t.closest('.feature-icon');
+          if (slot && !/^\d{2}$/.test(slot.textContent.trim())) { slot.classList.remove('lt-num-slot'); numberSlots(slot); }
         }
-        m.addedNodes && m.addedNodes.forEach(function (n) { scan(n.nodeType === 1 ? n : null); });
+        if (m.type === 'characterData') swapText(m.target);
+        m.addedNodes && m.addedNodes.forEach(function (n) { scan(n); });
       });
     }).observe(document.body, { childList: true, subtree: true, characterData: true });
   }

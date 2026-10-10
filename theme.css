@@ -167,3 +167,18 @@ footer .footer-logo { color: #f4f2ee !important; }
 .match-pair > .lt-emblem { font-size: 2.6rem; }
 .lt-emblem-pair { display: flex !important; justify-content: center; align-items: center; gap: 0.6rem; letter-spacing: 0 !important; }
 .lt-emblem-x { font-family: var(--serif-en); font-size: 0.5em; color: var(--accent); }
+
+/* ---------- 문장 속 아이콘 (emblems.js 가 장식 이모지를 대체) ---------- */
+.lt-ico { display: inline-block; width: 1.05em; height: 1.05em; vertical-align: -0.17em; margin: 0 0.12em 0 0; line-height: 1; }
+.lt-ico .lt-emblem-svg { width: 100%; height: 100%; display: block; }
+.lt-num { font-family: var(--serif-en); font-style: italic; color: var(--accent); font-size: 1.15em; line-height: 1; }
+.feature-icon.lt-num-slot {
+  font-family: var(--serif-en) !important;
+  font-style: italic;
+  font-size: 1.9rem !important;
+  line-height: 1 !important;
+  color: var(--accent) !important;
+  margin-bottom: 0.4rem !important;
+}
+/* 링크 안 징표·아이콘이 기본 링크색(파랑)을 물려받지 않게 */
+a [class*="emoji"], a .lt-ico { color: var(--wine, #141210); }

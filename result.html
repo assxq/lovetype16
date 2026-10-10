@@ -21,7 +21,7 @@
 <meta property="og:site_name" content="Love Type 16">
 <meta property="og:title" content="당신의 연애 유형 결과 — Love Type 16">
 <meta property="og:description" content="16가지 연애 유형 중 나는 어떤 사람일까? 내 유형을 확인하고 친구와 비교해보세요.">
-<meta property="og:image" content="https://lovetype16.xyz/og-image.png?v=2">
+<meta property="og:image" content="https://lovetype16.xyz/og-image.png?v=3">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://www.lovetype16.xyz/result.html">
@@ -31,7 +31,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="당신의 연애 유형 결과 — Love Type 16">
 <meta name="twitter:description" content="16가지 연애 유형 중 나는 어떤 사람일까? 내 유형을 확인하고 친구와 비교해보세요.">
-<meta name="twitter:image" content="https://lovetype16.xyz/og-image.png?v=2">
+<meta name="twitter:image" content="https://lovetype16.xyz/og-image.png?v=3">
 
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" crossorigin="anonymous"></script>
@@ -1654,7 +1654,7 @@
             content: {
               title: inviteTitle,
               description: inviteDesc,
-              imageUrl: `https://lovetype16.xyz/og-${result.type.toLowerCase()}.png?v=2`,
+              imageUrl: `https://lovetype16.xyz/og-${result.type.toLowerCase()}.png?v=3`,
               link: { mobileWebUrl: inviteUrl, webUrl: inviteUrl }
             },
             buttons: [
@@ -1679,7 +1679,7 @@
       }).catch(() => alert('복사 실패. 다시 시도해주세요.'));
     } else if (platform === 'kakao') {
       // 카카오톡 공유 — 유형별 OG 이미지 + 테스트하기 버튼
-      const ogImage = `https://lovetype16.xyz/og-${result.type.toLowerCase()}.png?v=2`;
+      const ogImage = `https://lovetype16.xyz/og-${result.type.toLowerCase()}.png?v=3`;
       const myUrl = `https://lovetype16.xyz/result.html?type=${result.type}`;
       if (window.Kakao && Kakao.isInitialized() && Kakao.Share) {
         try {

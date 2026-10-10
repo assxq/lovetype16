@@ -1142,6 +1142,7 @@
   gtag('config', 'G-TB6F95LG0V');
 </script>
 <link rel="stylesheet" href="/theme.css">
+<script src="/emblems.js" defer></script>
 </head>
 <body>
 
@@ -2359,10 +2360,10 @@ function drawCard() {
   ctx.textAlign = 'center';
   ctx.fillStyle = '#b8352a'; ctx.font = '600 30px Pretendard, sans-serif';
   ctx.fillText('L O V E   T Y P E   1 6', W/2, 200);
-  ctx.font = '260px serif'; ctx.fillText(data.emoji, W/2, 720);
-  ctx.fillStyle = '#cfc9c0'; ctx.font = '700 64px Pretendard, sans-serif';
+  if (!(window.LT16Emblem && LT16Emblem.draw(ctx, data.emoji, W/2, 625, 300))) { ctx.font = '260px serif'; ctx.fillText(data.emoji, W/2, 720); }
+  ctx.fillStyle = '#cfc9c0'; ctx.font = "400 130px 'Instrument Serif', serif";
   ctx.fillText(type, W/2, 900);
-  ctx.fillStyle = '#f4f2ee'; ctx.font = '800 96px Pretendard, sans-serif';
+  ctx.fillStyle = '#f4f2ee'; ctx.font = "600 84px 'Noto Serif KR', serif";
   ctx.fillText(data.name, W/2, 1020);
   ctx.strokeStyle = 'rgba(20, 18, 16,0.5)'; ctx.lineWidth = 3;
   ctx.beginPath(); ctx.moveTo(W/2-80, 1090); ctx.lineTo(W/2+80, 1090); ctx.stroke();

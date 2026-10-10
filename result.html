@@ -1047,6 +1047,7 @@
   gtag('config', 'G-TB6F95LG0V');
 </script>
 <link rel="stylesheet" href="/theme.css">
+<script src="/emblems.js" defer></script>
 </head>
 <body>
 
@@ -1759,17 +1760,19 @@
     ctx.fillText('L O V E   T Y P E   1 6', W/2, 200);
 
     // 이모지 (큰 사이즈)
-    ctx.font = '260px serif';
-    ctx.fillText(data.emoji, W/2, 720);
+    if (!(window.LT16Emblem && LT16Emblem.draw(ctx, result.type, W/2, 625, 300))) {
+      ctx.font = '260px serif';
+      ctx.fillText(data.emoji, W/2, 720);
+    }
 
     // 유형 코드
     ctx.fillStyle = '#cfc9c0';
-    ctx.font = '700 64px Pretendard, sans-serif';
+    ctx.font = "400 130px 'Instrument Serif', serif";
     ctx.fillText(result.type, W/2, 900);
 
     // 유형 이름
     ctx.fillStyle = '#f4f2ee';
-    ctx.font = '800 96px Pretendard, sans-serif';
+    ctx.font = "600 84px 'Noto Serif KR', serif";
     ctx.fillText(data.name, W/2, 1020);
 
     // 구분선

@@ -223,6 +223,7 @@
   gtag('config', 'G-TB6F95LG0V');
 </script>
 <link rel="stylesheet" href="/theme.css">
+<script src="/emblems.js" defer></script>
 </head>
 <body>
 
@@ -601,8 +602,8 @@ function drawCard() {
 
   // 두 이모지
   ctx.font='150px serif';
-  ctx.fillText(TYPES[a].emoji, W/2 - 180, 480);
-  ctx.fillText(TYPES[b].emoji, W/2 + 180, 480);
+  if (!(window.LT16Emblem && LT16Emblem.draw(ctx, a, W/2 - 180, 425, 180))) ctx.fillText(TYPES[a].emoji, W/2 - 180, 480);
+  if (!(window.LT16Emblem && LT16Emblem.draw(ctx, b, W/2 + 180, 425, 180))) ctx.fillText(TYPES[b].emoji, W/2 + 180, 480);
   ctx.fillStyle='#b8352a';
   ctx.font='80px Pretendard, sans-serif';
   ctx.fillText('×', W/2, 460);

@@ -158,3 +158,12 @@ nav, header { box-shadow: none !important; }
 
 /* ---------- 푸터 로고 ---------- */
 footer .footer-logo { color: #f4f2ee !important; }
+
+/* ---------- 유형 징표 (emblems.js) ---------- */
+.lt-emblem { color: var(--wine, #141210); line-height: 1 !important; filter: none !important; animation: none !important; }
+.lt-emblem .lt-emblem-svg { width: 1.15em; height: 1.15em; display: inline-block; vertical-align: middle; overflow: visible; }
+.type-emoji.lt-emblem, .hero-emoji.lt-emblem { font-size: 4.2rem !important; }
+.tpc-emoji.lt-emblem { font-size: 2.8rem !important; margin-bottom: 0.5rem !important; }
+.match-pair > .lt-emblem { font-size: 2.6rem; }
+.lt-emblem-pair { display: flex !important; justify-content: center; align-items: center; gap: 0.6rem; letter-spacing: 0 !important; }
+.lt-emblem-x { font-family: var(--serif-en); font-size: 0.5em; color: var(--accent); }

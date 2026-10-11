@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Love Type 16">
 <meta property="og:title" content="커플 궁합 테스트 — 우리는 몇 %?">
 <meta property="og:description" content="두 사람의 연애 유형으로 알아보는 궁합 점수. 무료로 확인하고 결과를 공유해보세요.">
-<meta property="og:image" content="https://lovetype16.xyz/og-image.png?v=3">
+<meta property="og:image" content="https://lovetype16.xyz/og-image.png?v=4">
 <meta property="og:url" content="https://www.lovetype16.xyz/compatibility.html">
 <meta property="og:locale" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
@@ -539,9 +539,10 @@ if (window.Kakao && !Kakao.isInitialized()) {
 function shareKakao() {
   if (!lastResult) return;
   const { a, b, score, label } = lastResult;
-  const ea = TYPES[a].emoji, eb = TYPES[b].emoji;
   const url = `https://lovetype16.xyz/compatibility.html?me=${a}`;
-  const text = `${ea} ${TYPES[a].name} × ${eb} ${TYPES[b].name}\n우리 궁합은 ${score}% — ${label}\nlovetype16.xyz`;
+  // 공유 문구에는 이모지를 넣지 않음 (카카오·클립보드)
+  const plainLabel = String(label).replace(/\s*(?:[\u2600-\u27BF]|[\uD83C-\uDBFF][\uDC00-\uDFFF])\uFE0F?/g, '').trim();
+  const text = `${TYPES[a].name} × ${TYPES[b].name}\n우리 궁합은 ${score}% — ${plainLabel}\nlovetype16.xyz`;
 
   if (window.Kakao && Kakao.isInitialized() && Kakao.Share) {
     try {
@@ -549,8 +550,8 @@ function shareKakao() {
         objectType: 'feed',
         content: {
           title: `우리 궁합은 ${score}%`,
-          description: `${ea} ${TYPES[a].name} × ${eb} ${TYPES[b].name} — ${label}`,
-          imageUrl: 'https://lovetype16.xyz/og-image.png?v=3',
+          description: `${TYPES[a].name} × ${TYPES[b].name} — ${plainLabel}`,
+          imageUrl: 'https://lovetype16.xyz/kakao-main.png?v=4', imageWidth: 800, imageHeight: 800,
           link: { mobileWebUrl: url, webUrl: url }
         },
         buttons: [
@@ -559,10 +560,10 @@ function shareKakao() {
         ]
       });
     } catch (e) {
-      navigator.clipboard.writeText(text).then(() => showToast('공유 문구를 복사했어요 💬'));
+      navigator.clipboard.writeText(text).then(() => showToast('공유 문구를 복사했어요'));
     }
   } else {
-    navigator.clipboard.writeText(text).then(() => showToast('공유 문구를 복사했어요. 카톡에 붙여넣으세요 💬'));
+    navigator.clipboard.writeText(text).then(() => showToast('공유 문구를 복사했어요. 카톡에 붙여넣으세요'));
   }
 }
 
@@ -671,7 +672,7 @@ function downloadCard() {
   link.download = `lovetype16-궁합-${lastResult.score}.png`;
   link.href = cardDataUrl;
   link.click();
-  showToast('이미지를 저장했어요 ✨');
+  showToast('이미지를 저장했어요');
 }
 
 function showToast(msg) {

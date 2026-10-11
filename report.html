@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="wrap">
-  <header class="top"><a href="index.html">LOVE TYPE 16</a></header>
+  <header class="top"><a href="index.html">Love Type <i>16</i></a></header>
   <div id="state" class="card center"><div class="spin"></div><div class="muted">리포트를 불러오는 중…</div></div>
   <main id="report" style="display:none"></main>
 </div>
@@ -36,7 +36,7 @@ function msg(h,p,link){ state.innerHTML=`<h1 style="font-size:1.2rem">${h}</h1><
   const link=location.origin+'/report.html#t='+encodeURIComponent(token);
   let h=`<div class="card"><span class="badge">COUPLE REPORT</span><h1>${esc(d.title)}</h1>
     <div class="score"><span class="n">${d.score}점</span><span><b>${esc(d.label)}</b><br><span class="muted">${esc(d.summary)}</span></span></div></div>
-    <div class="card noprint"><h2>📌 이 주소를 저장해 두세요</h2><p class="muted">로그인 없이 이 주소로 언제든 다시 볼 수 있어요. 다른 기기에서 보려면 주소를 복사해 두세요.</p>
+    <div class="card noprint"><h2>이 주소를 저장해 두세요</h2><p class="muted">로그인 없이 이 주소로 언제든 다시 볼 수 있어요. 다른 기기에서 보려면 주소를 복사해 두세요.</p>
     <button class="btn ghost" id="copy">주소 복사하기</button><button class="btn ghost" onclick="window.print()">PDF로 저장 / 인쇄</button></div>`;
   for(const s of d.sections){
     h+=`<section class="card sec"><h2>${esc(s.h)}</h2>`;

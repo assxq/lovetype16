@@ -21,9 +21,9 @@
 <meta property="og:site_name" content="Love Type 16">
 <meta property="og:title" content="당신의 연애 유형 결과 — Love Type 16">
 <meta property="og:description" content="16가지 연애 유형 중 나는 어떤 사람일까? 내 유형을 확인하고 친구와 비교해보세요.">
-<meta property="og:image" content="https://lovetype16.xyz/og-image.png?v=3">
+<meta property="og:image" content="https://lovetype16.xyz/og-image.png?v=4">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:height" content="600">
 <meta property="og:url" content="https://www.lovetype16.xyz/result.html">
 <meta property="og:locale" content="ko_KR">
 
@@ -31,7 +31,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="당신의 연애 유형 결과 — Love Type 16">
 <meta name="twitter:description" content="16가지 연애 유형 중 나는 어떤 사람일까? 내 유형을 확인하고 친구와 비교해보세요.">
-<meta name="twitter:image" content="https://lovetype16.xyz/og-image.png?v=3">
+<meta name="twitter:image" content="https://lovetype16.xyz/og-image.png?v=4">
 
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" crossorigin="anonymous"></script>
@@ -1636,7 +1636,7 @@
   function shareTo(platform, from) {
     const result = getResult();
     const data = TYPES[result.type];
-    const text = `나는 ${result.type} ${data.emoji} ${data.name}!\n너의 연애 유형은?\nhttps://lovetype16.xyz/test.html?utm_source=share&utm_medium=referral&utm_campaign=result_link`;
+    const text = `나는 ${result.type} ${data.name}!\n너의 연애 유형은?\nhttps://lovetype16.xyz/test.html?utm_source=share&utm_medium=referral&utm_campaign=result_link`;
 
     closeModal(null, 'shareModal');
 
@@ -1644,8 +1644,8 @@
       // 커플 초대: 상대가 테스트를 끝내면 결과 화면에서 우리 궁합으로 바로 연결
       trackEvent('invite_send', { type: result.type, location: from || '' });
       const inviteUrl = `https://lovetype16.xyz/test.html?with=${result.type}&utm_source=invite&utm_medium=referral&utm_campaign=couple_invite`;
-      const inviteTitle = `나는 ${data.emoji} ${data.name}. 우리 얼마나 잘 맞을까?`;
-      const inviteDesc = '3분 테스트 끝나면 우리 궁합 점수가 바로 나와 💞';
+      const inviteTitle = `나는 ${result.type} ${data.name}. 우리 얼마나 잘 맞을까?`;
+      const inviteDesc = '3분 테스트가 끝나면 우리 궁합 점수가 바로 나와요';
       const inviteText = `${inviteTitle}\n${inviteDesc}\n${inviteUrl}`;
       if (window.Kakao && Kakao.isInitialized() && Kakao.Share) {
         try {
@@ -1654,7 +1654,8 @@
             content: {
               title: inviteTitle,
               description: inviteDesc,
-              imageUrl: `https://lovetype16.xyz/og-${result.type.toLowerCase()}.png?v=3`,
+              imageUrl: `https://lovetype16.xyz/kakao-${result.type.toLowerCase()}.png?v=4`,
+              imageWidth: 800, imageHeight: 800,
               link: { mobileWebUrl: inviteUrl, webUrl: inviteUrl }
             },
             buttons: [
@@ -1667,7 +1668,7 @@
       if (navigator.share) {
         navigator.share({ title: inviteTitle, text: `${inviteTitle}\n${inviteDesc}`, url: inviteUrl }).catch(() => {});
       } else {
-        navigator.clipboard.writeText(inviteText).then(() => showToast('초대 링크를 복사했어요. 상대에게 보내 주세요 💌'))
+        navigator.clipboard.writeText(inviteText).then(() => showToast('초대 링크를 복사했어요. 상대에게 보내 주세요'))
           .catch(() => showToast('복사 실패. 다시 시도해주세요.'));
       }
       return;
@@ -1675,20 +1676,20 @@
 
     if (platform === 'link') {
       navigator.clipboard.writeText(text).then(() => {
-        showToast('링크가 복사됐어요 ✨');
+        showToast('링크가 복사됐어요');
       }).catch(() => alert('복사 실패. 다시 시도해주세요.'));
     } else if (platform === 'kakao') {
       // 카카오톡 공유 — 유형별 OG 이미지 + 테스트하기 버튼
-      const ogImage = `https://lovetype16.xyz/og-${result.type.toLowerCase()}.png?v=3`;
+      const ogImage = `https://lovetype16.xyz/kakao-${result.type.toLowerCase()}.png?v=4`;
       const myUrl = `https://lovetype16.xyz/result.html?type=${result.type}`;
       if (window.Kakao && Kakao.isInitialized() && Kakao.Share) {
         try {
           Kakao.Share.sendDefault({
             objectType: 'feed',
             content: {
-              title: `나는 ${data.emoji} ${data.name}`,
+              title: `나는 ${result.type} ${data.name}`,
               description: data.tagline,
-              imageUrl: ogImage,
+              imageUrl: ogImage, imageWidth: 800, imageHeight: 800,
               link: { mobileWebUrl: myUrl, webUrl: myUrl }
             },
             buttons: [
@@ -1697,12 +1698,12 @@
             ]
           });
         } catch (e) {
-          navigator.clipboard.writeText(text).then(() => showToast('공유 문구를 복사했어요 💬'));
+          navigator.clipboard.writeText(text).then(() => showToast('공유 문구를 복사했어요'));
         }
       } else {
         // SDK 미로드 시 폴백: 문구 복사
         navigator.clipboard.writeText(text).then(() => {
-          showToast('공유 문구를 복사했어요. 카톡에 붙여넣으세요 💬');
+          showToast('공유 문구를 복사했어요. 카톡에 붙여넣으세요');
         }).catch(() => showToast('복사 실패. 다시 시도해주세요.'));
       }
     }
@@ -1843,7 +1844,7 @@
     link.download = `lovetype16-${result.type}.png`;
     link.href = cardDataUrl;
     link.click();
-    showToast('이미지를 저장했어요 ✨');
+    showToast('이미지를 저장했어요');
   }
 
   // ===== Toast 알림 =====

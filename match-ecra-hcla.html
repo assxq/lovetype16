@@ -110,7 +110,7 @@
 .rt ul{list-style:none;text-align:left;max-width:330px;margin:.8rem auto 1rem}
 .rt li{font-size:.9rem;padding:.4rem .2rem;border-bottom:1px dashed rgba(207, 201, 192,.25)}
 .rt li:last-child{border:0}
-.rt button{display:block;width:100%;max-width:330px;margin:0 auto;border:0;border-radius:2px;padding:.9rem;font-family:inherit;font-size:1rem;font-weight:700;cursor:pointer;background:var(--gold);color:var(--wine-deep)}
+.rt button,.rt a.rt-go{box-sizing:border-box;text-decoration:none;display:block;width:100%;max-width:330px;margin:0 auto;border:0;border-radius:2px;padding:.9rem;font-family:inherit;font-size:1rem;font-weight:700;cursor:pointer;background:var(--gold);color:var(--wine-deep)}
 .rt .rt-p{font-size:.78rem;color:var(--gold-soft);margin-top:.6rem}
 .rt .rt-n{display:none;margin-top:1rem;padding:.9rem 1rem;border-radius:6px;background:rgba(244, 242, 238,.12);font-size:.86rem;line-height:1.6;text-align:left}
 .rt .rt-n a{color:var(--gold-soft);font-weight:700}
@@ -180,9 +180,8 @@
       <li>💬 이 말 한마디로 달라져요 (대화 스크립트)</li>
       <li>📅 썸 · 100일 · 1년 시기별 조언</li>
     </ul>
-    <button onclick="reportInterest()">💌 출시 알림 받기</button>
-    <div class="rt-p">출시 예정가 3,900원 · 재미로 보는 콘텐츠예요</div>
-    <div class="rt-n" id="rtn"></div>
+    <a class="rt-go" href="pay.html?a=ECRA&b=HCLA" onclick="rtGo()">리포트 미리보기 · 3,900원</a>
+    <div class="rt-p">디지털 콘텐츠 · 결제 즉시 열람 · 열람 후 청약철회 제한 (미리보기 확인 후 결제)</div>
   </section>
 
   <div class="cta-box">
@@ -216,14 +215,8 @@
 </footer>
 
 <script>
-function reportInterest() {
-  var pair = 'ECRA_HCLA';
-  try { if (window.gtag) gtag('event', 'report_interest', { pair: pair, source: 'match_page' }); } catch (e) {}
-  var subject = encodeURIComponent('[Love Type 16] 커플 궁합 리포트 출시 알림');
-  var body = encodeURIComponent('출시되면 알려주세요.\n(관심 조합: ' + pair + ')');
-  var n = document.getElementById('rtn');
-  n.innerHTML = '아직 준비 중이에요. 출시되면 가장 먼저 알려드릴게요!<br>알림을 받고 싶다면 <a href="mailto:assxq@naver.com?subject=' + subject + '&body=' + body + '">assxq@naver.com</a>으로 메일을 보내주세요. (메일 주소는 출시 안내 외에 사용하지 않아요)';
-  n.style.display = 'block';
+function rtGo() {
+  try { if (window.gtag) gtag('event', 'report_checkout_click', { pair: 'ECRA_HCLA', source: 'match_page' }); } catch (e) {}
 }
 </script>
 </body>

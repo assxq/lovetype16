@@ -209,7 +209,7 @@
   .report-teaser ul { list-style:none; text-align:left; max-width:340px; margin:0 auto 1.1rem; }
   .report-teaser li { font-size:.9rem; padding:.42rem .2rem; border-bottom:1px dashed rgba(207, 201, 192,.25); }
   .report-teaser li:last-child { border-bottom:0; }
-  .report-teaser .rt-btn { display:block; width:100%; max-width:340px; margin:0 auto; border:0; border-radius:2px; padding:.95rem; font-family:inherit; font-size:1rem; font-weight:700; cursor:pointer; background:var(--gold); color:var(--wine-deep); }
+  .report-teaser .rt-btn { box-sizing:border-box; text-decoration:none; text-align:center; display:block; width:100%; max-width:340px; margin:0 auto; border:0; border-radius:2px; padding:.95rem; font-family:inherit; font-size:1rem; font-weight:700; cursor:pointer; background:var(--gold); color:var(--wine-deep); }
   .report-teaser .rt-price { font-size:.78rem; color:var(--gold-soft); margin-top:.6rem; }
   .report-teaser .rt-note { display:none; margin-top:1rem; padding:.9rem 1rem; border-radius:6px; background:rgba(244, 242, 238,.12); font-size:.86rem; line-height:1.6; text-align:left; }
   .report-teaser .rt-note a { color:var(--gold-soft); font-weight:700; }
@@ -297,7 +297,7 @@
 
   <div class="axis-detail" id="axisDetail"></div>
 
-  <!-- 상세 리포트 안내 (출시 준비 중: 관심도 측정) -->
+  <!-- 상세 리포트 안내 (결제 페이지로 연결) -->
   <section class="report-teaser" id="reportTeaser">
     <span class="rt-badge">COUPLE REPORT</span>
     <h3>이 두 사람만을 위한<br>상세 궁합 리포트</h3>
@@ -308,9 +308,8 @@
       <li>💬 이 말 한마디로 달라져요 (대화 스크립트)</li>
       <li>📅 썸 · 100일 · 1년 시기별 조언</li>
     </ul>
-    <button class="rt-btn" onclick="reportInterest()">💌 출시 알림 받기</button>
-    <div class="rt-price">출시 예정가 3,900원 · 재미로 보는 콘텐츠예요</div>
-    <div class="rt-note" id="reportNote"></div>
+    <a class="rt-btn" id="rtGo" href="pay.html" onclick="return goPay()">리포트 미리보기 · 3,900원</a>
+    <div class="rt-price">디지털 콘텐츠 · 결제 즉시 열람 · 열람 후 청약철회 제한 (미리보기 확인 후 결제)</div>
   </section>
 
   <!-- 광고 -->
@@ -567,15 +566,13 @@ function shareKakao() {
   }
 }
 
-function reportInterest() {
-  const a = lastResult ? lastResult.a : '', b = lastResult ? lastResult.b : '';
+function goPay() {
+  if (!lastResult) return false;
+  const a = lastResult.a, b = lastResult.b;
   const pair = [a, b].sort().join('_');
-  try { if (window.gtag) gtag('event', 'report_interest', { pair: pair }); } catch (e) {}
-  const subject = encodeURIComponent('[Love Type 16] 커플 궁합 리포트 출시 알림');
-  const body = encodeURIComponent('출시되면 알려주세요.\n(관심 조합: ' + pair + ')');
-  const note = document.getElementById('reportNote');
-  note.innerHTML = '아직 준비 중이에요. 출시되면 가장 먼저 알려드릴게요!<br>알림을 받고 싶다면 <a href="mailto:assxq@naver.com?subject=' + subject + '&body=' + body + '">assxq@naver.com</a>으로 메일을 보내주세요. (메일 주소는 출시 안내 외에 사용하지 않아요)';
-  note.style.display = 'block';
+  try { if (window.gtag) gtag('event', 'report_checkout_click', { pair: pair, source: 'compat_page' }); } catch (e) {}
+  location.href = 'pay.html?a=' + encodeURIComponent(a) + '&b=' + encodeURIComponent(b);
+  return false;
 }
 
 function restart() {
